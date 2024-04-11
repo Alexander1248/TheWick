@@ -152,21 +152,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   compressedSteamCylinderMax: 10
-  compressedSteamCylinder: 10
+  compressedSteamCylinder: 5
   compressedSteamCylinderBar: {fileID: 0}
   shootParticle: {fileID: 5815394909314302356}
   animator: {fileID: 0}
   shootShaker: {fileID: 11400000, guid: a87a468a14450d9459ac6f0b804f49bd, type: 2}
-  distance: 10
-  mask:
+  enemyMask:
     serializedVersion: 2
     m_Bits: 64
+  distance: 10
   damage: 10
   kickForce: 0.1
   rollbackTime: 0.5
   clipSize: 5
+  clipBar: {fileID: 0}
   reloadTime: 3
   reload: {fileID: 0}
+  candleMask:
+    serializedVersion: 2
+    m_Bits: 128
+  candleMultiplier: 2
 --- !u!1001 &5982011618153229309
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4037013393180842779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: 9b906fb8cf5bc2045ad23f6d7e78159f
+  next: {fileID: 0}
+--- !u!114 &-2880303085070775891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e2fe82ffd14622aec35674b0cbc11e, type: 3}
+  m_Name: SimpleSentence
+  m_EditorClassIdentifier: 
+  guid: a4a7c03620ebe334c9e813d33c360ea4
+  next: {fileID: 0}
+  sentenceData:
+    sentence: 
+    time: 1
+    delay: 1
+    narrator: any
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58646d219bb14154bdb9188ab6cbb3e5, type: 3}
+  m_Name: Sentence Graph
+  m_EditorClassIdentifier: 
+  root: {fileID: 0}
+  nodes:
+  - {fileID: -2880303085070775891}
+  - {fileID: -4037013393180842779}
+  - {fileID: 840204186296177252}
+--- !u!114 &840204186296177252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e2fe82ffd14622aec35674b0cbc11e, type: 3}
+  m_Name: SimpleSentence
+  m_EditorClassIdentifier: 
+  guid: 4428e41c19ac0c44ba8858357f328359
+  next: {fileID: 0}
+  sentenceData:
+    sentence: 
+    time: 1
+    delay: 1
+    narrator: any

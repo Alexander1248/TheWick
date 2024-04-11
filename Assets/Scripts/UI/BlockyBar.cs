@@ -22,10 +22,8 @@ public class BlockyBar : MonoBehaviour
             t.SetParent(transform);
             t.sizeDelta = new Vector2(blockSize.x, blockSize.y);
             t.anchorMax = t.anchorMin = anchor;
-            var x = i % inRowCount * block.x;
-            x -= (int) (inRowCount * block.x * anchor.x); 
-            var y = i / inRowCount * block.y;
-            y -= (int) (_max / inRowCount * block.y * anchor.y); 
+            var x = (int) ((i % inRowCount + .5f) * block.x * (1 - anchor.x * 2));
+            var y = (int) ((i / inRowCount + .5f) * block.y * (1 - anchor.y * 2));
             t.anchoredPosition = new Vector2(x, y);
             _images[i] = obj.AddComponent<Image>();
             _images[i].sprite = sprite;
