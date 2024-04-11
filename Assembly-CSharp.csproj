@@ -42,9 +42,24 @@
   </PropertyGroup>
   <ItemGroup>
      <Folder Include="Assets" />
+     <Folder Include="Assets\Audio" />
      <Folder Include="Assets\Settings" />
      <Folder Include="Assets\Scripts" />
+     <Folder Include="Assets\Graphics\Shaders\PostEffects" />
+     <Folder Include="Assets\Graphics\Materials" />
      <Folder Include="Assets\Scenes" />
+     <None Include="Assets\Graphics\Shaders\PostEffects\DeleteMe.txt" />
+     <Folder Include="Assets\Prefabs" />
+     <None Include="Assets\Scripts\DeleteMe.txt" />
+     <None Include="Assets\Graphics\Materials\DeleteMe.txt" />
+     <None Include="Assets\Audio\DeleteMe.txt" />
+     <None Include="Assets\Models\DeleteMe.txt" />
+     <None Include="Assets\Prefabs\DeleteMe.txt" />
+     <Folder Include="Assets\Graphics" />
+     <Folder Include="Assets\Graphics\Shaders" />
+     <None Include="Assets\Graphics\Textures\DeleteMe.txt" />
+     <Folder Include="Assets\Models" />
+     <Folder Include="Assets\Graphics\Textures" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
