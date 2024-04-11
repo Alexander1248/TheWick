@@ -1,6 +1,7 @@
 ﻿using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Weapon : MonoBehaviour
 {
@@ -12,18 +13,25 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private MilkShake.ShakePreset shootShaker;
     [Space]
+    [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private float rayRadius = 0.1f;
     [SerializeField] private float distance = 10.0f;
-    [SerializeField] private LayerMask mask;
     [SerializeField] private float damage = 10.0f;
     [SerializeField] private float kickForce;
     [SerializeField] private float rollbackTime = 0.2f;
-    
     [SerializeField] private int clipSize = 5;
+    [SerializeField] private BlockyBar clipBar;
+    
     [SerializeField] private float reloadTime = 3.0f;
     [SerializeField] private Animator reload;
+    
+    [Space]
+    [SerializeField] private LayerMask candleMask;
+    [SerializeField] private float candleMultiplier = 2;
 
     private RaycastHit _hit;
-    private bool _reloading = false;
+    private RaycastHit[] _hits;
+    private bool _reloading;
     private bool _canShoot = true;
     private int _clipCount;
 
@@ -31,14 +39,35 @@ public class Weapon : MonoBehaviour
     public void AddCompressedSteamCylinder(int count)
     {
         compressedSteamCylinder = Math.Min(compressedSteamCylinder + count, compressedSteamCylinderMax);
-        compressedSteamCylinderBar.Set(compressedSteamCylinder);
+        if (compressedSteamCylinderBar) compressedSteamCylinderBar.Set(compressedSteamCylinder);
     }
 
     private void Start()
     {
+        _hits = new RaycastHit[16];
         reload.speed = 1 / reloadTime;
+        if (compressedSteamCylinderBar)
+        {
+            compressedSteamCylinderBar.Initialize(
+                compressedSteamCylinderMax,
+                new Vector2(1, 0),
+                new Vector2Int(96, 48),
+                new Vector2Int(10, 10),
+                1);
+            compressedSteamCylinderBar.Set(compressedSteamCylinder);
+        }
+
+        if (clipBar)
+        {
+            clipBar.Initialize(
+                clipSize,
+                new Vector2(0, 0),
+                new Vector2Int(48, 48),
+                new Vector2Int(10, 10),
+                1);
+            clipBar.Set(_clipCount);
+        }
         Reload();
-        compressedSteamCylinderBar.Initialize(compressedSteamCylinderMax, new Vector2(1, 0), new Vector2Int(96, 48), new Vector2Int(10, 10), 1);
     }
 
     private void Update()
@@ -47,7 +76,8 @@ public class Weapon : MonoBehaviour
         {
             if (compressedSteamCylinder <= 0) return;
             compressedSteamCylinder--;
-            compressedSteamCylinderBar.Set(compressedSteamCylinder);
+            if (compressedSteamCylinderBar) 
+                compressedSteamCylinderBar.Set(compressedSteamCylinder);
 
             _reloading = true;
             _canShoot = false;
@@ -61,15 +91,34 @@ public class Weapon : MonoBehaviour
         shootParticle.Play();
         
         _clipCount--;
+        if (clipBar) clipBar.Set(_clipCount);
+        
         _canShoot = false;
         Invoke(nameof(Rollback), rollbackTime);
-        MilkShake.Shaker.ShakeAll(shootShaker);
         
-        Physics.Raycast(transform.position, transform.forward, out _hit, distance, mask);
-        if (_hit.collider.IsUnityNull()) return;
-        var health = _hit.collider.gameObject.GetComponent<Health>();
-        if (health.IsUnityNull()) return;
-        health.DealDamage(damage, transform.forward * kickForce, _hit.point);
+        int count = Physics.SphereCastNonAlloc(transform.position, rayRadius,  transform.forward, _hits, distance, candleMask);
+        if (Physics.SphereCast(transform.position,rayRadius, transform.forward, out _hit, distance, enemyMask))
+        {
+            var health = _hit.collider.gameObject.GetComponent<Health>();
+            var dmg = damage;
+
+            for (var index = 0; index < count; index++)
+            {
+                if (_hits[index].distance >= _hit.distance) break;
+                dmg *= candleMultiplier;
+                Destroy(_hits[index].collider.gameObject);
+            }
+
+
+            if (health.IsUnityNull()) return;
+            health.DealDamage(dmg, -transform.forward, kickForce, _hit.point);
+            Debug.Log("Hit! Damage: " + dmg);
+        }
+        else for (var index = 0; index < count; index++)
+            Destroy(_hits[index].collider.gameObject);
+
+        
+        MilkShake.Shaker.ShakeAll(shootShaker);
     }
 
     private void Reload()
@@ -77,6 +126,7 @@ public class Weapon : MonoBehaviour
         Rollback();
         _reloading = false;
         _clipCount = clipSize;
+        if (clipBar) clipBar.Set(_clipCount);
     }
     private void Rollback()
     {
