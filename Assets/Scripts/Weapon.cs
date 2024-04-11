@@ -38,7 +38,7 @@ public class Weapon : MonoBehaviour
     {
         reload.speed = 1 / reloadTime;
         Reload();
-        compressedSteamCylinderBar.Initialize(compressedSteamCylinderMax, new Vector2(1, 0), new Vector2Int(64, 32), new Vector2Int(10, 10), 1);
+        compressedSteamCylinderBar.Initialize(compressedSteamCylinderMax, new Vector2(1, 0), new Vector2Int(96, 48), new Vector2Int(10, 10), 1);
     }
 
     private void Update()
