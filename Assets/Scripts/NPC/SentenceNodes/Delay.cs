@@ -6,11 +6,11 @@ using UnityEngine.Serialization;
 namespace NPC.SentenceNodes
 {
     [Serializable]
-    public class SimpleSentence : Sentence
+    public class Delay : Sentence
     {
-        public SentenceData sentenceData;
+        public float delay;
         
-        public SimpleSentence() : base(1) { }
+        public Delay() : base(1) { }
         
         public override Sentence GetNext()
         {
@@ -19,7 +19,7 @@ namespace NPC.SentenceNodes
 
         public override SentenceData GetSentence(string locale)
         {
-            return sentenceData;
+            return new SentenceData("", -1, delay, "");
         }
 
         public override Sentence Clone()
@@ -29,7 +29,7 @@ namespace NPC.SentenceNodes
             for (var i = 0; i < next.Length; i++) 
                 sentence.next[i] = next[i].Clone();
 
-            sentence.sentenceData = sentenceData.Clone();
+            sentence.delay = delay;
             return sentence;
         }
     }

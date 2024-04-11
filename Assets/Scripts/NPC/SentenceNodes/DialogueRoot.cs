@@ -1,16 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using NPC.SentenceNodes;
-using Unity.VisualScripting;
-using UnityEngine.Serialization;
+using Utils;
 
 namespace NPC.SentenceNodes
 {
     [Serializable]
-    public class SimpleSentence : Sentence
+    public class DialogueRoot : Sentence
     {
-        public SentenceData sentenceData;
-        
-        public SimpleSentence() : base(1) { }
+        public DialogueRoot() : base(1) { }
         
         public override Sentence GetNext()
         {
@@ -19,7 +17,7 @@ namespace NPC.SentenceNodes
 
         public override SentenceData GetSentence(string locale)
         {
-            return sentenceData;
+            return null;
         }
 
         public override Sentence Clone()
@@ -28,8 +26,6 @@ namespace NPC.SentenceNodes
             sentence.next = new Sentence[next.Length];
             for (var i = 0; i < next.Length; i++) 
                 sentence.next[i] = next[i].Clone();
-
-            sentence.sentenceData = sentenceData.Clone();
             return sentence;
         }
     }

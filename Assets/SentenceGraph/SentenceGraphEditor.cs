@@ -30,14 +30,21 @@ namespace SentenceGraph
 
             _graphView = root.Q<SentenceGraphView>();
             _inspectorView = root.Q<InspectorView>();
+            _graphView.OnNodeSelected = OnNodeSelectionChanged;
             OnSelectionChange();
         }
 
         private void OnSelectionChange()
         {
             var graph = Selection.activeObject as NPC.SentenceGraph;
-            if (graph) _graphView.PopulateView(graph);
+            if (graph && AssetDatabase.CanOpenAssetInEditor(graph.GetInstanceID())) 
+                _graphView.PopulateView(graph);
             
+        }
+
+        private void OnNodeSelectionChanged(NodeView view)
+        {
+            _inspectorView.UpdateSelection(view);
         }
     }
 }

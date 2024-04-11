@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using NPC.SentenceNodes;
+using Utils;
 
 namespace NPC.SentenceNodes
 {
     [Serializable]
     public class LocalizedSentence : Sentence
     {
-        public Dictionary<String, SentenceData> sentences = new();
+        public UDictionary<String, SentenceData> sentences = new();
 
         public LocalizedSentence() : base(1) { }
         
@@ -18,12 +19,17 @@ namespace NPC.SentenceNodes
 
         public override SentenceData GetSentence(string locale)
         {
-            return sentences.TryGetValue(locale, out var sentence) ? sentence : sentences["en"];
+            return sentences.TryGetValue(locale, out var sentence) ? sentence : sentences.Values[0];
         }
 
-        public override void Update(Dialogue dialogue)
+        public override Sentence Clone()
         {
-            throw new NotImplementedException();
+            var sentence = Instantiate(this);
+            sentence.next = new Sentence[next.Length];
+            for (var i = 0; i < next.Length; i++) 
+                sentence.next[i] = next[i].Clone();
+            sentences.Keys.ForEach(key => sentence.sentences[key] = sentences[key]);
+            return sentence;
         }
     }
 }
