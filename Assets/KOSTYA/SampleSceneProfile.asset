@@ -111,7 +111,7 @@ MonoBehaviour:
     m_Value: 3.4
   focalLength:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 12
   bladeCount:
     m_OverrideState: 0
     m_Value: 5
@@ -183,7 +183,7 @@ MonoBehaviour:
   - {fileID: -7011558710299706105}
   - {fileID: -4715352690669809084}
   - {fileID: -1501777034788243678}
-  - {fileID: 5499610029388200677}
+  - {fileID: 6956854488646471000}
   - {fileID: 5421415838614342596}
   - {fileID: -6644374866297012503}
 --- !u!114 &849379129802519247
@@ -245,7 +245,7 @@ MonoBehaviour:
   cropToFit:
     m_OverrideState: 1
     m_Value: 1
---- !u!114 &5499610029388200677
+--- !u!114 &6956854488646471000
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,10 +260,10 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 0.7157506, y: 0.90298295, z: 1, w: -0.04400985}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.024183799}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.725745, y: 0.95665056, z: 1, w: 0.053789664}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.060459483}
   gain:
     m_OverrideState: 0
-    m_Value: {x: 0.9087107, y: 0.93501824, z: 1, w: 0}
+    m_Value: {x: 1, y: 1, z: 1, w: 0}
