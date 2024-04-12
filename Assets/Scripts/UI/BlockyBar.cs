@@ -8,6 +8,7 @@ public class BlockyBar : MonoBehaviour
     [SerializeField] private Sprite sprite;
 
     private int _max;
+    private int _prev;
     private Image[] _images;
 
     public void Initialize(int max, Vector2 anchor, Vector2Int blockSize, Vector2Int blockMargin, int inRowCount)
@@ -28,14 +29,18 @@ public class BlockyBar : MonoBehaviour
             _images[i] = obj.AddComponent<Image>();
             _images[i].sprite = sprite;
         }
+
+        _prev = _max;
     }
 
     public void Set(int value)
     {
-        for (int i = 0; i < value; i++)
+        for (var i = _prev; i < value; i++)
             _images[i].enabled = true;
         
-        for (int i = value; i < _max; i++)
+        for (var i = value; i < _prev; i++)
             _images[i].enabled = false;
+
+        _prev = value;
     }
 }
