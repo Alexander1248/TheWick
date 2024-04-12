@@ -12989,7 +12989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23660311bb145a5a8322c3d9903e6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 1000
+  maxHP: 100
   onDeath:
     m_PersistentCalls:
       m_Calls:
