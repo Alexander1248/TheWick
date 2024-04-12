@@ -10,7 +10,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] private BlockyBar compressedSteamCylinderBar;
     
     [SerializeField] private ParticleSystem shootParticle;
-    [SerializeField] private Animator animator;
     [SerializeField] private MilkShake.ShakePreset shootShaker;
     [Space]
     [SerializeField] private LayerMask enemyMask;
