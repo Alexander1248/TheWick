@@ -1,5 +1,6 @@
 ﻿using System;
 using NPC.SentenceNodes;
+using Unity.VisualScripting;
 using UnityEngine.Serialization;
 
 namespace NPC.SentenceNodes
@@ -21,9 +22,15 @@ namespace NPC.SentenceNodes
             return sentenceData;
         }
 
-        public override void Update(Dialogue dialogue)
+        public override Sentence Clone()
         {
-            throw new NotImplementedException();
+            var sentence = Instantiate(this);
+            sentence.next = new Sentence[next.Length];
+            for (var i = 0; i < next.Length; i++) 
+                sentence.next[i] = next[i].Clone();
+
+            sentence.sentenceData = sentenceData.Clone();
+            return sentence;
         }
     }
 }

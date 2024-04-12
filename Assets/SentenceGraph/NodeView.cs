@@ -1,4 +1,5 @@
-﻿using NPC.SentenceNodes;
+﻿using System;
+using NPC.SentenceNodes;
 using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.Experimental.GraphView;
@@ -8,52 +9,40 @@ namespace SentenceGraph
 {
     public class NodeView : Node
     {
-        private readonly Sentence _sentence;
+        public Action<NodeView> OnNodeSelected;
+        
+        public readonly Sentence Sentence;
         private readonly NPC.SentenceGraph _graph;
-        private Port _input;
-        private Port[] _outputs;
+        public Port Input { get; private set; }
+        public  Port[] Outputs { get; private set; }
         public NodeView(Sentence sentence, NPC.SentenceGraph graph)
         {
-            _sentence = sentence;
+            Sentence = sentence;
             _graph = graph;
             title = sentence.name;
             viewDataKey = sentence.guid;
 
-            style.left = _sentence.nodePos.x;
-            style.top = _sentence.nodePos.y;
+            style.left = Sentence.nodePos.x;
+            style.top = Sentence.nodePos.y;
 
             CreateInputPorts();
             CreateOutputPorts();
         }
-        
-
-        public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
-        {
-            evt.menu.AppendAction("Select As Main Node", (a) =>
-            {
-                _graph.root = _sentence;
-            });
-            evt.menu.AppendAction("Delete Node", (a) =>
-            {
-                _graph.DeleteNode(_sentence);
-                parent.Remove(this);
-            });
-            base.BuildContextualMenu(evt);
-        }
 
         private void CreateInputPorts()
         {
-            _input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, null);
-            inputContainer.Add(_input);
+            if (Sentence is DialogueRoot) return;
+            Input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, null);
+            inputContainer.Add(Input);
         }
 
         private void CreateOutputPorts()
         {
-            _outputs = new Port[_sentence.next.Length];
-            for (var i = 0; i < _outputs.Length; i++)
+            Outputs = new Port[Sentence.next.Length];
+            for (var i = 0; i < Outputs.Length; i++)
             {
-                _outputs[i] = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, null);
-                outputContainer.Add(_outputs[i]);
+                Outputs[i] = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, null);
+                outputContainer.Add(Outputs[i]);
             }
 
         }
@@ -61,8 +50,14 @@ namespace SentenceGraph
         public override void SetPosition(Rect newPos)
         {
             base.SetPosition(newPos);
-            _sentence.nodePos.x = newPos.xMin;
-            _sentence.nodePos.y = newPos.yMin;
+            Sentence.nodePos.x = newPos.xMin;
+            Sentence.nodePos.y = newPos.yMin;
+        }
+
+        public override void OnSelected()
+        {
+            base.OnSelected();
+            OnNodeSelected?.Invoke(this);
         }
     }
 }
