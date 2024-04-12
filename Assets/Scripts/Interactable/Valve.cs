@@ -69,11 +69,6 @@ namespace Interactable
             locked = true;
         }
 
-        public void PrintProgress(float value)
-        {
-            Debug.Log(value);
-        }
-
         private void Update()
         {
             if (_time == 0) return;
