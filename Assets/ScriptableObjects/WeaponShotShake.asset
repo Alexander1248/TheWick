@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeaponShotShake
   m_EditorClassIdentifier: 
   shakeType: 0
-  strength: 1
+  strength: 0
   roughness: 1
   fadeIn: 0.05
   fadeOut: 0.1

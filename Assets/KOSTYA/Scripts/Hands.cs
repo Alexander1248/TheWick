@@ -30,20 +30,27 @@ public class Hands : MonoBehaviour
         float scrollWheelInput = Input.GetAxisRaw("Mouse ScrollWheel");
         if (Time.time - lastScrollTime > scrollThreshold)
         {
+            int lastweapon = currentWeaponIndex;
             if (scrollWheelInput > 0)
                 currentWeaponIndex++;
             else if (scrollWheelInput < 0)
                 currentWeaponIndex--;
+            currentWeaponIndex = Mathf.Clamp(currentWeaponIndex, 0, weapons.Length - 1);
 
-            if (scrollWheelInput != 0){
-                currentWeaponIndex = Mathf.Clamp(currentWeaponIndex, 0, weapons.Length - 1);
+            if (scrollWheelInput != 0 && currentWeaponIndex != lastweapon){
                 for (int i = 0; i < weapons.Length; i++)
                 {
                     if (weapons[i] != null){
                         weapons[i].SetActive(i == currentWeaponIndex);
-                        animatorsWeapons[i].enabled = false;
+                        animatorsWeapons[i].enabled = true;
                         animatorsWeapons[i].Rebind();
                         animatorsWeapons[i].Update(0f);
+                        if (currentWeaponIndex == 2){
+                            animatorsWeapons[i].Play("TakeWeapon", 0, 0);
+                        }
+                        else if (currentWeaponIndex == 1){
+                            animatorsWeapons[i].Play("TakeGaechnii", 0, 0);
+                        }
                     }
                 }
                 lastScrollTime = Time.time;
@@ -59,15 +66,15 @@ public class Hands : MonoBehaviour
             animatorGaechnii.Play(gaechniiHit.name, 0, 0);
             Invoke("resetGaechnii", gaechniiHit.length);
         }
-        else if (Input.GetMouseButton(0) && canShoot && currentWeaponIndex == 2){
-            if (!playerAnimator.enabled) playerAnimator.enabled = true;
-            playerAnimator.Play("PlayerShoot", 0, 0);
-            canShoot = false;
+        //else if (Input.GetMouseButton(0) && canShoot && currentWeaponIndex == 2){
+        //    if (!playerAnimator.enabled) playerAnimator.enabled = true;
+        //    playerAnimator.Play("PlayerShoot", 0, 0);
+        //    canShoot = false;
 
-            if (!animatorGun.enabled) animatorGun.enabled = true;
-            animatorGun.Play(gunShoot.name, 0, 0);
-            Invoke("resetGun", gunShoot.length);
-        }
+        //    if (!animatorGun.enabled) animatorGun.enabled = true;
+        //    animatorGun.Play(gunShoot.name, 0, 0);
+        //    Invoke("resetGun", gunShoot.length);
+        //}
     }
 
     void resetGaechnii(){
