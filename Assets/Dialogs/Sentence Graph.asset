@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4037013393180842779
+--- !u!114 &-8200539612729998577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,9 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
   m_Name: LocalizedSentence
   m_EditorClassIdentifier: 
-  guid: 9b906fb8cf5bc2045ad23f6d7e78159f
-  next: {fileID: 0}
---- !u!114 &-2880303085070775891
+  guid: c17c696bfa09a314aa38d657605a14ae
+  nodePos: {x: 502.2275, y: 206.5725}
+  next:
+  - {fileID: -6557304834744964164}
+  sentences:
+    keys:
+    - en
+    - ru
+    values:
+    - sentence: Hello!
+      time: 1
+      delay: 1
+      narrator: n1
+    - sentence: "\u041F\u0440\u0438\u0432\u0435\u0442!"
+      time: 1
+      delay: 1
+      narrator: n1
+--- !u!114 &-6557304834744964164
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23,16 +38,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68e2fe82ffd14622aec35674b0cbc11e, type: 3}
-  m_Name: SimpleSentence
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
   m_EditorClassIdentifier: 
-  guid: a4a7c03620ebe334c9e813d33c360ea4
-  next: {fileID: 0}
-  sentenceData:
-    sentence: 
-    time: 1
-    delay: 1
-    narrator: any
+  guid: 3a7ff69f175075a4bb0e3187579d1625
+  nodePos: {x: 711.17, y: 206.99998}
+  next:
+  - {fileID: 0}
+  sentences:
+    keys:
+    - en
+    - ru
+    values:
+    - sentence: How are you?
+      time: 1
+      delay: 1
+      narrator: n2
+    - sentence: "\u041A\u0430\u043A \u0442\u044B?"
+      time: 1
+      delay: 1
+      narrator: n2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,12 +70,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58646d219bb14154bdb9188ab6cbb3e5, type: 3}
   m_Name: Sentence Graph
   m_EditorClassIdentifier: 
-  root: {fileID: 0}
+  root: {fileID: 4362220531778645243}
   nodes:
-  - {fileID: -2880303085070775891}
-  - {fileID: -4037013393180842779}
-  - {fileID: 840204186296177252}
---- !u!114 &840204186296177252
+  - {fileID: -8200539612729998577}
+  - {fileID: -6557304834744964164}
+  - {fileID: 4362220531778645243}
+  - {fileID: 3964691831619626067}
+--- !u!114 &3964691831619626067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,13 +85,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68e2fe82ffd14622aec35674b0cbc11e, type: 3}
-  m_Name: SimpleSentence
+  m_Script: {fileID: 11500000, guid: 14af7cf68a2e454daf561243e9037826, type: 3}
+  m_Name: Delay
   m_EditorClassIdentifier: 
-  guid: 4428e41c19ac0c44ba8858357f328359
-  next: {fileID: 0}
-  sentenceData:
-    sentence: 
-    time: 1
-    delay: 1
-    narrator: any
+  guid: ec375750d26bfba4cabf3ba6bb293321
+  nodePos: {x: 315.09497, y: 206.99998}
+  next:
+  - {fileID: -8200539612729998577}
+  delay: 3
+--- !u!114 &4362220531778645243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10113cc9b4c402eb4af960250a0a137, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: 002d7a385b12ef144a0012011b0bd30e
+  nodePos: {x: 122.00001, y: 207.00002}
+  next:
+  - {fileID: 3964691831619626067}

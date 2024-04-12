@@ -10,7 +10,7 @@ namespace NPC
     [CreateAssetMenu(fileName = "Sentence Graph")]
     public class SentenceGraph : ScriptableObject
     {
-        [HideInInspector] public Sentence root;
+        [HideInInspector] public DialogueRoot root;
         [HideInInspector] public List<Sentence> nodes = new();
 
 
@@ -34,7 +34,7 @@ namespace NPC
             AssetDatabase.SaveAssets();
         }
 
-        public void AddLink(Sentence from, int index, Sentence to)
+        public static void AddLink(Sentence from, int index, Sentence to)
         {
             from.next[index] = to;
         }

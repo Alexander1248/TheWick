@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace NPC.SentenceNodes
 {
     public abstract class Sentence : ScriptableObject
     {
-        public string guid;
-        public Vector2 nodePos;
+        [HideInInspector] public string guid;
+        [HideInInspector] public Vector2 nodePos;
         
-        public Sentence[] next;
+        [HideInInspector] public Sentence[] next;
 
         protected Sentence(int variantCount)
         {
@@ -19,6 +20,15 @@ namespace NPC.SentenceNodes
         public abstract Sentence GetNext();
         public abstract SentenceData GetSentence(String locale);
 
-        public abstract void Update(Dialogue dialogue);
+        public virtual void GetState(Dialogue dialogue) { }
+
+        public virtual Sentence Clone()
+        {
+            var sentence = Instantiate(this);
+            sentence.next = new Sentence[next.Length];
+            for (var i = 0; i < next.Length; i++) 
+                sentence.next[i] = next[i].Clone();
+            return sentence;
+        }
     }
 }
