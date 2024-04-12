@@ -18,16 +18,23 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float distance = 10.0f;
     [SerializeField] private float damage = 10.0f;
     [SerializeField] private float kickForce;
-    [SerializeField] private float rollbackTime = 0.2f;
+    private float rollbackTime = 0.2f;
     [SerializeField] private int clipSize = 5;
     [SerializeField] private BlockyBar clipBar;
     
-    [SerializeField] private float reloadTime = 3.0f;
+    private float reloadTime = 3.0f;
     [SerializeField] private Animator reload;
     
     [Space]
     [SerializeField] private LayerMask candleMask;
     [SerializeField] private float candleMultiplier = 2;
+
+
+    [SerializeField] private Animator playerAnimator;
+    [SerializeField] private Animator animatorGun;
+    [SerializeField] private AnimationClip gunShoot;
+    [SerializeField] private AnimationClip gunReload;
+
 
     private RaycastHit _hit;
     private RaycastHit[] _hits;
@@ -44,6 +51,9 @@ public class Weapon : MonoBehaviour
 
     private void Start()
     {
+        rollbackTime = gunShoot.length;
+        reloadTime = gunReload.length;
+
         _hits = new RaycastHit[16];
         reload.speed = 1 / reloadTime;
         if (compressedSteamCylinderBar)
@@ -83,12 +93,19 @@ public class Weapon : MonoBehaviour
             _canShoot = false;
             Invoke(nameof(Reload), reloadTime);
             reload.Play("Reload", -1, 0);
+            animatorGun.Play(gunReload.name, 0, 0);
         }
         
         if (_clipCount <= 0) return;
         if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
+        if (!_canShoot) return;
         shootParticle.time = 0;
         shootParticle.Play();
+
+        if (!playerAnimator.enabled) playerAnimator.enabled = true;
+        playerAnimator.Play("PlayerShoot", 0, 0);
+        if (!animatorGun.enabled) animatorGun.enabled = true;
+        animatorGun.Play(gunShoot.name, 0, 0);
         
         _clipCount--;
         if (clipBar) clipBar.Set(_clipCount);

@@ -11,6 +11,7 @@ public class Freddy : MonoBehaviour
     [SerializeField] private Transform head;
     [SerializeField] private float fightDistance;
     [SerializeField] private AnimationClip[] fightClips;
+    [SerializeField] private AnimationClip takeDamageClip;
     [SerializeField] private float legKickForce;
     [SerializeField] private float handKickForce;
 
@@ -18,16 +19,22 @@ public class Freddy : MonoBehaviour
     [SerializeField] private Rigidbody[] partsRBs;
 
     private Transform player;
+    private Rigidbody rbPlayer;
     private Vector3 normalHead;
 
+    private bool pushing;
+    private float pushingforce;
+    private float pushingtime;
+
     public enum State{
-        Idle, Chasing, Fighting, Died, StoppingChase
+        Idle, Chasing, Fighting, Died, StoppingChase, Stunned
     };
     public State state;
 
     void Start(){
         normalHead = head.forward;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        rbPlayer = player.GetComponent<Rigidbody>();
         state = State.Idle;
     }
 
@@ -43,18 +50,29 @@ public class Freddy : MonoBehaviour
 
         if (id == 1) // foot kick
         {
-            Vector3 dir = new Vector3(player.position.x, transform.position.y, player.position.z) - transform.position;
-            player.GetComponent<Rigidbody>().AddForce(dir.normalized * legKickForce, ForceMode.Acceleration);
+            pushingtime = 0.25f;
+            pushingforce = legKickForce;
+            pushing = true;
         }
         else if (id == 2) // hand kick
         {
-            Vector3 dir = new Vector3(player.position.x, transform.position.y, player.position.z) - transform.position;
-            player.GetComponent<Rigidbody>().AddForce(dir.normalized * handKickForce, ForceMode.Acceleration);
+            pushingtime = 0.25f;
+            pushingforce = handKickForce;
+            pushing = true;
         }
     }
 
+    void FixedUpdate(){
+        if (!pushing) return;
+        Vector3 dir = new Vector3(player.position.x, transform.position.y, player.position.z) - transform.position;
+        rbPlayer.AddForce(dir.normalized * pushingforce, ForceMode.Acceleration);
+        pushingtime -= Time.fixedDeltaTime;
+        if (pushingtime <= 0) pushing = false;
+
+    }
+
     void Update(){
-        if (state == State.Died) return;
+        if (state == State.Died || state == State.Stunned) return;
 
         if (agent.enabled && (state == State.Chasing || state == State.StoppingChase))
             agent.SetDestination(player.position);
@@ -80,8 +98,6 @@ public class Freddy : MonoBehaviour
             state = State.StoppingChase;
             Invoke("StopChase", 3);
         }
-
-        if (Input.GetMouseButton(1)) DieBitch();
     }
     void LateUpdate(){
         if (state == State.Chasing || state == State.StoppingChase || state == State.Fighting)
@@ -91,11 +107,24 @@ public class Freddy : MonoBehaviour
     void StopChase(){
         state = State.Idle;
         head.forward = normalHead;
-        animator.CrossFade("IdleRobot", 0.1f);
+        animator.CrossFade("IdleRobot", 0.2f);
         agent.SetDestination(transform.position);
     }
 
-    void DieBitch(){
+    public void GetDamaged(){
+        CancelInvoke("Unstun");
+        animator.CrossFade(takeDamageClip.name, 0.1f, -1, 0);
+        state = State.Stunned;
+        agent.SetDestination(transform.position);
+        Invoke("Unstun", takeDamageClip.length);
+    }
+    void Unstun(){
+        CancelInvoke("StopChase");
+        state = State.Chasing;
+        animator.CrossFade("RunRobot", 0.25f);
+    }
+
+    public void DieBitch(){
         if (state == State.Died) return;
         state = State.Died; 
 
