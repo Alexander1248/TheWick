@@ -51,7 +51,6 @@ public class Health : MonoBehaviour
                 blood.transform.position = point.Value;
             }
             if (!IMPLAYER){
-                // TODO: Fix blood direction
                 blood.transform.LookAt(direction);
             }
             else blood.transform.forward = Camera.main.transform.forward;
