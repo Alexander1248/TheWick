@@ -40,8 +40,8 @@ public class Freddy : MonoBehaviour
 
     void stopFight(){
         state = State.Idle;
-        head.forward = normalHead;
         animator.CrossFade("IdleRobot", 0.1f);
+        head.forward = normalHead;
     }
 
     public void AnimationCall(int id){
