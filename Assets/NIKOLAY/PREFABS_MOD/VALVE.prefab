@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2041802766401316832}
   - component: {fileID: 3550367089906824701}
   - component: {fileID: 91478805080899811}
+  - component: {fileID: 5693409992384005986}
   m_Layer: 0
   m_Name: ValveWheel
   m_TagString: Untagged
@@ -105,6 +106,45 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2927599, y: 0.2162338, z: 0.2927599}
   m_Center: {x: -0.00025505573, y: -0.07773151, z: 0.0001359731}
+--- !u!114 &5693409992384005986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125908429458823097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d77b36e76348d093bb764a02162839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valveRotationTime: 3
+  valveRotationAngle: 90
+  animator: {fileID: 0}
+  valveObj: {fileID: 2555884928545760526}
+  open: 0
+  locked: 0
+  tipButton: 101
+  tipName:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C"
+    - Rotate
+  meshesOutline:
+  - {fileID: 3550367089906824701}
+  valveOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  valveClosed:
+    m_PersistentCalls:
+      m_Calls: []
+  valveProgress:
+    m_PersistentCalls:
+      m_Calls: []
+  audioSource: {fileID: 0}
+  clips: []
 --- !u!1 &7126155592005098857
 GameObject:
   m_ObjectHideFlags: 0

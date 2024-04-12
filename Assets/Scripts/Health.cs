@@ -1,12 +1,15 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    public Image reloadImage; // Для вызова через аптечку
     [SerializeField] private float maxHP = 100;
     [SerializeField] private UnityEvent onDeath;
-    [SerializeField] private UnityEvent<float, float> onDamageDeal;
+    [FormerlySerializedAs("onDamageDeal")] [SerializeField] private UnityEvent<float, float> onHealthEdit;
     [SerializeField] private Rigidbody rb;
 
     [SerializeField] private float _hp;
@@ -14,6 +17,10 @@ public class Health : MonoBehaviour
     [SerializeField] private int amountRestore;
 
     [SerializeField] private bool autoHeal;
+
+    [SerializeField] private float autoHealStartTime = 10;
+    [SerializeField] private float autoHealStartCooldown = 1;
+    [SerializeField] private float autoHealAmount = 3;
 
     [SerializeField] private MilkShake.ShakePreset preset;
 
@@ -28,13 +35,9 @@ public class Health : MonoBehaviour
 
     }
     
-    void Heal(){
-        _hp += 3;
-        if (_hp >= maxHP){
-            _hp = maxHP;
-            CancelInvoke(nameof(Heal));
-        }
-        onDamageDeal.Invoke(_hp, maxHP);
+    void Heal()
+    {
+        EditHealth(autoHealAmount);
     }
 
     private Vector3 _buff;
@@ -44,7 +47,7 @@ public class Health : MonoBehaviour
         
         if (rb) rb.AddForce(-direction * kickForce, ForceMode.Impulse);
 
-        if (blood){
+        if (blood) {
             if (point != null)
             {
                 _buff = blood.transform.position;
@@ -59,18 +62,26 @@ public class Health : MonoBehaviour
 
         if (IMPLAYER) MilkShake.Shaker.ShakeAll(preset);
 
-        _hp -= damage;
-        onDamageDeal.Invoke(_hp, maxHP);
         if (autoHeal){
             CancelInvoke(nameof(Heal));
-            InvokeRepeating(nameof(Heal), 10, 1);
+            InvokeRepeating(nameof(Heal), autoHealStartTime, autoHealStartCooldown);
         }
-        if (_hp <= 0)
+        EditHealth(-damage);
+    }
+
+    public void EditHealth(float delta)
+    {
+        _hp += delta;
+        if (_hp >= maxHP){
+            _hp = maxHP;
+            CancelInvoke(nameof(Heal));
+        }
+
+        if (_hp > 0)
         {
-            onDeath.Invoke();
+            onHealthEdit.Invoke(_hp, maxHP);
             return;
         }
+        onDeath.Invoke();
     }
-    
-    
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Hands : MonoBehaviour
@@ -20,7 +21,15 @@ public class Hands : MonoBehaviour
     private float lastScrollTime = 0f;
     [SerializeField] private GameObject[] weapons;
     [SerializeField] private Animator[] animatorsWeapons;
+    [Space]
+    [SerializeField] private Camera camera;
+    [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private float wrenchRayRadius = 0.5f;
+    [SerializeField] private float wrenchDistance = 3.0f;
+    [SerializeField] private float wrenchDamage = 10.0f;
+    [SerializeField] private float wrenchKickForce = 1f;
 
+    private RaycastHit _hit;
     void Start(){
         lastScrollTime = Time.time;
     }
@@ -64,7 +73,14 @@ public class Hands : MonoBehaviour
 
             if (!animatorGaechnii.enabled) animatorGaechnii.enabled = true;
             animatorGaechnii.Play(gaechniiHit.name, 0, 0);
-            Invoke("resetGaechnii", gaechniiHit.length);
+            Invoke(nameof(ResetGaechnii), gaechniiHit.length);
+
+            if (!Physics.SphereCast(camera.transform.position, wrenchRayRadius,
+                    camera.transform.forward, out _hit, wrenchDistance, enemyMask)) return;
+            var health = _hit.collider.gameObject.GetComponent<Health>();
+            if (health.IsUnityNull()) return;
+            health.DealDamage(wrenchDamage, -transform.forward, wrenchKickForce, _hit.point);
+            Debug.Log("Hit! Damage: " + wrenchDamage);
         }
         //else if (Input.GetMouseButton(0) && canShoot && currentWeaponIndex == 2){
         //    if (!playerAnimator.enabled) playerAnimator.enabled = true;
@@ -77,10 +93,11 @@ public class Hands : MonoBehaviour
         //}
     }
 
-    void resetGaechnii(){
+    private void ResetGaechnii(){
         canHitGaechnii = true;
     }
-    void resetGun(){
+
+    private void ResetGun(){
         canShoot = true;
     }
 }

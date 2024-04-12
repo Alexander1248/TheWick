@@ -25983,7 +25983,6 @@ MonoBehaviour:
   compressedSteamCylinder: 5
   compressedSteamCylinderBar: {fileID: 1765140993}
   shootParticle: {fileID: 2125222701}
-  animator: {fileID: 0}
   shootShaker: {fileID: 11400000, guid: a87a468a14450d9459ac6f0b804f49bd, type: 2}
   enemyMask:
     serializedVersion: 2

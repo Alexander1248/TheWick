@@ -1,14 +1,12 @@
 ﻿using System;
+using Interactable;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private int compressedSteamCylinderMax = 10;
-    [SerializeField] private int compressedSteamCylinder = 10;
-    [SerializeField] private BlockyBar compressedSteamCylinderBar;
-    
+    [SerializeField] private GasInventory inventory;
     [SerializeField] private ParticleSystem shootParticle;
     [SerializeField] private MilkShake.ShakePreset shootShaker;
     [Space]
@@ -34,6 +32,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private AnimationClip gunShoot;
     [SerializeField] private AnimationClip gunReload;
 
+    [SerializeField] private PlayerInteract playerInteract;
 
     private RaycastHit _hit;
     private RaycastHit[] _hits;
@@ -42,11 +41,6 @@ public class Weapon : MonoBehaviour
     private int _clipCount;
 
 
-    public void AddCompressedSteamCylinder(int count)
-    {
-        compressedSteamCylinder = Math.Min(compressedSteamCylinder + count, compressedSteamCylinderMax);
-        if (compressedSteamCylinderBar) compressedSteamCylinderBar.Set(compressedSteamCylinder);
-    }
 
     private void Start()
     {
@@ -55,16 +49,6 @@ public class Weapon : MonoBehaviour
 
         _hits = new RaycastHit[16];
         reload.speed = 1 / reloadTime;
-        if (compressedSteamCylinderBar)
-        {
-            compressedSteamCylinderBar.Initialize(
-                compressedSteamCylinderMax,
-                new Vector2(1, 0),
-                new Vector2Int(96, 48),
-                new Vector2Int(10, 10),
-                1);
-            compressedSteamCylinderBar.Set(compressedSteamCylinder);
-        }
 
         if (clipBar)
         {
@@ -83,16 +67,16 @@ public class Weapon : MonoBehaviour
     {
         if (!_reloading && Input.GetKeyDown(KeyCode.R))
         {
-            if (compressedSteamCylinder <= 0) return;
-            compressedSteamCylinder--;
-            if (compressedSteamCylinderBar) 
-                compressedSteamCylinderBar.Set(compressedSteamCylinder);
+            if (inventory.IsEmpty()) return;
+            inventory.Edit(-1);
 
             _reloading = true;
             _canShoot = false;
             Invoke(nameof(Reload), reloadTime);
+            reload.enabled = true;
             reload.Play("Reload", -1, 0);
             animatorGun.Play(gunReload.name, 0, 0);
+            if (playerInteract) playerInteract.enabled = false;
         }
         
         if (_clipCount <= 0) return;
@@ -137,12 +121,26 @@ public class Weapon : MonoBehaviour
         MilkShake.Shaker.ShakeAll(shootShaker);
     }
 
+    private void OnEnable()
+    {
+        clipBar.gameObject.SetActive(true);
+        inventory.EnableBar();
+    }
+
+    private void OnDisable()
+    {
+        clipBar.gameObject.SetActive(false);
+        inventory.DisableBar();
+    }
+
     private void Reload()
     {
+        reload.enabled = false;
         Rollback();
         _reloading = false;
         _clipCount = clipSize;
         if (clipBar) clipBar.Set(_clipCount);
+        if (playerInteract) playerInteract.enabled = true;
     }
     private void Rollback()
     {

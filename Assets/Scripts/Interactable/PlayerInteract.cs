@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -62,6 +63,8 @@ namespace Interactable
             _idxInteract = tagsInteract.IndexOf(obj.tag);
             if (_idxInteract == -1)
             {
+                if (!_interactable.IsUnityNull()) 
+                    _interactable.Deselected();
                 _interactableObj = null;
                 HideTip();
                 return;
@@ -72,12 +75,15 @@ namespace Interactable
 
                 _interactableObj = obj;
                 _interactable = obj.GetComponent<IInteractable>();
+                _interactable.Selected();
             
                 ShowTip(_interactable.TipButton.ToString(), _interactable.TipName.TryGetValue(PlayerPrefs.GetString("Language"), 
                     out var value) ? value : _interactable.TipName.Values[0]);
             }
             else if (Vector3.Distance(transform.position, obj.transform.position) > distInteract)
             {
+                if (!_interactable.IsUnityNull()) 
+                    _interactable.Deselected();
                 HideTip();
                 _idxInteract = -1;
                 _interactableObj = null;
@@ -116,6 +122,7 @@ namespace Interactable
             var meshes = _interactable.MeshesOutline;
             foreach (var mesh in meshes)
             {
+                if (mesh == null) continue;
                 var materials = mesh.materials;
                 var newArray = new Material[materials.Length + 1];
                 for (int j = 0; j < materials.Length; j++) newArray[j] = materials[j];
@@ -133,6 +140,7 @@ namespace Interactable
             var meshes = _interactable.MeshesOutline;
             foreach (var mesh in meshes)
             {
+                if (mesh == null) continue;
                 var materials = mesh.materials;
                 var newArray = new Material[materials.Length - 1];
                 for (int j = 0; j < materials.Length - 1; j++) newArray[j] = materials[j];

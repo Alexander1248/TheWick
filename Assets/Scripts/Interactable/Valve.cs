@@ -34,6 +34,7 @@ namespace Interactable
 
 
         private float _time;
+        private bool _selected;
         
         public void Interact(PlayerInteract playerInteract)
         {
@@ -57,11 +58,22 @@ namespace Interactable
                 audioSource.Play();
             }
 
+            if (_time >= 0.01f) return;
+            _time = 0.01f;
+
             _startAngle = valveObj.localEulerAngles.y;
             
-            if (open) _endAngle = _startAngle - valveRotationAngle * (1 - _time);
-            else _endAngle = _startAngle + valveRotationAngle * (1 - _time);
-            _time = 0.01f;
+            if (open) _endAngle = _startAngle - valveRotationAngle;
+            else _endAngle = _startAngle + valveRotationAngle;
+        }
+
+        public void Selected()
+        {
+            _selected = true;
+        }
+        public void Deselected()
+        {
+            _selected = false;
         }
 
         public void LockValve()
@@ -69,19 +81,13 @@ namespace Interactable
             locked = true;
         }
 
-        public void PrintProgress(float value)
-        {
-            Debug.Log(value);
-        }
-
         private void Update()
         {
             if (_time == 0) return;
-            if (!Input.GetKey(tipButton)) return;
+            if (!Input.GetKey(tipButton) || !_selected) return;
             _time += Time.deltaTime / valveRotationTime;
 
-            if (open) valveProgress.Invoke(Mathf.Clamp01(_time));
-            else valveProgress.Invoke(Mathf.Clamp01(1 - _time));
+            valveProgress.Invoke(open ? Mathf.Clamp01(1 - _time) : Mathf.Clamp01(_time));
             valveObj.localEulerAngles = new Vector3(0, Mathf.LerpAngle(_startAngle, _endAngle, _time), 0);
 
             if (_time < 1) return;
