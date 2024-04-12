@@ -2623,6 +2623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3142968716395347501}
   - component: {fileID: 8004584197633857372}
+  - component: {fileID: 963110826071794971}
   m_Layer: 0
   m_Name: MEDKIT_HEAL
   m_TagString: Untagged
@@ -2639,7 +2640,7 @@ Transform:
   m_GameObject: {fileID: 8191362238711832795}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.060133, y: 0, z: -2.9926481}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2681,28 +2682,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5da0123635048abb952339323c1d2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valveRotationTime: 3
-  valveRotationAngle: 90
-  animator: {fileID: 0}
-  valveObj: {fileID: 0}
-  open: 1
-  locked: 1
-  tipButton: 0
+  medkitUsageTime: 5
+  medkitHealth: 30
+  cylinderContainer: {fileID: 7042620983126016891}
+  tipButton: 101
   tipName:
-    keys: []
-    values: []
-  meshesOutline: []
-  valveOpened:
-    m_PersistentCalls:
-      m_Calls: []
-  valveClosed:
-    m_PersistentCalls:
-      m_Calls: []
-  valveProgress:
-    m_PersistentCalls:
-      m_Calls: []
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C"
+    - Use
+  meshesOutline:
+  - {fileID: 2466981466309283144}
+  - {fileID: 2491359319243856362}
   audioSource: {fileID: 0}
   clips: []
+--- !u!65 &963110826071794971
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8191362238711832795}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1, y: 0.08916381, z: 0.14743492}
+  m_Center: {x: 0, y: 0.045622468, z: -0.1907907}
 --- !u!1 &8695368284326058476
 GameObject:
   m_ObjectHideFlags: 0

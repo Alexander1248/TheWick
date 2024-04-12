@@ -8,6 +8,7 @@ namespace Interactable
     public class Medkit : MonoBehaviour, IInteractable
     {
         [SerializeField] private float medkitUsageTime = 3f;
+        [SerializeField] private float medkitHealth = 30f;
         [SerializeField] private Transform cylinderContainer;
         
 
@@ -23,9 +24,11 @@ namespace Interactable
         public UDictionary<string, string> TipName => tipName;
         public MeshRenderer[] MeshesOutline => meshesOutline;
 
+        private float _healPerCylinder;
         private float _cylinderUsageTime;
         private float _time;
         private float _cylinderTime;
+        private bool _selected;
         
         public void Interact(PlayerInteract playerInteract)
         {
@@ -34,7 +37,11 @@ namespace Interactable
                 audioSource.clip = clips[0];
                 audioSource.Play();
             }
-            
+
+            var childCount = cylinderContainer.childCount;
+            _cylinderUsageTime = 0.98f / childCount;
+            _healPerCylinder = medkitHealth / childCount;
+            _cylinderTime = 0;
             
             if (_time < 0.01f) _time = 0.01f;
         }
@@ -43,24 +50,42 @@ namespace Interactable
         {
             _playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         }
+
+        public void Selected()
+        {
+            _selected = true;
+            _playerHealth.reloadImage.fillAmount = 1 - _time;
+        }
+        public void Deselected()
+        {
+            _selected = false;
+            _playerHealth.reloadImage.fillAmount = 0;
+        }
         
         private void Update()
         {
             if (_time == 0) return;
-            if (!Input.GetKey(tipButton)) return;
+            if (!Input.GetKey(tipButton) || !_selected)
+            {
+                return;
+            }
+
             var deltaTime = Time.deltaTime / medkitUsageTime;
             _time += deltaTime;
             _cylinderTime += deltaTime;
 
-            if (_cylinderTime > _cylinderUsageTime)
+            while (cylinderContainer.childCount > 0 && _cylinderTime > _cylinderUsageTime)
             {
-                _cylinderTime = 0;
-                DestroyImmediate(transform.GetChild(0));
+                _cylinderTime -= _cylinderUsageTime;
+                _playerHealth.EditHealth(_healPerCylinder);
+                DestroyImmediate(cylinderContainer.GetChild(0).gameObject);
             }
-            
+
+            _playerHealth.reloadImage.fillAmount = 1 - _time;
 
             if (_time < 1) return;
             _time = 0;
+            gameObject.tag = "Untagged";
             DestroyImmediate(this);
         }
     }

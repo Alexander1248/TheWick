@@ -25,13 +25,6 @@ namespace Movable
             _onPlatform.ForEach(t => t.position += transform.position);
         }
 
-        private void OnDisable()
-        {
-            var position = transform.position;
-            from -= position;
-            to -= position;
-        }
-
         private void OnCollisionEnter(Collision other)
         {
             _onPlatform.Add(other.transform);
