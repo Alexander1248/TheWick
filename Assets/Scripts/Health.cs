@@ -38,11 +38,11 @@ public class Health : MonoBehaviour
     }
 
     private Vector3 _buff;
-    public void DealDamage(float damage, Vector3 kick, Vector3? point = null)
+    public void DealDamage(float damage, Vector3 direction, float kickForce , Vector3? point = null)
     {
         blood.transform.position = _buff;
         
-        if (rb) rb.AddForce(kick, ForceMode.Impulse);
+        if (rb) rb.AddForce(-direction * kickForce, ForceMode.Impulse);
 
         if (blood){
             if (point != null)
@@ -51,7 +51,8 @@ public class Health : MonoBehaviour
                 blood.transform.position = point.Value;
             }
             if (!IMPLAYER){
-                blood.transform.LookAt(-kick);
+                // TODO: Fix blood direction
+                blood.transform.LookAt(direction);
             }
             else blood.transform.forward = Camera.main.transform.forward;
             blood.Play();
