@@ -11,26 +11,50 @@ namespace NPC
     {
         [SerializeField] private UDictionary<string, Narrator> narrators;
         [SerializeField] private SentenceGraph graph;
-        public string locale;
 
-        
+
         private SentenceData _currentData;
         private Narrator _currentNarrator;
         private Sentence _current;
         private double _time;
         private bool _wait = true;
 
+        public bool IsStarted => _current != null;
+        public bool IsPlaying { get; private set; }
+
 
         public void StartDialogue()
         {
             _current = graph.root;
             SwitchUpdate();
+            PlayDialogue();
+        }
+
+        public void PlayDialogue()
+        {
+            IsPlaying = true;
+        }
+        public void PauseDialogue()
+        {
+            IsPlaying = false;
+            _currentNarrator?.Clear();
+        }
+
+        public void StopDialogue()
+        {
+            _current = null;
         }
 
         public void Update()
         {
-            if (_current.IsUnityNull()) return;
-            if (_currentData == null) GoToNext();
+            if (_current.IsUnityNull() || !IsPlaying) return;
+            if (_currentData == null || Input.GetKeyDown(KeyCode.Return))
+            {
+                CancelInvoke(nameof(GoToNext));
+                GoToNext();
+                return;
+            }
+
             if (_wait) return;
             
             _time += Time.deltaTime;
@@ -56,7 +80,7 @@ namespace NPC
         {
             if (_current.IsUnityNull()) return;
             _current.GetState(this);
-            _currentData = _current.GetSentence(locale);
+            _currentData = _current.GetSentence(PlayerPrefs.GetString("Language"));
             _wait = false;
             _time = 0;
             if (_currentData.IsUnityNull()) return;
