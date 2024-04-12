@@ -19,9 +19,8 @@ namespace SentenceGraph
         public SentenceGraphView()
         {
             Insert(0, new GridBackground());
-            
             this.AddManipulator(new ContentZoomer());
-            this.AddManipulator(new ContentDragger());
+            this.AddManipulator( new ContentDragger());
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
             
@@ -35,12 +34,14 @@ namespace SentenceGraph
             evt.menu.AppendAction("Update", _ => PopulateView(_graph));
             var types = TypeCache.GetTypesDerivedFrom<Sentence>();
             foreach (var type in types.Where(type => type != typeof(DialogueRoot)))
-                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", _ => CreateNode(type));
+                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", a => CreateNode(type, 
+                    viewTransform.matrix.inverse.MultiplyPoint(a.eventInfo.localMousePosition)));
         }
 
-        private void CreateNode(Type type)
+        private void CreateNode(Type type, Vector2 position)
         {
             Sentence node = _graph.CreateNode(type);
+            node.nodePos = position;
             CreateNodeView(node);
         }
 
