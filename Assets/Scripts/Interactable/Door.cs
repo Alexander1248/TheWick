@@ -38,27 +38,28 @@ namespace Interactable
         {
             if (locked)
             {
-                audioSource.clip = clips[0];
-                audioSource.Play();
+                if (audioSource){
+                    audioSource.clip = clips[0];
+                    audioSource.Play();
+                }
                 if (!animator.enabled) animator.enabled = true;
                 animator.CrossFade("LockedDoor", 0.1f, 0, 0);
                 return;
             }
             animator.enabled = false;
-            audioSource.clip = clips[1];
-            audioSource.Play();
+            if (audioSource){
+                audioSource.clip = clips[1];
+                audioSource.Play();
+            }
 
             _state = _state == "CloseDoor" ? "OpenDoor" : "CloseDoor";
 
             _startAngle = doorObj.localEulerAngles.y;
             var direction = _plr.position - doorObj.position;
-            var dotProduct = Vector3.Dot(direction, doorObj.right);
-            _endAngle = _state switch
-            {
-                "OpenDoor" when dotProduct >= 0 => -90,
-                "OpenDoor" when dotProduct < 0 => 90,
-                _ => 0
-            };
+            var dotProduct = Vector3.Dot(direction, -doorObj.forward);
+            if (_state == "OpenDoor" && dotProduct >= 0) _endAngle = -90;
+            else if (_state == "OpenDoor" && dotProduct < 0) _endAngle = 90;
+            else _endAngle = 0;
             _t = 0.01f;
         }
 
