@@ -11,7 +11,7 @@
     <RootNamespace></RootNamespace>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
     <TargetFramework>netstandard2.1</TargetFramework>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
@@ -45,7 +45,7 @@
   <PropertyGroup>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
     <UnityProjectGeneratorVersion>2.0.21</UnityProjectGeneratorVersion>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityProjectType>GamePlugins:3</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2022.3.12f1</UnityVersion>
   </PropertyGroup>
@@ -55,84 +55,65 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
-    <Compile Include="Assets\Scripts\Utils\UDictionary.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
-    <Compile Include="Assets\Scripts\NPC\SentenceNodes\LocalizedSentence.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
-    <Compile Include="Assets\Scripts\NPC\Dialogue.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_New.cs" />
-    <Compile Include="Assets\MilkShake\Scripts\ShakeParameters.cs" />
-    <Compile Include="Assets\Scripts\UI\FillBar.cs" />
-    <Compile Include="Assets\Scripts\NPC\SentenceNodes\SimpleSentence.cs" />
-    <Compile Include="Assets\MilkShake\Scripts\ShakeResult.cs" />
-    <Compile Include="Assets\SentenceGraph\SentenceGraphEditor.cs" />
-    <Compile Include="Assets\MilkShake\Scripts\ShakeInstance.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightFlicker.cs" />
-    <Compile Include="Assets\KOSTYA\Scripts\Freddy.cs" />
-    <Compile Include="Assets\MilkShake\Scripts\ShakePreset.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
-    <Compile Include="Assets\KOSTYA\Scripts\Boss.cs" />
-    <Compile Include="Assets\Scripts\SetStandardSettings.cs" />
-    <Compile Include="Assets\MilkShake\Scripts\ShakeType.cs" />
-    <Compile Include="Assets\SentenceGraph\SentenceGraphView.cs" />
-    <Compile Include="Assets\Scripts\NPC\SentenceNodes\SentenceData.cs" />
-    <Compile Include="Assets\KOSTYA\Scripts\Nav.cs" />
-    <Compile Include="Assets\KOSTYA\Scripts\ScreenScale.cs" />
-    <Compile Include="Assets\MilkShake\Scripts\ShakeState.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
-    <Compile Include="Assets\Scripts\Weapon.cs" />
-    <Compile Include="Assets\Scripts\Health.cs" />
-    <Compile Include="Assets\SentenceGraph\SplitView.cs" />
-    <Compile Include="Assets\Scripts\NPC\SentenceGraph.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
-    <Compile Include="Assets\MilkShake\Scripts\Shaker.cs" />
-    <Compile Include="Assets\KOSTYA\Scripts\Hands.cs" />
-    <Compile Include="Assets\SentenceGraph\NodeView.cs" />
-    <Compile Include="Assets\KOSTYA\Scripts\FieldOfView.cs" />
-    <Compile Include="Assets\Scripts\UI\BlockyBar.cs" />
-    <Compile Include="Assets\MilkShake\Scripts\IShakeParameters.cs" />
-    <Compile Include="Assets\KOSTYA\Scripts\FirstPersonController2.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
-    <Compile Include="Assets\SentenceGraph\InspectorView.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
-    <Compile Include="Assets\Scripts\NPC\SentenceNodes\Sentence.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Config.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\DynamicOcclusionDepthBuffer.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\PlatformHelper.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\MinMaxRangeFloat.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\EffectFlicker.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\ConfigOverride.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\BatchingHelper.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\VolumetricLightBeam.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\BeamGeometry.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\MaterialManager.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\DummyMaterial.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\GlobalMesh.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\MeshGenerator.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Noise3D.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\ShaderGenerator.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Samples\Scripts\CameraToggleBeamVisibility.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\TransformUtils.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\TriggerZone.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Samples\Scripts\FeaturesNotSupportedMessage.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\ShaderKeywords.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\VolumetricDustParticles.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Utils.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\SRPHelper.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Consts.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\SkewingHandle.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Samples\Scripts\CheckIfInsideBeam.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\EditorPrefsStrings.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Enums.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\CachedLightProperties.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Samples\Scripts\Rotater.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\Version.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Samples\Scripts\FreeCameraController.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\MaterialModifier.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Samples\Scripts\LightGenerator.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\ShaderProperties.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\DynamicOcclusionRaycasting.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\DynamicOcclusionAbstractBase.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\HighlightNullAttribute.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\PolygonHelper.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\EffectPulse.cs" />
+    <Compile Include="Assets\Plugins\VolumetricLightBeam\Scripts\EffectAbstractBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\JMO Assets\Cartoon FX (legacy)\Shaders\CFX3 Multiply Color.shader" />
-    <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_SETTINGS.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\SentenceGraph\SentenceTreeEditor.uxml" />
-    <None Include="Assets\Graphics\Shaders\PostEffects\DeleteMe.txt" />
-    <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Audio\DeleteMe.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\Models\DeleteMe.txt" />
-    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\JMO Assets\Cartoon FX Remaster\Readme Cartoon FX Remaster FREE.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Texts\_Make your own text effect.txt" />
-    <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_PASSES.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\SentenceGraph\SentenceTreeEditor.uss" />
-    <None Include="Assets\JMO Assets\Cartoon FX (legacy)\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_URP.cginc" />
-    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\shadergen_includes_hdrp.txt" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\VolumetricLightBeamShared.cginc" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\shadergen_includes_urp.txt" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\ShaderUtils.cginc" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\ShaderSpecificURP.cginc" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\shadergen_pass.txt" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\ShaderProperties.cginc" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\shadergen_base.txt" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\ShaderSpecificHDRP.hlsl" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\ShaderDefines.cginc" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Readme.txt" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\ShaderPropertySystem.cginc" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\ShaderMaths.cginc" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\shadergen_includes_builtin.txt" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\VLBGeneratedShader.shader" />
+    <None Include="Assets\Plugins\VolumetricLightBeam\Shaders\ShaderSpecificBuiltin.cginc" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -881,7 +862,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj" />
     <ProjectReference Include="KinoBloom.Runtime.csproj" />
     <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj" />
     <ProjectReference Include="CFXRRuntime.csproj" />
