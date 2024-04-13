@@ -8,7 +8,6 @@ namespace Interactable
 {
     public class Vent : MonoBehaviour, IInteractable
     {
-        [SerializeField] private float valveRotationAngle = 90f;
         [SerializeField] private Animator animator;
 
         [SerializeField] private KeyCode tipButton;
@@ -18,7 +17,7 @@ namespace Interactable
         public UDictionary<string, string> TipName => tipName;
         public MeshRenderer[] MeshesOutline => meshesOutline;
 
-
+        private bool _closed = true;
         private float _time;
         private bool _selected;
         private FirstPersonController2 _controller;
@@ -30,7 +29,14 @@ namespace Interactable
 
         public void Interact(PlayerInteract playerInteract)
         {
-            _controller.inVent = !_controller.inVent;
+            if (_closed)
+            {
+                _closed = !_closed;
+                animator.Play("OpenVent");
+                InvokeRepeating(nameof(ChangeView), 0.1f, 0.1f);
+                return; 
+            }
+            _controller.ChangeVentState();
         }
 
         public void Selected()
@@ -40,6 +46,14 @@ namespace Interactable
         public void Deselected()
         {
             
+        }
+
+        public void ChangeView()
+        {
+            if (animator.GetCurrentAnimatorStateInfo(-1).length >
+                animator.GetCurrentAnimatorStateInfo(-1).normalizedTime) return;
+            CancelInvoke(nameof(ChangeView));
+            _controller.ChangeVentState();
         }
     }
 }
