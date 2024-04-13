@@ -72,6 +72,11 @@ public class FirstPersonController2 : MonoBehaviour
     private Hands _hands;
     private Collider _inUse;
 
+    [SerializeField] private float fovNormal;
+    [SerializeField] private float fovVent;
+    [SerializeField] private float speedVent;
+    private float normalSpeedSave;
+
     private void ChangeCollider(Collider coll)
     {
         if (coll.IsUnityNull()) return;
@@ -99,7 +104,11 @@ public class FirstPersonController2 : MonoBehaviour
         transform.position = vent.inside.position;
         InVent = true;
         _hands.enabled = false;
-        
+
+        enableSprint = false;
+        isSprinting = false;
+        walkSpeed = speedVent;
+        Camera.main.fieldOfView = fovVent;
     }
     private void VentExit(Vent vent)
     {
@@ -109,6 +118,11 @@ public class FirstPersonController2 : MonoBehaviour
         transform.position = vent.outside.position;
         _hands.enabled = true;
         jointOriginalPos = _jointBufferedPosition;
+
+        enableSprint = true;
+        isSprinting = false;
+        walkSpeed = normalSpeedSave;
+        Camera.main.fieldOfView = fovNormal;
     }
     
 
@@ -122,6 +136,7 @@ public class FirstPersonController2 : MonoBehaviour
 
     private void Start()
     {
+        normalSpeedSave = walkSpeed;
         _hands = GetComponent<Hands>();
         foreach (var coll in GetComponents<Collider>())
         {

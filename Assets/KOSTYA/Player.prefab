@@ -1420,6 +1420,7 @@ GameObject:
   - component: {fileID: 8223817409023574157}
   - component: {fileID: 281910802171689048}
   - component: {fileID: 526152239465407960}
+  - component: {fileID: 6474536862580522797}
   m_Layer: 30
   m_Name: Player
   m_TagString: Player
@@ -1576,8 +1577,12 @@ MonoBehaviour:
   joint: {fileID: 1659800441520286177}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
-  ventCollider: {fileID: 0}
+  ventCollider: {fileID: 6474536862580522797}
   ventAnimator: {fileID: 0}
+  target: {fileID: 0}
+  fovNormal: 60
+  fovVent: 37
+  speedVent: 0.5
 --- !u!95 &3264357145432501923
 Animator:
   serializedVersion: 5
@@ -1706,6 +1711,27 @@ MonoBehaviour:
   gasCylinderMax: 10
   gasCylinderCount: 0
   gasCylinderBar: {fileID: 1756274522275201032}
+--- !u!135 &6474536862580522797
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3613695928230953461}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Radius: 0.45
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3643597534608658520
 GameObject:
   m_ObjectHideFlags: 0
