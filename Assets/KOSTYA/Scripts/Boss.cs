@@ -65,10 +65,24 @@ public class Boss : MonoBehaviour
     private bool pushing;
     private float pushingtime;
 
+    [SerializeField] private Vector3 chillOffsetBody;
+    private Vector3 bodyOffsetCopy;
+
+    [SerializeField] private GameObject coreGlow;
+    [SerializeField] private ParticleSystem whitecoreparticles;
+
+    [SerializeField] private float chillKD;
+    
+    [SerializeField] private float chillTime;
+    private float chillKDLeft;
+
+    private int lastattack = -1;
+
     public enum State{
-        Walking, ShootingBig, ShootingStay, NearAttack
+        Walking, ShootingBig, ShootingTop, ShootingStay, NearAttack, StartingChill, StoppingChill
     }
     [SerializeField] private State state;   
+
         
     void findNewTraget()
     {
@@ -101,6 +115,8 @@ public class Boss : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rbPlayer = player.GetComponent<Rigidbody>();
         state = State.Walking;
+        bodyOffsetCopy = bodyOffset;
+        chillKDLeft = chillKD;
 
         //
         legPositions = new Vector3[legPoints.Length];
@@ -138,6 +154,16 @@ public class Boss : MonoBehaviour
 
     void Update()
     {
+        if (state == State.Walking || state == State.ShootingTop || state == State.ShootingBig || state == State.ShootingStay)
+        {
+            chillKDLeft -= Time.deltaTime;
+            if (chillKDLeft <= 0){
+                startChilling();
+            }
+        }
+
+        if (state == State.StartingChill || state == State.StoppingChill) return;
+
         if (state == State.ShootingStay)
         {
             agent.SetDestination(transform.position);
@@ -148,7 +174,7 @@ public class Boss : MonoBehaviour
 
     void FixedUpdate(){
         if (!pushing) return;
-        Vector3 dir = new Vector3(player.position.x, transform.position.y, player.position.z) - transform.position;
+        Vector3 dir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
         rbPlayer.AddForce(dir.normalized * pushingforce, ForceMode.Acceleration);
         pushingtime -= Time.fixedDeltaTime;
         if (pushingtime <= 0) pushing = false;
@@ -198,8 +224,10 @@ public class Boss : MonoBehaviour
 
         avgPos /= legPoints.Length;
         //body.position = new Vector3(body.position.x, avgPos.y + bodyOffset.y, body.position.z);
-
         body.position = Vector3.MoveTowards(body.position, new Vector3(body.position.x, avgPos.y + bodyOffset.y, body.position.z), bodyMovingSpeed * Time.deltaTime);
+
+
+        if (state == State.StartingChill || state == State.StoppingChill) return;
 
         Vector3 dir = (new Vector3(player.position.x, transform.position.y, player.position.z) - transform.position).normalized;
         Quaternion rotation = Quaternion.LookRotation(dir);
@@ -225,6 +253,7 @@ public class Boss : MonoBehaviour
         if (right) rotationgun1 *= Quaternion.Euler(0, -90, 0);
 
         obj.rotation = Quaternion.RotateTowards(obj.rotation, rotationgun1, gunSpeedFollow * Time.deltaTime);
+
         if (obj.localEulerAngles.x <= 180 && obj.localEulerAngles.x > maxminAnglesGun[0].x) obj.localEulerAngles = new Vector3(maxminAnglesGun[0].x, obj.localEulerAngles.y, obj.localEulerAngles.z);
         else if (obj.localEulerAngles.x > 180 && obj.localEulerAngles.x < maxminAnglesGun[1].x) obj.localEulerAngles = new Vector3(maxminAnglesGun[1].x, obj.localEulerAngles.y, obj.localEulerAngles.z);
         if (obj.localEulerAngles.y <= 180 && obj.localEulerAngles.y > maxminAnglesGun[0].y) obj.localEulerAngles = new Vector3(obj.localEulerAngles.x, maxminAnglesGun[0].y, obj.localEulerAngles.z);
@@ -232,8 +261,6 @@ public class Boss : MonoBehaviour
         if (obj.localEulerAngles.z <= 180 && obj.localEulerAngles.z > maxminAnglesGun[0].z) obj.localEulerAngles = new Vector3(obj.localEulerAngles.x, obj.localEulerAngles.y, maxminAnglesGun[0].z);
         else if (obj.localEulerAngles.z > 180 && obj.localEulerAngles.z < maxminAnglesGun[1].z) obj.localEulerAngles = new Vector3(obj.localEulerAngles.x, obj.localEulerAngles.y, maxminAnglesGun[1].z);
         obj.localEulerAngles = new Vector3(obj.localEulerAngles.x, obj.localEulerAngles.y, obj.localEulerAngles.z);
-
-
     }
 
     void shootRightTurret(){
@@ -249,6 +276,40 @@ public class Boss : MonoBehaviour
             GameObject obj0 = Instantiate(bulletTurret, spawnPointsTurret[i].position, Quaternion.Euler(0, 0, 0));
             obj0.GetComponent<BulletBoss>().init(spawnPointsTurret[i].right);
         }
+    }
+
+    public void coreHitted(){
+        if (state != State.StartingChill) return;
+        gunAnimator.CrossFade("BossBackHitted", 0.1f, -1, 0);
+    }
+
+    void startChilling(){
+        CancelInvoke();
+        chillKDLeft = chillKD;
+        state = State.StartingChill;
+        agent.enabled = false;
+        bodyOffset = chillOffsetBody;
+        gunAnimator.enabled = true;
+        gunAnimator.CrossFade("BossOpenBack", 0.5f, -1, 0);
+        Invoke("stopChilling", chillTime);
+        coreGlow.SetActive(true);
+        whitecoreparticles.Play();
+    }
+
+    void stopChilling(){
+        CancelInvoke();
+        state = State.StoppingChill;
+        bodyOffset = bodyOffsetCopy;
+        gunAnimator.enabled = true;
+        gunAnimator.CrossFade("BossCloseBack", 0.5f, -1, 0);
+        whitecoreparticles.Stop();
+        coreGlow.SetActive(false);
+        Invoke("stopChill", 1.5f);
+    }
+    void stopChill(){
+        state = State.Walking;
+        agent.enabled = true;
+        Invoke("Attack", Random.Range(2f, 5f));
     }
 
     void shootTopTurret(){
@@ -271,38 +332,48 @@ public class Boss : MonoBehaviour
     }
 
     void Attack(){
-        Invoke("Attack", ktop * 1/3f + Random.Range(2f, 5f));
-        state = State.Walking;
-        ktop = 10;
-        InvokeRepeating("shootTopTurret", 0, 1/3f);
-        Invoke("stopAnim", ktop * 1/3f);
-        gunAnimator.enabled = true;
 
-        return;
-        Invoke("Attack", clipStayShoot.length + Random.Range(2f, 5f));
-        state = State.ShootingStay;
-        gunAnimator.enabled = true;
-        CancelInvoke("stopAnim");
-        Invoke("stopAnim", clipStayShoot.length);
-        gunAnimator.CrossFade(clipStayShoot.name, 0.2f, -1, 0);
-        kright = 10;
-        InvokeRepeating("shootRightTurret", 0, 1/3f);
+        int typeattack = Random.Range(0, 3);
 
-        return;
-        Invoke("Attack", Random.Range(2f, 5f));
-        state = State.ShootingBig;
-        gunAnimator.enabled = true;
-        CancelInvoke("stopAnim");
-        Invoke("stopAnim", shootGunClip.length);
-        gunAnimator.CrossFade(shootGunClip.name, 0.2f, -1, 0);
-        shootParticles.Play();
-        GameObject obj = Instantiate(bigBullet, bulletSpawPos.position, Quaternion.Euler(0, 0, 0));
-        obj.GetComponent<BulletBoss>().init(bulletSpawPos.forward);
+        if (typeattack == lastattack){
+            typeattack++;
+            if (typeattack >= 3) typeattack -= 2;
+        }
+        lastattack = typeattack;
+
+        if (typeattack == 0){
+            Invoke("Attack", ktop * 1/3f + Random.Range(2f, 5f));
+            state = State.ShootingTop;
+            ktop = 10;
+            InvokeRepeating("shootTopTurret", 0, 1/3f);
+            Invoke("stopAnim", ktop * 1/3f);
+            gunAnimator.enabled = true;
+            gunAnimator.Play("BossEmptyState", -1, 0);
+        }
+        else if (typeattack == 1){
+            Invoke("Attack", clipStayShoot.length + Random.Range(2f, 5f));
+            state = State.ShootingStay;
+            gunAnimator.enabled = true;
+            CancelInvoke("stopAnim");
+            Invoke("stopAnim", clipStayShoot.length);
+            gunAnimator.CrossFade(clipStayShoot.name, 0.2f, -1, 0);
+            kright = 10;
+            InvokeRepeating("shootRightTurret", 0, 1/3f);
+        }
+        else{
+            Invoke("Attack", Random.Range(2f, 5f));
+            state = State.ShootingBig;
+            gunAnimator.enabled = true;
+            CancelInvoke("stopAnim");
+            Invoke("stopAnim", shootGunClip.length);
+            gunAnimator.CrossFade(shootGunClip.name, 0.2f, -1, 0);
+            shootParticles.Play();
+            GameObject obj = Instantiate(bigBullet, bulletSpawPos.position, Quaternion.Euler(0, 0, 0));
+            obj.GetComponent<BulletBoss>().init(bulletSpawPos.forward);
+        }
     }
 
     void stopAnim(){
-        gunAnimator.Rebind();
-        gunAnimator.Update(0f);
         state = State.Walking;
         gunAnimator.enabled = false;
     }
