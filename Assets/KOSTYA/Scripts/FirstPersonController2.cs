@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,7 +61,47 @@ public class FirstPersonController2 : MonoBehaviour
     private Vector3 jointOriginalPos;
     private float timer = 0;
 
-    public bool inVent;
+
+    [Space] 
+    public Collider ventCollider;
+    public Animator ventAnimator;
+    public bool InVent { get; private set; }
+
+    private Hands _hands;
+    private Collider _inUse;
+
+    private void ChangeCollider(Collider coll)
+    {
+        if (coll.IsUnityNull()) return;
+        _inUse.enabled = false;
+        _inUse = coll;
+        coll.enabled = true;
+    }
+    
+    
+
+    private Collider _ventBuffer;
+    public void ChangeVentState()
+    {
+        if (InVent) VentExit();
+        else VentEnter();
+    }
+    private void VentEnter()
+    {
+        _ventBuffer = _inUse;
+        ChangeCollider(ventCollider);
+        InVent = true;
+        _hands.enabled = false;
+        ventAnimator.Play("VentEnter", -1, 0);
+    }
+    private void VentExit()
+    {
+        InVent = false;
+        ChangeCollider(_ventBuffer);
+        _hands.enabled = true;
+        ventAnimator.Play("VentExit", -1, 0);
+    }
+    
 
     private void Awake()
     {
@@ -70,8 +111,16 @@ public class FirstPersonController2 : MonoBehaviour
         jointOriginalPos = joint.localPosition;
     }
 
-    void Start()
+    private void Start()
     {
+        _hands = GetComponent<Hands>();
+        foreach (var coll in GetComponents<Collider>())
+        {
+            if (!coll.enabled) continue;
+            if (_inUse == null) _inUse = coll;
+            else coll.enabled = false;
+        }
+
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
