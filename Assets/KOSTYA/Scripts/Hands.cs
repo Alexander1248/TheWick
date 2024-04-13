@@ -49,17 +49,16 @@ public class Hands : MonoBehaviour
             if (scrollWheelInput != 0 && currentWeaponIndex != lastweapon){
                 for (int i = 0; i < weapons.Length; i++)
                 {
-                    if (weapons[i] != null){
-                        weapons[i].SetActive(i == currentWeaponIndex);
-                        animatorsWeapons[i].enabled = true;
-                        animatorsWeapons[i].Rebind();
-                        animatorsWeapons[i].Update(0f);
-                        if (currentWeaponIndex == 2){
-                            animatorsWeapons[i].Play("TakeWeapon", 0, 0);
-                        }
-                        else if (currentWeaponIndex == 1){
-                            animatorsWeapons[i].Play("TakeGaechnii", 0, 0);
-                        }
+                    if (weapons[i].IsUnityNull()) continue;
+                    weapons[i].SetActive(i == currentWeaponIndex);
+                    animatorsWeapons[i].enabled = true;
+                    animatorsWeapons[i].Rebind();
+                    animatorsWeapons[i].Update(0f);
+                    if (currentWeaponIndex == 2){
+                        animatorsWeapons[i].Play("TakeWeapon", 0, 0);
+                    }
+                    else if (currentWeaponIndex == 1){
+                        animatorsWeapons[i].Play("TakeGaechnii", 0, 0);
                     }
                 }
                 lastScrollTime = Time.time;
@@ -99,5 +98,18 @@ public class Hands : MonoBehaviour
 
     private void ResetGun(){
         canShoot = true;
+    }
+
+    public void OnEnable()
+    {
+        if (weapons[currentWeaponIndex].IsUnityNull()) return;
+        weapons[currentWeaponIndex].SetActive(true);
+    }
+    public void OnDisable()
+    {
+        foreach (var weapon in weapons)
+            if (!weapon.IsUnityNull()) 
+                weapon.SetActive(false);
+        
     }
 }
