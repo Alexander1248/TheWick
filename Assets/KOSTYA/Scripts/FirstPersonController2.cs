@@ -198,7 +198,7 @@ public class FirstPersonController2 : MonoBehaviour
             // Question 69: to be, or not to be, that is the question
             Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"),
                                                 0,
-                                                Input.GetAxis("Vertical"));
+                                                Input.GetAxis("Vertical")).normalized;
             if ((targetVelocity.x != 0 || targetVelocity.z != 0))
             {
                 isWalking = true;
