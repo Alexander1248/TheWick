@@ -15,6 +15,8 @@ public class Freddy : MonoBehaviour
     [SerializeField] private float legKickForce;
     [SerializeField] private float handKickForce;
 
+    [SerializeField] private float seeAfterLostTime;
+
     [SerializeField] private Collider[] partsColliders;
     [SerializeField] private Rigidbody[] partsRBs;
 
@@ -96,7 +98,7 @@ public class Freddy : MonoBehaviour
         }
         else if (!fov.canSeePlayer && (state == State.Chasing || state == State.Fighting)){
             state = State.StoppingChase;
-            Invoke("StopChase", 3);
+            Invoke("StopChase", seeAfterLostTime);
         }
     }
     void LateUpdate(){
@@ -112,7 +114,8 @@ public class Freddy : MonoBehaviour
     }
 
     public void GetDamaged(){
-        CancelInvoke("Unstun");
+        //CancelInvoke("Unstun");
+        CancelInvoke();
         animator.CrossFade(takeDamageClip.name, 0.1f, -1, 0);
         state = State.Stunned;
         agent.SetDestination(transform.position);

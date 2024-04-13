@@ -8,9 +8,11 @@ namespace Interactable
 {
     public class Vent : MonoBehaviour, IInteractable
     {
-        [SerializeField] private float valveRotationAngle = 90f;
         [SerializeField] private Animator animator;
-
+        [SerializeField] private float time;
+        public Transform inside;
+        public Transform outside;
+        
         [SerializeField] private KeyCode tipButton;
         [SerializeField] private UDictionary<string, string> tipName;
         [SerializeField] private MeshRenderer[] meshesOutline;
@@ -18,19 +20,29 @@ namespace Interactable
         public UDictionary<string, string> TipName => tipName;
         public MeshRenderer[] MeshesOutline => meshesOutline;
 
-
-        private float _time;
-        private bool _selected;
+        private bool _closed = true;
         private FirstPersonController2 _controller;
 
+        
+        private Collider _collider;
         private void Start()
         {
             _controller = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController2>();
+            _collider = GetComponent<Collider>();
         }
 
         public void Interact(PlayerInteract playerInteract)
         {
-            _controller.inVent = !_controller.inVent;
+            if (_closed)
+            {
+                _closed = false;
+                animator.speed = 1 / time;
+                animator.Play("OpenVent");
+                Invoke(nameof(ChangeVentState), time);
+                return;
+            }
+
+            _controller.ChangeVentState(this);
         }
 
         public void Selected()
@@ -40,6 +52,11 @@ namespace Interactable
         public void Deselected()
         {
             
+        }
+
+        public void ChangeVentState()
+        {
+            _controller.ChangeVentState(this);
         }
     }
 }

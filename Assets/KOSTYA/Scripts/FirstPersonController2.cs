@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Interactable;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,7 +62,57 @@ public class FirstPersonController2 : MonoBehaviour
     private Vector3 jointOriginalPos;
     private float timer = 0;
 
-    public bool inVent;
+
+    [Space] 
+    public Collider ventCollider;
+    public Animator ventAnimator;
+    public Transform target;
+    public bool InVent { get; private set; }
+
+    private Hands _hands;
+    private Collider _inUse;
+
+    private void ChangeCollider(Collider coll)
+    {
+        if (coll.IsUnityNull()) return;
+        _inUse.enabled = false;
+        _inUse = coll;
+        coll.enabled = true;
+    }
+
+
+    private Vector3 _jointBufferedPosition;
+    private Collider _ventBuffer;
+    public void ChangeVentState(Vent vent)
+    {
+        if (InVent) VentExit(vent);
+        else VentEnter(vent);
+    }
+    private void VentEnter(Vent vent)
+    {
+        if (vent.inside.IsUnityNull()) return;
+        _jointBufferedPosition = jointOriginalPos;
+        jointOriginalPos = Vector3.zero;
+        
+        _ventBuffer = _inUse;
+        ChangeCollider(ventCollider);
+
+        transform.position = vent.inside.position;
+        InVent = true;
+        _hands.enabled = false;
+        
+    }
+    private void VentExit(Vent vent)
+    {
+        if (vent.outside.IsUnityNull()) return;
+        InVent = false;
+        ChangeCollider(_ventBuffer);
+        
+        transform.position = vent.outside.position;
+        _hands.enabled = true;
+        jointOriginalPos = _jointBufferedPosition;
+    }
+    
 
     private void Awake()
     {
@@ -70,8 +122,16 @@ public class FirstPersonController2 : MonoBehaviour
         jointOriginalPos = joint.localPosition;
     }
 
-    void Start()
+    private void Start()
     {
+        _hands = GetComponent<Hands>();
+        foreach (var coll in GetComponents<Collider>())
+        {
+            if (!coll.enabled) continue;
+            if (_inUse == null) _inUse = coll;
+            else coll.enabled = false;
+        }
+
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -140,7 +200,7 @@ public class FirstPersonController2 : MonoBehaviour
             // Question 69: to be, or not to be, that is the question
             Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"),
                                                 0,
-                                                Input.GetAxis("Vertical"));
+                                                Input.GetAxis("Vertical")).normalized;
             if ((targetVelocity.x != 0 || targetVelocity.z != 0))
             {
                 isWalking = true;
@@ -191,7 +251,7 @@ public class FirstPersonController2 : MonoBehaviour
     {
         Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
         Vector3 direction = transform.TransformDirection(Vector3.down);
-        float distance = 1f;
+        float distance = 0.2f;
 
         if (Physics.Raycast(origin, direction, out RaycastHit hit, distance))
         {

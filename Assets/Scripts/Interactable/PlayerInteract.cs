@@ -63,10 +63,11 @@ namespace Interactable
             _idxInteract = tagsInteract.IndexOf(obj.tag);
             if (_idxInteract == -1)
             {
+                HideTip();
                 if (!_interactable.IsUnityNull()) 
                     _interactable.Deselected();
+                _interactable = null;
                 _interactableObj = null;
-                HideTip();
                 return;
             }
             if (_interactableObj != obj && Vector3.Distance(transform.position, obj.transform.position) <= distInteract)
