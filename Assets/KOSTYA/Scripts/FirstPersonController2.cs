@@ -60,6 +60,8 @@ public class FirstPersonController2 : MonoBehaviour
     private Vector3 jointOriginalPos;
     private float timer = 0;
 
+    public bool inVent;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
