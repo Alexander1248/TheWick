@@ -34,7 +34,7 @@ namespace Interactable
         public MeshRenderer[] MeshesOutline => meshesOutline;
 
 
-        [SerializeField] private float time;
+        [SerializeField][Range(0, 1)] private float time;
         private bool _selected;
         
         public void Interact(PlayerInteract playerInteract)
