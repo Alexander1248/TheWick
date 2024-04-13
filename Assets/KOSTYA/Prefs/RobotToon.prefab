@@ -3109,8 +3109,8 @@ MonoBehaviour:
   - {fileID: 7400000, guid: c0385533e37d1684bad235a0b778dce2, type: 2}
   - {fileID: 7400000, guid: fc6d8fb72bc066e43bd8913ba7daf994, type: 2}
   takeDamageClip: {fileID: 7400000, guid: c1d91bdc4a7c36c4495c9c5d06b3980c, type: 2}
-  legKickForce: 137.5
-  handKickForce: 37.5
+  legKickForce: 150
+  handKickForce: 60
   seeAfterLostTime: 3
   partsColliders:
   - {fileID: 933952382208868820}

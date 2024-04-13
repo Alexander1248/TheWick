@@ -114,7 +114,8 @@ public class Freddy : MonoBehaviour
     }
 
     public void GetDamaged(){
-        CancelInvoke("Unstun");
+        //CancelInvoke("Unstun");
+        CancelInvoke();
         animator.CrossFade(takeDamageClip.name, 0.1f, -1, 0);
         state = State.Stunned;
         agent.SetDestination(transform.position);
