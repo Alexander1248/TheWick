@@ -10,5 +10,11 @@ namespace Interactable
         UDictionary<string, string> TipName { get; }
 
         MeshRenderer[] MeshesOutline { get; }
+        void Selected() {
+            
+        }
+        void Deselected() {
+            
+        }
     }
 }
