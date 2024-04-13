@@ -40,11 +40,10 @@ public class Health : MonoBehaviour
     private Vector3 _buff;
     public void DealDamage(float damage, Vector3 direction, float kickForce , Vector3? point = null)
     {
-        blood.transform.position = _buff;
-        
         if (rb) rb.AddForce(-direction * kickForce, ForceMode.Impulse);
 
         if (blood){
+            blood.transform.position = _buff;
             if (point != null)
             {
                 _buff = blood.transform.position;
