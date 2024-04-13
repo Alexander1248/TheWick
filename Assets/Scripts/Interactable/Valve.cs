@@ -5,6 +5,7 @@ using Utils;
 
 namespace Interactable
 {
+    [ExecuteInEditMode]
     public class Valve : MonoBehaviour, IInteractable
     {
         [SerializeField] private float valveRotationTime = 3f;
@@ -33,7 +34,7 @@ namespace Interactable
         public MeshRenderer[] MeshesOutline => meshesOutline;
 
 
-        private float _time;
+        [SerializeField] private float time;
         private bool _selected;
         
         public void Interact(PlayerInteract playerInteract)
@@ -58,8 +59,8 @@ namespace Interactable
                 audioSource.Play();
             }
 
-            if (_time >= 0.01f) return;
-            _time = 0.01f;
+            if (time >= 0.01f) return;
+            time = 0.01f;
 
             _startAngle = valveObj.localEulerAngles.y;
             
@@ -83,15 +84,14 @@ namespace Interactable
 
         private void Update()
         {
-            if (_time == 0) return;
+            valveProgress.Invoke(open ? Mathf.Clamp01(1 - time) : Mathf.Clamp01(time));
             if (!Input.GetKey(tipButton) || !_selected) return;
-            _time += Time.deltaTime / valveRotationTime;
+            time += Time.deltaTime / valveRotationTime;
 
-            valveProgress.Invoke(open ? Mathf.Clamp01(1 - _time) : Mathf.Clamp01(_time));
-            valveObj.localEulerAngles = new Vector3(0, Mathf.LerpAngle(_startAngle, _endAngle, _time), 0);
+            valveObj.localEulerAngles = new Vector3(0, Mathf.LerpAngle(_startAngle, _endAngle, time), 0);
 
-            if (_time < 1) return;
-            _time = 0;
+            if (time < 1) return;
+            time = 0;
             if (open) valveClosed.Invoke();
             else valveOpened.Invoke();
             open = !open;
