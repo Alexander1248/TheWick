@@ -36,9 +36,15 @@ namespace SentenceGraph
             inputContainer.Add(Input);
         }
 
+        public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+        {
+            base.BuildContextualMenu(evt);
+            Sentence.BuildContextualMenu(evt);
+        }
+
         private void CreateOutputPorts()
         {
-            Outputs = new Port[Sentence.next.Length];
+            Outputs = new Port[Sentence.next.Count];
             for (var i = 0; i < Outputs.Length; i++)
             {
                 Outputs[i] = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, null);

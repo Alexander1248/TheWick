@@ -3,6 +3,7 @@ using NPC.SentenceNodes;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using Utils;
 
 namespace NPC
@@ -11,7 +12,8 @@ namespace NPC
     {
         [SerializeField] private UDictionary<string, Narrator> narrators;
         [SerializeField] private SentenceGraph graph;
-
+        [SerializeField] private UnityEvent<string> onSentenceChanged;
+        [SerializeField] private UnityEvent onDialogueEnd;
 
         private SentenceData _currentData;
         private Narrator _currentNarrator;
@@ -25,7 +27,7 @@ namespace NPC
 
         public void StartDialogue()
         {
-            _current = graph.root;
+            _current = graph.root.Clone();
             SwitchUpdate();
             PlayDialogue();
         }
@@ -78,7 +80,13 @@ namespace NPC
 
         private void SwitchUpdate()
         {
-            if (_current.IsUnityNull()) return;
+            if (_current.IsUnityNull())
+            {
+                onDialogueEnd.Invoke();
+                return;
+            }
+            onSentenceChanged.Invoke(_current.tag);
+
             _current.GetState(this);
             _currentData = _current.GetSentence(PlayerPrefs.GetString("Language"));
             _wait = false;

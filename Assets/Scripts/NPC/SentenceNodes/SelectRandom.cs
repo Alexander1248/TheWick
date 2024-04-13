@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using UnityEngine.UIElements;
+using Utils;
 using Random = UnityEngine.Random;
 
 namespace NPC.SentenceNodes
@@ -7,11 +10,10 @@ namespace NPC.SentenceNodes
     public class SelectRandom : Sentence
     {
         
-        public SelectRandom() : base(2) { }
-        
         public override Sentence GetNext()
         {
-            return next[Random.Range(0, next.Length)];
+            var index = Random.Range(0, next.Count);
+            return next[new List<int>(next.Keys)[index]];
         }
 
         public override SentenceData GetSentence(string locale)
@@ -22,10 +24,15 @@ namespace NPC.SentenceNodes
         public override Sentence Clone()
         {
             var sentence = Instantiate(this);
-            sentence.next = new Sentence[next.Length];
-            for (var i = 0; i < next.Length; i++) 
-                sentence.next[i] = next[i].Clone();
+            foreach (var key in next.Keys)
+                sentence.next[key] = next[key].Clone();
             return sentence;
+        }
+
+        public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+        {
+            evt.menu.AppendAction("Add Branch", _ => next[next.Count] = null);
+            evt.menu.AppendAction("Remove Branch", _ => next.Remove(next.Count - 1));
         }
     }
 }

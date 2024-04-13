@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using NPC.SentenceNodes;
 using Unity.VisualScripting;
 using UnityEngine.Serialization;
+using Utils;
 
 namespace NPC.SentenceNodes
 {
@@ -9,8 +11,11 @@ namespace NPC.SentenceNodes
     public class SimpleSentence : Sentence
     {
         public SentenceData sentenceData;
-        
-        public SimpleSentence() : base(1) { }
+
+        public SimpleSentence()
+        {
+            next[0] = null;
+        }
         
         public override Sentence GetNext()
         {
@@ -25,9 +30,8 @@ namespace NPC.SentenceNodes
         public override Sentence Clone()
         {
             var sentence = Instantiate(this);
-            sentence.next = new Sentence[next.Length];
-            for (var i = 0; i < next.Length; i++) 
-                sentence.next[i] = next[i].Clone();
+            foreach (var key in next.Keys)
+                sentence.next[key] = next[key].Clone();
 
             sentence.sentenceData = sentenceData.Clone();
             return sentence;

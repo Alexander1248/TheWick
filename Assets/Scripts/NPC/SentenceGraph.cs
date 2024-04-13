@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using NPC.SentenceNodes;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
@@ -38,11 +39,10 @@ namespace NPC
         {
             from.next[index] = to;
         }
-        public void RemoveLink(Sentence from, Sentence to)
+        public static void RemoveLink(Sentence from, Sentence to)
         {
-            for (var i = 0; i < from.next.Length; i++)
-                if (from.next[i] == to)
-                    from.next[i] = null;
+            foreach (var key in from.next.Keys.Where(key => from.next[key] == to))
+                from.next[key] = null;
         }
     }
 }
