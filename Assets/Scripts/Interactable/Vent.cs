@@ -9,7 +9,10 @@ namespace Interactable
     public class Vent : MonoBehaviour, IInteractable
     {
         [SerializeField] private Animator animator;
-
+        [SerializeField] private float time;
+        public Transform inside;
+        public Transform outside;
+        
         [SerializeField] private KeyCode tipButton;
         [SerializeField] private UDictionary<string, string> tipName;
         [SerializeField] private MeshRenderer[] meshesOutline;
@@ -18,25 +21,28 @@ namespace Interactable
         public MeshRenderer[] MeshesOutline => meshesOutline;
 
         private bool _closed = true;
-        private float _time;
-        private bool _selected;
         private FirstPersonController2 _controller;
 
+        
+        private Collider _collider;
         private void Start()
         {
             _controller = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController2>();
+            _collider = GetComponent<Collider>();
         }
 
         public void Interact(PlayerInteract playerInteract)
         {
             if (_closed)
             {
-                _closed = !_closed;
+                _closed = false;
+                animator.speed = 1 / time;
                 animator.Play("OpenVent");
-                InvokeRepeating(nameof(ChangeView), 0.1f, 0.1f);
-                return; 
+                Invoke(nameof(ChangeVentState), time);
+                return;
             }
-            _controller.ChangeVentState();
+
+            _controller.ChangeVentState(this);
         }
 
         public void Selected()
@@ -48,12 +54,9 @@ namespace Interactable
             
         }
 
-        public void ChangeView()
+        public void ChangeVentState()
         {
-            if (animator.GetCurrentAnimatorStateInfo(-1).length >
-                animator.GetCurrentAnimatorStateInfo(-1).normalizedTime) return;
-            CancelInvoke(nameof(ChangeView));
-            _controller.ChangeVentState();
+            _controller.ChangeVentState(this);
         }
     }
 }
