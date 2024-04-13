@@ -10,7 +10,10 @@ namespace NPC.SentenceNodes
     {
         public UDictionary<String, SentenceData> sentences = new();
 
-        public LocalizedSentence() : base(1) { }
+        public LocalizedSentence()
+        {
+            next[0] = null;
+        }
         
         public override Sentence GetNext()
         {
@@ -25,9 +28,8 @@ namespace NPC.SentenceNodes
         public override Sentence Clone()
         {
             var sentence = Instantiate(this);
-            sentence.next = new Sentence[next.Length];
-            for (var i = 0; i < next.Length; i++) 
-                sentence.next[i] = next[i].Clone();
+            foreach (var key in next.Keys)
+                sentence.next[key] = next[key].Clone();
             sentences.Keys.ForEach(key => sentence.sentences[key] = sentences[key]);
             return sentence;
         }

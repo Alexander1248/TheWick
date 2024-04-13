@@ -1,5 +1,6 @@
 using System;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -30,6 +31,12 @@ namespace SentenceGraph
 
             _graphView = root.Q<SentenceGraphView>();
             _inspectorView = root.Q<InspectorView>();
+
+            var save = root.Q<ToolbarButton>("save");
+            if (save != null)
+                save.clickable.clicked += _graphView.Save;
+            
+            
             _graphView.OnNodeSelected = OnNodeSelectionChanged;
             OnSelectionChange();
         }
