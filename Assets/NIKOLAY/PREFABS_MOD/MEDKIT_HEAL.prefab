@@ -197,7 +197,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3142968716395347501}
+  m_Father: {fileID: 7042620983126016891}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5672047947947245637
 MeshFilter:
@@ -280,7 +280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3142968716395347501}
+  m_Father: {fileID: 7042620983126016891}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2532464949658381262
 MeshFilter:
@@ -360,10 +360,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.9807853, y: -0.19509041, z: 0.000000015745849, w: 0.000000073601925}
   m_LocalPosition: {x: 0.020842552, y: 0.0073827277, z: -0.17849159}
-  m_LocalScale: {x: 0.945135, y: 0.9451353, z: 0.94513553}
+  m_LocalScale: {x: 0.945135, y: 0.94513535, z: 0.9451356}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3142968716395347501}
+  m_Father: {fileID: 7042620983126016891}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &280412415362970293
 MeshFilter:
@@ -747,6 +747,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1772374196642230518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7042620983126016891}
+  m_Layer: 0
+  m_Name: Cylinders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7042620983126016891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772374196642230518}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8686657011843798971}
+  - {fileID: 6320135398932324135}
+  - {fileID: 7980906317387315493}
+  - {fileID: 8956289332887946843}
+  - {fileID: 6608475825021660334}
+  - {fileID: 2624315768121309761}
+  - {fileID: 4957060881945411727}
+  - {fileID: 3923167747322043197}
+  - {fileID: 6604437799392107672}
+  m_Father: {fileID: 3142968716395347501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2056527100939012220
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +818,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3142968716395347501}
+  m_Father: {fileID: 7042620983126016891}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7973848087232120279
 MeshFilter:
@@ -1359,7 +1399,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3142968716395347501}
+  m_Father: {fileID: 7042620983126016891}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4927814413237164621
 MeshFilter:
@@ -1608,7 +1648,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3142968716395347501}
+  m_Father: {fileID: 7042620983126016891}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4434638209161373023
 MeshFilter:
@@ -1857,7 +1897,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3142968716395347501}
+  m_Father: {fileID: 7042620983126016891}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2342225391365606959
 MeshFilter:
@@ -1940,7 +1980,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3142968716395347501}
+  m_Father: {fileID: 7042620983126016891}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6141123860907908759
 MeshFilter:
@@ -2272,7 +2312,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3142968716395347501}
+  m_Father: {fileID: 7042620983126016891}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6201853477216973945
 MeshFilter:
@@ -2582,6 +2622,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3142968716395347501}
+  - component: {fileID: 8004584197633857372}
+  - component: {fileID: 963110826071794971}
   m_Layer: 0
   m_Name: MEDKIT_HEAL
   m_TagString: Untagged
@@ -2599,7 +2641,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -14.060133, y: 0, z: -2.9926481}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.297302, y: 2.297302, z: 2.297302}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3724067902715336136}
@@ -2623,19 +2665,60 @@ Transform:
   - {fileID: 2093942533650967378}
   - {fileID: 8902882141369369486}
   - {fileID: 9144506498498359978}
-  - {fileID: 8686657011843798971}
-  - {fileID: 6320135398932324135}
-  - {fileID: 7980906317387315493}
-  - {fileID: 8956289332887946843}
-  - {fileID: 6608475825021660334}
-  - {fileID: 2624315768121309761}
-  - {fileID: 4957060881945411727}
-  - {fileID: 3923167747322043197}
-  - {fileID: 6604437799392107672}
   - {fileID: 1522293662911143634}
   - {fileID: 2016921863690170039}
+  - {fileID: 7042620983126016891}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8004584197633857372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8191362238711832795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5da0123635048abb952339323c1d2a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  medkitUsageTime: 5
+  medkitHealth: 30
+  cylinderContainer: {fileID: 7042620983126016891}
+  tipButton: 101
+  tipName:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C"
+    - Use
+  meshesOutline:
+  - {fileID: 2466981466309283144}
+  - {fileID: 2491359319243856362}
+  audioSource: {fileID: 0}
+  clips: []
+--- !u!65 &963110826071794971
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8191362238711832795}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1, y: 0.08916381, z: 0.14743492}
+  m_Center: {x: 0, y: 0.045622468, z: -0.1907907}
 --- !u!1 &8695368284326058476
 GameObject:
   m_ObjectHideFlags: 0
