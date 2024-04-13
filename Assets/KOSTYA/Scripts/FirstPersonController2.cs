@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Interactable;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -65,6 +66,7 @@ public class FirstPersonController2 : MonoBehaviour
     [Space] 
     public Collider ventCollider;
     public Animator ventAnimator;
+    public Transform target;
     public bool InVent { get; private set; }
 
     private Hands _hands;
@@ -77,29 +79,36 @@ public class FirstPersonController2 : MonoBehaviour
         _inUse = coll;
         coll.enabled = true;
     }
-    
-    
 
+
+    private Vector3 _jointBufferedPosition;
     private Collider _ventBuffer;
-    public void ChangeVentState()
+    public void ChangeVentState(Vent vent)
     {
-        if (InVent) VentExit();
-        else VentEnter();
+        if (InVent) VentExit(vent);
+        else VentEnter(vent);
     }
-    private void VentEnter()
+    private void VentEnter(Vent vent)
     {
+        _jointBufferedPosition = jointOriginalPos;
+        jointOriginalPos = Vector3.zero;
+        
         _ventBuffer = _inUse;
         ChangeCollider(ventCollider);
+
+        transform.position = vent.inside.position;
         InVent = true;
         _hands.enabled = false;
-        ventAnimator.Play("VentEnter", -1, 0);
+        
     }
-    private void VentExit()
+    private void VentExit(Vent vent)
     {
         InVent = false;
         ChangeCollider(_ventBuffer);
+        
+        transform.position = vent.outside.position;
         _hands.enabled = true;
-        ventAnimator.Play("VentExit", -1, 0);
+        jointOriginalPos = _jointBufferedPosition;
     }
     
 
