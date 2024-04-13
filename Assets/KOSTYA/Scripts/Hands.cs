@@ -29,13 +29,83 @@ public class Hands : MonoBehaviour
     [SerializeField] private float wrenchDamage = 10.0f;
     [SerializeField] private float wrenchKickForce = 1f;
 
+    [SerializeField] private bool wrenchUnlocked;
+    [SerializeField] private bool weaponUnlocked;
+
+    [SerializeField] private Transform wrenchForVent;
+    private bool venting;
+
     private RaycastHit _hit;
     void Start(){
         lastScrollTime = Time.time;
     }
 
+    public void UnlockWeapon(int id){ // 1 - wrench, 2 - gun
+        if (id == 1){
+            wrenchUnlocked = true;
+            currentWeaponIndex = 1;
+        }
+        else if (id == 2){
+            weaponUnlocked = true;
+            currentWeaponIndex = 2;
+        }
+        TakeWeapon();
+    }
+
+    void TakeWeapon(){
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            if (weapons[i] == null) continue;
+            weapons[i].SetActive(i == currentWeaponIndex);
+            animatorsWeapons[i].enabled = true;
+            animatorsWeapons[i].Rebind();
+            animatorsWeapons[i].Update(0f);
+            if (currentWeaponIndex == 2){
+                animatorsWeapons[i].Play("TakeWeapon", 0, 0);
+            }
+            else if (currentWeaponIndex == 1){
+                animatorsWeapons[i].Play("TakeGaechnii", 0, 0);
+            }
+        }
+    }
+
+    public bool requestWrench(Transform pos){
+        if (weapons[1].activeSelf){
+            wrenchForVent.gameObject.SetActive(true);
+            wrenchForVent.SetParent(pos);
+            wrenchForVent.localEulerAngles = Vector3.zero;
+            wrenchForVent.localPosition = Vector3.zero;
+            wrenchForVent.localScale = Vector3.one;
+            venting = true;
+            weapons[1].SetActive(false);
+            return true;
+        }
+        return false;
+    }
+    
+    public void releaseWrench(){
+        Debug.Log("sdf");
+        wrenchForVent.gameObject.SetActive(false);
+        venting = false;
+        if (wrenchUnlocked)
+        {
+            currentWeaponIndex = 1;
+            TakeWeapon();
+        }
+    }
+
+    public void wrenchHit(){
+        if (!Physics.SphereCast(camera.transform.position - camera.transform.forward, wrenchRayRadius,
+                camera.transform.forward, out _hit, wrenchDistance, enemyMask)) return;
+        var health = _hit.collider.gameObject.GetComponent<Health>();
+        if (health == null) return;
+        health.DealDamage(wrenchDamage, -transform.forward, wrenchKickForce, _hit.point);
+    }
+
     void Update()
     {
+        if (venting) return;
+
         float scrollWheelInput = Input.GetAxisRaw("Mouse ScrollWheel");
         if (Time.time - lastScrollTime > scrollThreshold)
         {
@@ -46,21 +116,11 @@ public class Hands : MonoBehaviour
                 currentWeaponIndex--;
             currentWeaponIndex = Mathf.Clamp(currentWeaponIndex, 0, weapons.Length - 1);
 
+            if (currentWeaponIndex == 1 && !wrenchUnlocked) currentWeaponIndex = lastweapon;
+            if (currentWeaponIndex == 2 && !weaponUnlocked) currentWeaponIndex = lastweapon;
+
             if (scrollWheelInput != 0 && currentWeaponIndex != lastweapon){
-                for (int i = 0; i < weapons.Length; i++)
-                {
-                    if (weapons[i].IsUnityNull()) continue;
-                    weapons[i].SetActive(i == currentWeaponIndex);
-                    animatorsWeapons[i].enabled = true;
-                    animatorsWeapons[i].Rebind();
-                    animatorsWeapons[i].Update(0f);
-                    if (currentWeaponIndex == 2){
-                        animatorsWeapons[i].Play("TakeWeapon", 0, 0);
-                    }
-                    else if (currentWeaponIndex == 1){
-                        animatorsWeapons[i].Play("TakeGaechnii", 0, 0);
-                    }
-                }
+                TakeWeapon();
                 lastScrollTime = Time.time;
             }
         }
@@ -74,12 +134,7 @@ public class Hands : MonoBehaviour
             animatorGaechnii.Play(gaechniiHit.name, 0, 0);
             Invoke(nameof(ResetGaechnii), gaechniiHit.length);
 
-            if (!Physics.SphereCast(camera.transform.position, wrenchRayRadius,
-                    camera.transform.forward, out _hit, wrenchDistance, enemyMask)) return;
-            var health = _hit.collider.gameObject.GetComponent<Health>();
-            if (health.IsUnityNull()) return;
-            health.DealDamage(wrenchDamage, -transform.forward, wrenchKickForce, _hit.point);
-            Debug.Log("Hit! Damage: " + wrenchDamage);
+
         }
         //else if (Input.GetMouseButton(0) && canShoot && currentWeaponIndex == 2){
         //    if (!playerAnimator.enabled) playerAnimator.enabled = true;
@@ -102,13 +157,13 @@ public class Hands : MonoBehaviour
 
     public void OnEnable()
     {
-        if (weapons[currentWeaponIndex].IsUnityNull()) return;
+        if (weapons[currentWeaponIndex] == null) return;
         weapons[currentWeaponIndex].SetActive(true);
     }
     public void OnDisable()
     {
         foreach (var weapon in weapons)
-            if (!weapon.IsUnityNull()) 
+            if (weapon != null) 
                 weapon.SetActive(false);
         
     }
