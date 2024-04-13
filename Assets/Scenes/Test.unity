@@ -1769,6 +1769,7 @@ MonoBehaviour:
   joint: {fileID: 1540246485}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
+  inVent: 0
 --- !u!54 &549409138
 Rigidbody:
   m_ObjectHideFlags: 0
