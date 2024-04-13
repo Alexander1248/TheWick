@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Movable
 {
+    [ExecuteInEditMode]
     public class MoveBetween : MonoBehaviour
     {
         private readonly List<Transform> _onPlatform = new();
