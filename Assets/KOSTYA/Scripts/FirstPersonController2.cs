@@ -95,6 +95,7 @@ public class FirstPersonController2 : MonoBehaviour
     }
     private void VentEnter(Vent vent)
     {
+        if (vent.inside.IsUnityNull()) return;
         _jointBufferedPosition = jointOriginalPos;
         jointOriginalPos = Vector3.zero;
         
@@ -112,6 +113,7 @@ public class FirstPersonController2 : MonoBehaviour
     }
     private void VentExit(Vent vent)
     {
+        if (vent.outside.IsUnityNull()) return;
         InVent = false;
         ChangeCollider(_ventBuffer);
         
