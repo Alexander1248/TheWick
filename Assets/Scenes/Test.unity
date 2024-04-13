@@ -1718,6 +1718,9 @@ MonoBehaviour:
   wrenchDistance: 3
   wrenchDamage: 10
   wrenchKickForce: 1
+  wrenchUnlocked: 0
+  weaponUnlocked: 0
+  wrenchForVent: {fileID: 0}
 --- !u!95 &549409136
 Animator:
   serializedVersion: 5
@@ -2034,6 +2037,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564573515}
   m_Mesh: {fileID: -2746142260806068395, guid: 1a7da3c8ab9914b4fa17149d73afcdd1, type: 3}
+--- !u!1001 &567741808
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 68bacf5081f98ff4f94ef3b176939640,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.015224
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68bacf5081f98ff4f94ef3b176939640,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.786
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68bacf5081f98ff4f94ef3b176939640,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.07148838
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68bacf5081f98ff4f94ef3b176939640,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68bacf5081f98ff4f94ef3b176939640,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68bacf5081f98ff4f94ef3b176939640,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68bacf5081f98ff4f94ef3b176939640,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68bacf5081f98ff4f94ef3b176939640,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68bacf5081f98ff4f94ef3b176939640,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 68bacf5081f98ff4f94ef3b176939640,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 68bacf5081f98ff4f94ef3b176939640,
+        type: 3}
+      propertyPath: m_Name
+      value: BROKEN_BROKEN_FLOOR
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 68bacf5081f98ff4f94ef3b176939640, type: 3}
 --- !u!1 &578365547
 GameObject:
   m_ObjectHideFlags: 0
@@ -5844,6 +5915,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   clips: []
   time: 0
+  wrenchPos: {fileID: 0}
 --- !u!1 &1900359722
 GameObject:
   m_ObjectHideFlags: 0
@@ -6578,3 +6650,4 @@ SceneRoots:
   - {fileID: 1885235184}
   - {fileID: 1695429778}
   - {fileID: 1517050005}
+  - {fileID: 567741808}
