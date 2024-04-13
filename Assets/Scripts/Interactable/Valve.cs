@@ -36,6 +36,9 @@ namespace Interactable
 
         [SerializeField][Range(0, 1)] private float time;
         private bool _selected;
+
+        [SerializeField] private Transform wrenchPos;
+        private Hands hands;
         
         public void Interact(PlayerInteract playerInteract)
         {
@@ -53,6 +56,14 @@ namespace Interactable
                 return;
             }
             if (animator) animator.enabled = false;
+
+            if (hands == null) hands = playerInteract.GetComponent<Hands>();
+
+            if (!hands.requestWrench(wrenchPos)) {
+                time = 0;
+                return;
+            }
+
             if (audioSource)
             {
                 audioSource.clip = clips[1];
@@ -60,7 +71,7 @@ namespace Interactable
             }
 
             if (time >= 0.01f) return;
-            time = 0.01f;
+            time = 0.001f;
 
             _startAngle = valveObj.localEulerAngles.y;
             
@@ -74,6 +85,8 @@ namespace Interactable
         }
         public void Deselected()
         {
+            if (time != 0) hands.releaseWrench();
+            time = 0;
             _selected = false;
         }
 
@@ -85,6 +98,11 @@ namespace Interactable
         private void Update()
         {
             valveProgress.Invoke(open ? Mathf.Clamp01(1 - time) : Mathf.Clamp01(time));
+            if (time == 0) return;
+            if (Input.GetKeyUp(tipButton) && _selected && hands != null){
+                hands.releaseWrench();
+                time = 0;
+            }
             if (!Input.GetKey(tipButton) || !_selected) return;
             time += Time.deltaTime / valveRotationTime;
 
@@ -92,6 +110,7 @@ namespace Interactable
 
             if (time < 1) return;
             time = 0;
+            hands.releaseWrench();
             if (open) valveClosed.Invoke();
             else valveOpened.Invoke();
             open = !open;

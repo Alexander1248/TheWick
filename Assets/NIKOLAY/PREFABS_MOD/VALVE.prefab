@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8744927028793552929}
   m_Father: {fileID: 2889111304598085868}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2041802766401316832
@@ -118,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d77b36e76348d093bb764a02162839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valveRotationTime: 3
-  valveRotationAngle: 90
+  valveRotationTime: 2.5
+  valveRotationAngle: 179
   animator: {fileID: 0}
   valveObj: {fileID: 2555884928545760526}
   open: 0
@@ -145,6 +146,39 @@ MonoBehaviour:
       m_Calls: []
   audioSource: {fileID: 0}
   clips: []
+  time: 0
+  wrenchPos: {fileID: 8744927028793552929}
+--- !u!1 &4828809823907521567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8744927028793552929}
+  m_Layer: 0
+  m_Name: PosForWrench
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8744927028793552929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4828809823907521567}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.011404692, y: 0.7117305, z: -0.70235705, w: 0.0020645855}
+  m_LocalPosition: {x: 0.07107046, y: 0.017423531, z: 0.1539599}
+  m_LocalScale: {x: 5.53, y: 5.53, z: 5.53}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2555884928545760526}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7126155592005098857
 GameObject:
   m_ObjectHideFlags: 0

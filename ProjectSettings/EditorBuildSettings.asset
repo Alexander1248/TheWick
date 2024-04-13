@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/KOSTYA/FACTORY.unity
+    guid: c4416816e3990d843a522d5704b6494a
+  - enabled: 1
+    path: Assets/KOSTYA/FACTORY_2.unity
+    guid: 29acf89dca075b44aad8ac28b27553ef
+  - enabled: 1
+    path: Assets/KOSTYA/FACTORY_3.unity
+    guid: 611a27f0156504c46bd48f1ec674dade
+  - enabled: 1
+    path: Assets/KOSTYA/FACTORY_4.unity
+    guid: 65753b72d20d706458eca32d9f7de24c
   m_configObjects: {}
