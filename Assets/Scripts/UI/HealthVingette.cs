@@ -7,6 +7,10 @@ namespace UI
         [SerializeField] private Material healthVis;
         private static readonly int Radius = Shader.PropertyToID("_Radius");
 
+        void Start(){
+            ClearVignette();
+        }
+
         public void ChangeVisual(float hp, float maxHP)
         {
             healthVis.SetFloat(Radius, Mathf.Clamp01(hp / maxHP));

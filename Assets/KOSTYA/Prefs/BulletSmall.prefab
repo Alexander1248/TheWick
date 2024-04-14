@@ -124,7 +124,7 @@ MonoBehaviour:
   speed: 30
   rb: {fileID: 4371958662600878984}
   destructionEffect: {fileID: 0}
-  radiusPlayerHit: 1.45
+  radiusPlayerHit: 1.25
 --- !u!54 &4371958662600878984
 Rigidbody:
   m_ObjectHideFlags: 0

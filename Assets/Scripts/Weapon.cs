@@ -40,7 +40,9 @@ public class Weapon : MonoBehaviour
     private bool _canShoot = true;
     private int _clipCount;
 
+    [SerializeField] private GameObject textNoAmmo;
 
+    [SerializeField] private PauseManager pauseManager;
 
     private void Start()
     {
@@ -65,6 +67,10 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
+        if (pauseManager.paused) return;
+        if (_clipCount <= 0 && !textNoAmmo.activeSelf) textNoAmmo.SetActive(true);
+        else if (_clipCount > 0 && textNoAmmo.activeSelf) textNoAmmo.SetActive(false);
+
         if (!_reloading && Input.GetKeyDown(KeyCode.R))
         {
             if (inventory.IsEmpty()) return;
@@ -131,6 +137,7 @@ public class Weapon : MonoBehaviour
     {
         if (clipBar) clipBar.gameObject.SetActive(false);
         inventory.DisableBar();
+        textNoAmmo.SetActive(false);
     }
 
     private void Reload()
