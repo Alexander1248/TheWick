@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using NPC;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Playables;
@@ -28,9 +29,16 @@ public class Cutscene2 : MonoBehaviour
     [SerializeField] private GameObject[] destroyMeAfterCS;
 
     [SerializeField] private Animator autoDoor;
+    
+    [SerializeField] private Dialogue dialogue;
+    [SerializeField] private AudioSource alarm;
 
-    void Start(){
+    private float _volume;
+    void Start()
+    {
+        _volume = alarm.volume;
         playableDirector.Play();
+        dialogue.StartDialogue();
     }
 
     bool isStaying()
@@ -57,7 +65,10 @@ public class Cutscene2 : MonoBehaviour
         catching = true;
     }
 
-    void Update(){
+    void Update()
+    {
+        alarm.volume = Mathf.Lerp(alarm.volume, _volume, 0.3f);
+        
         if (catching && Vector3.Distance(agent.transform.position, firstPersonController2.transform.position) <= 1f){
             agent.transform.forward = (new Vector3(firstPersonController2.transform.position.x, 
                                                 agent.transform.position.y,
@@ -95,5 +106,17 @@ public class Cutscene2 : MonoBehaviour
         firstPersonController2.transform.SetParent(posUnderTable);
         imundertable = true;
         firstPersonController2.transform.localPosition = Vector3.zero;
+        dialogue.StartDialogue("UnderTable");
+    }
+
+    public void TryStartAlarm(string tag)
+    {
+        if (tag != "alarm") return;
+        alarm.Play();
+    }
+    public void TryDecreaseAlarmVolume(string tag)
+    {
+        if (tag != "alarm") return;
+        _volume *= 0.5f;
     }
 }

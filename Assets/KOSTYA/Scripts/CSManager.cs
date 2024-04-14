@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NPC;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class CSManager : MonoBehaviour
 {
@@ -69,6 +70,7 @@ public class CSManager : MonoBehaviour
         else if (cntr == 3){
             // конец катсцены
             // с отцом можно поговорить (да / нет)
+            father.gameObject.tag = "InteractMe";
 
             father.CrossFade("FatherIdle", 0.5f, -1, 0);
         }
@@ -100,5 +102,11 @@ public class CSManager : MonoBehaviour
             // Debug.Log("(Мужики)- Ох, представь, как получка придёт, поедем в бричке кутить по центральным улочкам!(Мужики)- Да уж... В прошлый раз после такой ночи мы оказались где-то в Вятке...(Мужики)- Ой, не начинай...");
         
         }
+    }
+
+    public void TryJumpToNextLevel(string tag)
+    {
+        if (tag != "next") return;
+        SceneManager.LoadScene("KOSTYA/FACTORY_2");
     }
 }
