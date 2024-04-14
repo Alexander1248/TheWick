@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
+    
     [SerializeField] private Animator birdanimator;
     [SerializeField] private GameObject birdObj;
     [SerializeField] private AnimationClip[] animClips;
