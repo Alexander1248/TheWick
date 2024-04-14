@@ -14,26 +14,28 @@ namespace Movable
 
         private void Start()
         {
-            var position = transform.position;
-            from += position;
-            to += position;
+            //var position = transform.position;
+            //from += position;
+            //to += position;
         }
 
         public void SetProgress(float progress)
         {
-            _onPlatform.ForEach(t => t.position -= transform.position);
-            transform.position = Vector3.Lerp(from, to, progress);
-            _onPlatform.ForEach(t => t.position += transform.position);
+            //_onPlatform.ForEach(t => t.position -= transform.position);
+            transform.localPosition = Vector3.Lerp(from, to, progress);
+            //_onPlatform.ForEach(t => t.position += transform.position);
         }
 
         private void OnCollisionEnter(Collision other)
         {
             _onPlatform.Add(other.transform);
+            other.transform.SetParent(transform);
         }
 
         private void OnCollisionExit(Collision other)
         {
             _onPlatform.Remove(other.transform);
+            other.transform.SetParent(null);
         }
     }
 }

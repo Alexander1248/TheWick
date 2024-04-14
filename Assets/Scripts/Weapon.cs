@@ -54,7 +54,7 @@ public class Weapon : MonoBehaviour
         {
             clipBar.Initialize(
                 clipSize,
-                new Vector2(0, 0),
+                new Vector2(1, 0),
                 new Vector2Int(48, 48),
                 new Vector2Int(10, 10),
                 1);
@@ -123,13 +123,13 @@ public class Weapon : MonoBehaviour
 
     private void OnEnable()
     {
-        clipBar.gameObject.SetActive(true);
+        if (clipBar) clipBar.gameObject.SetActive(true);
         inventory.EnableBar();
     }
 
     private void OnDisable()
     {
-        clipBar.gameObject.SetActive(false);
+        if (clipBar) clipBar.gameObject.SetActive(false);
         inventory.DisableBar();
     }
 

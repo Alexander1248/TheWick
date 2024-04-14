@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
@@ -62,6 +63,7 @@ public class Boss : MonoBehaviour
      [SerializeField] private AnimationClip nearHitClip;
      [SerializeField] private float nearRadius;
      [SerializeField] private float pushingforce;
+     [SerializeField] private float pushDamage = 12;
     private bool pushing;
     private float pushingtime;
 
@@ -78,14 +80,27 @@ public class Boss : MonoBehaviour
 
     private int lastattack = -1;
 
+    [SerializeField] private LayerMask layerGround;
+
+    [SerializeField] private Collider myCollider;
+
+    private Image bossBar;
+    [SerializeField] private int myHP;
+    private int maxHP;
+
+    [SerializeField] private BossFight bossFight;
+
+    private Health playerHP;
+
     public enum State{
-        Walking, ShootingBig, ShootingTop, ShootingStay, NearAttack, StartingChill, StoppingChill
+        Walking, ShootingBig, ShootingTop, ShootingStay, NearAttack, StartingChill, StoppingChill, DIED
     }
     [SerializeField] private State state;   
 
         
     void findNewTraget()
     {
+        if (state == State.DIED) return;
         Vector3 randomDirection = Random.insideUnitSphere * walkRadius;
         randomDirection += transform.position;
         NavMeshHit hit;
@@ -112,11 +127,14 @@ public class Boss : MonoBehaviour
 
 
     void Start(){
+        maxHP = myHP;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rbPlayer = player.GetComponent<Rigidbody>();
         state = State.Walking;
         bodyOffsetCopy = bodyOffset;
         chillKDLeft = chillKD;
+        bossBar = GameObject.FindGameObjectWithTag("BossBar").GetComponent<Image>();
+        playerHP = player.GetComponent<Health>();
 
         //
         legPositions = new Vector3[legPoints.Length];
@@ -154,6 +172,8 @@ public class Boss : MonoBehaviour
 
     void Update()
     {
+        if (state == State.DIED) return;
+
         if (state == State.Walking || state == State.ShootingTop || state == State.ShootingBig || state == State.ShootingStay)
         {
             chillKDLeft -= Time.deltaTime;
@@ -173,6 +193,7 @@ public class Boss : MonoBehaviour
     }
 
     void FixedUpdate(){
+        if (state == State.DIED) return;
         if (!pushing) return;
         Vector3 dir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
         rbPlayer.AddForce(dir.normalized * pushingforce, ForceMode.Acceleration);
@@ -182,10 +203,11 @@ public class Boss : MonoBehaviour
     }
 
     void LateUpdate(){
+        if (state == State.DIED) return;
         avgPos = Vector3.zero;
         for(int i = 0; i < legPoints.Length; i++){
             RaycastHit hit;
-            if (Physics.Raycast(targets[i].position + Vector3.up * 10, Vector3.down, out hit, Mathf.Infinity))
+            if (Physics.Raycast(targets[i].position + Vector3.up * 10, Vector3.down, out hit, Mathf.Infinity, layerGround))
             {
                 targets[i].position = hit.point;
             }
@@ -281,10 +303,23 @@ public class Boss : MonoBehaviour
     public void coreHitted(){
         if (state != State.StartingChill) return;
         gunAnimator.CrossFade("BossBackHitted", 0.1f, -1, 0);
+        myHP--;
+        if (myHP <= 0){
+            myHP = 0;
+            CancelInvoke();
+            state = State.DIED;
+            bossFight.bossDied();
+        }
+        bossBar.fillAmount = (float)myHP /  (float)maxHP;
+    }
+
+    public void armorHitted(){
+        chillKDLeft -= 1.5f;
     }
 
     void startChilling(){
         CancelInvoke();
+        myCollider.enabled = false;
         chillKDLeft = chillKD;
         state = State.StartingChill;
         agent.enabled = false;
@@ -298,6 +333,7 @@ public class Boss : MonoBehaviour
 
     void stopChilling(){
         CancelInvoke();
+        myCollider.enabled = true;
         state = State.StoppingChill;
         bodyOffset = bodyOffsetCopy;
         gunAnimator.enabled = true;
@@ -329,6 +365,7 @@ public class Boss : MonoBehaviour
     void pushPlayer(){
         pushingtime = 0.25f;
         pushing = true;
+        playerHP.DealDamage(pushDamage, (player.position - transform.position).normalized, 0);
     }
 
     void Attack(){

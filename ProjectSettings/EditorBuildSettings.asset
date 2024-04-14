@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/KOSTYA/FACTORY_4.unity
     guid: 65753b72d20d706458eca32d9f7de24c
+  - enabled: 1
+    path: Assets/KOSTYA/MENU.unity
+    guid: 1fa6a398bd6aa2b479d17ff833d1abf5
+  - enabled: 1
+    path: Assets/KOSTYA/FACTORY_5.unity
+    guid: e5c57ff817f6d834391d9786a34c261b
+  - enabled: 1
+    path: Assets/KOSTYA/FACTORY_6 1.unity
+    guid: 6970ed93efbf29d43a691a5c6d5cd8e9
   m_configObjects: {}

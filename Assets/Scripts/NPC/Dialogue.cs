@@ -3,6 +3,7 @@ using NPC.SentenceNodes;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using Utils;
 
 namespace NPC
@@ -11,7 +12,10 @@ namespace NPC
     {
         [SerializeField] private UDictionary<string, Narrator> narrators;
         [SerializeField] private SentenceGraph graph;
-
+        [Space]
+        public UnityEvent<string> onSentenceStart;
+        public UnityEvent<string> onSentenceEnd;
+        public UnityEvent onDialogueEnd;
 
         private SentenceData _currentData;
         private Narrator _currentNarrator;
@@ -25,7 +29,13 @@ namespace NPC
 
         public void StartDialogue()
         {
-            _current = graph.root;
+            _current = graph.root.Clone();
+            SwitchUpdate();
+            PlayDialogue();
+        }
+        public void StartDialogue(string rootName)
+        {
+            _current = graph.roots.Find(r => r.RootName == rootName).Clone();
             SwitchUpdate();
             PlayDialogue();
         }
@@ -43,6 +53,11 @@ namespace NPC
         public void StopDialogue()
         {
             _current = null;
+        }
+
+        public string GetCurrentNarratorName()
+        {
+            return _currentData?.narrator;
         }
 
         public void Update()
@@ -71,6 +86,7 @@ namespace NPC
 
         private void GoToNext()
         {
+            onSentenceEnd.Invoke(_current.tag);
             _currentNarrator?.Clear();
             _current = _current.GetNext();
             SwitchUpdate();
@@ -78,7 +94,13 @@ namespace NPC
 
         private void SwitchUpdate()
         {
-            if (_current.IsUnityNull()) return;
+            if (_current.IsUnityNull())
+            {
+                onDialogueEnd.Invoke();
+                return;
+            }
+            onSentenceStart.Invoke(_current.tag);
+
             _current.GetState(this);
             _currentData = _current.GetSentence(PlayerPrefs.GetString("Language"));
             _wait = false;
