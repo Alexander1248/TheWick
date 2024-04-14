@@ -83,7 +83,7 @@ public class Menu : MonoBehaviour
 
         if (currentSelected == 0){
             //PlayerPrefs.SetInt("SaveStage", 0);
-            animatorFade.Play("Fade", 0, 0);
+            animatorFade.Play("FadeIn", 0, 0);
             Invoke("StartGame", 2f);
             cliked = true;
         }
