@@ -99,14 +99,13 @@ namespace NPC
                 onDialogueEnd.Invoke();
                 return;
             }
-            onSentenceStart.Invoke(_current.tag);
-
             _current.GetState(this);
             _currentData = _current.GetSentence(PlayerPrefs.GetString("Language"));
             _wait = false;
             _time = 0;
             if (_currentData.IsUnityNull()) return;
             _currentNarrator = narrators.TryGetValue(_currentData.narrator, out var narrator) ? narrator : narrators.Values[0];
+            onSentenceStart.Invoke(_current.tag);
         }
     }
 }
