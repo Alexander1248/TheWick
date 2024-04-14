@@ -126,6 +126,7 @@ public class FirstPersonController2 : MonoBehaviour
         walkSpeed = normalSpeedSave;
         Camera.main.fieldOfView = fovNormal;
     }
+    
 
     public void lockPlayer(){
         enableSprint = false;
@@ -165,6 +166,7 @@ public class FirstPersonController2 : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
+        mouseSensitivity = PlayerPrefs.GetFloat("PlayerSens", 2);
     }
 
     float camRotation;

@@ -14,6 +14,7 @@ public class Freddy : MonoBehaviour
     [SerializeField] private AnimationClip takeDamageClip;
     [SerializeField] private float legKickForce;
     [SerializeField] private float handKickForce;
+    [SerializeField] private float robotDamage = 15;
 
     [SerializeField] private float seeAfterLostTime;
 
@@ -22,6 +23,7 @@ public class Freddy : MonoBehaviour
 
     private Transform player;
     private Rigidbody rbPlayer;
+    private Health hpPlayer;
     private Vector3 normalHead;
 
     private bool pushing;
@@ -37,6 +39,7 @@ public class Freddy : MonoBehaviour
         normalHead = head.forward;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rbPlayer = player.GetComponent<Rigidbody>();
+        hpPlayer = player.GetComponent<Health>();
         state = State.Idle;
     }
 
@@ -55,12 +58,14 @@ public class Freddy : MonoBehaviour
             pushingtime = 0.25f;
             pushingforce = legKickForce;
             pushing = true;
+            hpPlayer.DealDamage(robotDamage, (player.position - transform.position).normalized, 0);
         }
         else if (id == 2) // hand kick
         {
             pushingtime = 0.25f;
             pushingforce = handKickForce;
             pushing = true;
+            hpPlayer.DealDamage(robotDamage, (player.position - transform.position).normalized, 0);
         }
     }
 
@@ -143,6 +148,8 @@ public class Freddy : MonoBehaviour
             partsColliders[i].enabled = true;
             partsRBs[i].isKinematic = false;
             partsRBs[i].AddForce(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * 1.7f, ForceMode.Impulse);
+            Destroy(partsRBs[i].gameObject, 5);
         }
+        Destroy(gameObject, 5);
     }
 }
