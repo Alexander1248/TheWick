@@ -92,6 +92,17 @@ public class Boss : MonoBehaviour
 
     [SerializeField] private AudioSource walkingSound;
 
+    [SerializeField] private AudioSource nearHit;
+
+    [SerializeField] private AudioSource rightSound;
+    [SerializeField] private AudioSource topSound;
+        [SerializeField] private AudioSource stunSound;
+    [SerializeField] private AudioSource shootingBigound;
+
+        [SerializeField] private AudioSource explosion;
+
+    [SerializeField] private AudioSource getHitted;
+
     private Health playerHP;
 
     public enum State{
@@ -227,6 +238,9 @@ public class Boss : MonoBehaviour
                 
                 if (legPositions[i] == targets[i].position)
                 {
+                    walkingSound.Stop();
+                    walkingSound.Play();
+
                     legmoving[i] = false;
                     ts[i] = 0;
                 }
@@ -239,6 +253,7 @@ public class Boss : MonoBehaviour
         if (Vector3.Distance(transform.position, player.position) <= nearRadius && state == State.Walking){
             state = State.NearAttack;
             CancelInvoke("Attack");
+            nearHit.Play();
             gunAnimator.enabled = true;
             gunAnimator.CrossFade(nearHitClip.name, 0.2f, -1, 0);
             Invoke("stopAnim", nearHitClip.length);
@@ -293,7 +308,7 @@ public class Boss : MonoBehaviour
             CancelInvoke("shootRightTurret");
             return;
         }
-
+        rightSound.Play();
         shootParticlesTurret.Clear();
         shootParticlesTurret.Play();
         for(int i = 0; i < spawnPointsTurret.Length; i++){
@@ -306,8 +321,10 @@ public class Boss : MonoBehaviour
         if (state != State.StartingChill) return;
         gunAnimator.CrossFade("BossBackHitted", 0.1f, -1, 0);
         myHP--;
+        getHitted.Play();
         if (myHP <= 0){
             myHP = 0;
+            explosion.Play();
             CancelInvoke();
             state = State.DIED;
             bossFight.bossDied();
@@ -317,10 +334,12 @@ public class Boss : MonoBehaviour
 
     public void armorHitted(){
         chillKDLeft -= 1.5f;
+        getHitted.Play();
     }
 
     void startChilling(){
         CancelInvoke();
+        stunSound.Play();
         myCollider.enabled = false;
         chillKDLeft = chillKD;
         state = State.StartingChill;
@@ -335,6 +354,7 @@ public class Boss : MonoBehaviour
 
     void stopChilling(){
         CancelInvoke();
+        stunSound.Stop();
         myCollider.enabled = true;
         state = State.StoppingChill;
         bodyOffset = bodyOffsetCopy;
@@ -356,7 +376,7 @@ public class Boss : MonoBehaviour
             CancelInvoke("shootTopTurret");
             return;
         }
-
+        topSound.Play();
         topParticles.Clear();
         topParticles.Play();
         gunAnimator.CrossFade(clipTopShoot.name, 0.05f, -1, 0);
@@ -402,6 +422,7 @@ public class Boss : MonoBehaviour
         else{
             Invoke("Attack", Random.Range(2f, 5f));
             state = State.ShootingBig;
+            shootingBigound.Play();
             gunAnimator.enabled = true;
             CancelInvoke("stopAnim");
             Invoke("stopAnim", shootGunClip.length);
