@@ -9586,6 +9586,7 @@ GameObject:
   - component: {fileID: 312324446}
   - component: {fileID: 312324445}
   - component: {fileID: 312324447}
+  - component: {fileID: 312324448}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -9629,6 +9630,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 312324448}
+        m_TargetAssemblyTypeName: BirdCaller, Assembly-CSharp
+        m_MethodName: UpdateBird
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSentenceEnd:
     m_PersistentCalls:
       m_Calls:
@@ -9646,7 +9659,19 @@ MonoBehaviour:
         m_CallState: 2
   onDialogueEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 312324448}
+        m_TargetAssemblyTypeName: BirdCaller, Assembly-CSharp
+        m_MethodName: HideBird
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &312324446
 Transform:
   m_ObjectHideFlags: 0
@@ -9676,6 +9701,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 1976518244}
   volume: 0.5
+--- !u!114 &312324448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312324444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37611366c7d4429ba3208de7ff2c713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 312324445}
 --- !u!1001 &312522392
 PrefabInstance:
   m_ObjectHideFlags: 0
