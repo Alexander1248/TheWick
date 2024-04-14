@@ -33,6 +33,7 @@ namespace Interactable
         public UDictionary<string, string> TipName => tipName;
         public MeshRenderer[] MeshesOutline => meshesOutline;
 
+        [SerializeField] private AudioSource audioSourceWrench;
 
         [SerializeField][Range(0, 1)] private float time;
         private bool _selected;
@@ -63,6 +64,7 @@ namespace Interactable
                 time = 0;
                 return;
             }
+            audioSourceWrench.Play();
 
             if (audioSource)
             {
@@ -86,6 +88,7 @@ namespace Interactable
         public void Deselected()
         {
             if (time != 0) hands.releaseWrench();
+            audioSourceWrench.Stop();
             time = 0;
             _selected = false;
         }
@@ -101,6 +104,7 @@ namespace Interactable
             if (time == 0) return;
             if (Input.GetKeyUp(tipButton) && _selected && hands != null){
                 hands.releaseWrench();
+                audioSourceWrench.Stop();
                 time = 0;
             }
             if (!Input.GetKey(tipButton) || !_selected) return;
@@ -111,6 +115,7 @@ namespace Interactable
             if (time < 1) return;
             time = 0;
             hands.releaseWrench();
+            audioSourceWrench.Stop();
             if (open) valveClosed.Invoke();
             else valveOpened.Invoke();
             open = !open;

@@ -12,7 +12,6 @@ public class WeaponTake : MonoBehaviour, IInteractable
         [SerializeField] private MeshRenderer[] meshesOutline;
         
         [SerializeField] private AudioSource audioSource;
-        [SerializeField] private AudioClip[] clips;
         public KeyCode TipButton => tipButton;
         public UDictionary<string, string> TipName => tipName;
         public MeshRenderer[] MeshesOutline => meshesOutline;
@@ -26,7 +25,6 @@ public class WeaponTake : MonoBehaviour, IInteractable
         {
             if (audioSource)
             {
-                audioSource.clip = clips[0];
                 audioSource.Play();
             }
             GameObject.FindGameObjectWithTag("Player").GetComponent<Hands>().UnlockWeapon(idWeapon);

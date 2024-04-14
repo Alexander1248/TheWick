@@ -1,8 +1,7 @@
 ﻿using System;
 using Interactable;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class Weapon : MonoBehaviour
 {
@@ -44,6 +43,9 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private PauseManager pauseManager;
 
+    [SerializeField] private AudioSource weaponAudio;
+    [SerializeField] private AudioClip[] clips;
+
     private void Start()
     {
         rollbackTime = gunShoot.length;
@@ -76,6 +78,10 @@ public class Weapon : MonoBehaviour
             if (inventory.IsEmpty()) return;
             inventory.Edit(-1);
 
+            weaponAudio.clip = clips[1];
+            weaponAudio.Play();
+
+
             _reloading = true;
             _canShoot = false;
             Invoke(nameof(Reload), reloadTime);
@@ -90,6 +96,9 @@ public class Weapon : MonoBehaviour
         if (!_canShoot) return;
         shootParticle.time = 0;
         shootParticle.Play();
+        weaponAudio.clip = clips[0];
+        weaponAudio.pitch = Random.Range(0.8f, 1.2f);
+        weaponAudio.Play();
 
         if (!playerAnimator.enabled) playerAnimator.enabled = true;
         playerAnimator.Play("PlayerShoot", 0, 0);
@@ -116,7 +125,7 @@ public class Weapon : MonoBehaviour
             }
 
 
-            if (health.IsUnityNull()) return;
+            if (health == null) return;
             health.DealDamage(dmg, -transform.forward, kickForce, _hit.point);
             Debug.Log("Hit! Damage: " + dmg);
         }
