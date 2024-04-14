@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e5017479fa45049fe16bd3d28cb8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  from: {x: -1.1501068e+16, y: -2.0266199e+14, z: 0}
-  to: {x: -1.1501068e+16, y: -2.0266199e+14, z: 0}
+  from: {x: -7.53734e+20, y: -1.3281656e+19, z: 0}
+  to: {x: -7.53734e+20, y: -1.3281656e+19, z: 0}
 --- !u!65 &104021297
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -237,7 +237,7 @@ Transform:
   m_GameObject: {fileID: 104021295}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1501068e+16, y: -2.0266199e+14, z: 0}
+  m_LocalPosition: {x: -7.53734e+20, y: -1.3281656e+19, z: 0}
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1718,8 +1718,8 @@ MonoBehaviour:
   wrenchDistance: 3
   wrenchDamage: 10
   wrenchKickForce: 1
-  wrenchUnlocked: 0
-  weaponUnlocked: 0
+  wrenchUnlocked: 1
+  weaponUnlocked: 1
   wrenchForVent: {fileID: 0}
 --- !u!95 &549409136
 Animator:
@@ -1776,6 +1776,9 @@ MonoBehaviour:
   ventCollider: {fileID: 549409145}
   ventAnimator: {fileID: 549409136}
   target: {fileID: 1338176903}
+  fovNormal: 0
+  fovVent: 0
+  speedVent: 0
 --- !u!54 &549409138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2137,9 +2140,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1747099378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -110, y: 410}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 110, y: 430}
   m_SizeDelta: {x: 200, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &578365549
@@ -2154,7 +2157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f846e09819474ee9aeaf21a4aafb1713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 026360de33536c449bf71f1c1d2c9000, type: 3}
+  sprite: {fileID: 21300000, guid: 2c5bb66da5cc98a4e9f3ac7c7e4b5aff, type: 3}
 --- !u!222 &578365550
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2374,64 +2377,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632683674}
   m_Mesh: {fileID: -2865104911859505335, guid: dc3ee3efbb61cb549a232dfa28b9ccdf, type: 3}
---- !u!1 &694486964
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 694486965}
-  - component: {fileID: 694486967}
-  - component: {fileID: 694486966}
-  m_Layer: 5
-  m_Name: ClipBar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &694486965
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694486964}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1747099378}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 110, y: 410}
-  m_SizeDelta: {x: 200, y: 800}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &694486966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694486964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f846e09819474ee9aeaf21a4aafb1713, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 026360de33536c449bf71f1c1d2c9000, type: 3}
---- !u!222 &694486967
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694486964}
-  m_CullTransparentMesh: 1
 --- !u!1 &712303035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2678,6 +2623,12 @@ MonoBehaviour:
       minPitch: 1.5
       maxPitch: 2.5
   graph: {fileID: 11400000, guid: 6a43258312a2d73409706a1ab98df895, type: 2}
+  onSentenceChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &794988198
 Transform:
   m_ObjectHideFlags: 0
@@ -4020,7 +3971,7 @@ MonoBehaviour:
   damage: 20
   kickForce: 0.1
   clipSize: 5
-  clipBar: {fileID: 694486966}
+  clipBar: {fileID: 0}
   reload: {fileID: 1254884851}
   candleMask:
     serializedVersion: 2
@@ -5584,7 +5535,6 @@ RectTransform:
   - {fileID: 337256218}
   - {fileID: 1254884848}
   - {fileID: 578365548}
-  - {fileID: 694486965}
   - {fileID: 1900359723}
   - {fileID: 255030205}
   - {fileID: 989072508}

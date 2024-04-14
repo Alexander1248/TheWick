@@ -29,9 +29,9 @@ public class GasInventory : MonoBehaviour
     {
         gasCylinderBar.Initialize(
             gasCylinderMax,
-            new Vector2(1, 0),
-            new Vector2Int(96, 48),
-            new Vector2Int(10, 10),
+            new Vector2(0, 0),
+            new Vector2Int(128, 72),
+            new Vector2Int(10, -40),
             1);
         gasCylinderBar.Set(gasCylinderCount);
         DisableBar();

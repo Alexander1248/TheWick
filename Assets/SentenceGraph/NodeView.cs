@@ -31,7 +31,7 @@ namespace SentenceGraph
 
         private void CreateInputPorts()
         {
-            if (Sentence is DialogueRoot) return;
+            if (Sentence is DialogueRoot or SelectableDialogueRoot) return;
             Input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, null);
             inputContainer.Add(Input);
         }

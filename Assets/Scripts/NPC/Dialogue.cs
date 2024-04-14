@@ -12,6 +12,7 @@ namespace NPC
     {
         [SerializeField] private UDictionary<string, Narrator> narrators;
         [SerializeField] private SentenceGraph graph;
+        [Space]
         [SerializeField] private UnityEvent<string> onSentenceChanged;
         [SerializeField] private UnityEvent onDialogueEnd;
 
@@ -28,6 +29,12 @@ namespace NPC
         public void StartDialogue()
         {
             _current = graph.root.Clone();
+            SwitchUpdate();
+            PlayDialogue();
+        }
+        public void StartDialogue(string rootName)
+        {
+            _current = graph.roots.Find(r => r.RootName == rootName).Clone();
             SwitchUpdate();
             PlayDialogue();
         }

@@ -12,6 +12,7 @@ namespace NPC
     public class SentenceGraph : ScriptableObject
     {
         [HideInInspector] public DialogueRoot root;
+        [HideInInspector] public List<SelectableDialogueRoot> roots = new();
         [HideInInspector] public List<Sentence> nodes = new();
 
 
@@ -21,6 +22,7 @@ namespace NPC
             node.name = type.Name;
             node.guid = GUID.Generate().ToString();
             nodes.Add(node);
+            if (node is SelectableDialogueRoot r) roots.Add(r);
             
             AssetDatabase.AddObjectToAsset(node, this);
             AssetDatabase.SaveAssets();
@@ -30,6 +32,7 @@ namespace NPC
 
         public void DeleteNode(Sentence node)
         {
+            if (node is SelectableDialogueRoot r) roots.Remove(r);
             nodes.Remove(node);
             AssetDatabase.RemoveObjectFromAsset(node);
             AssetDatabase.SaveAssets();
