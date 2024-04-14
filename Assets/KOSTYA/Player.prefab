@@ -2505,6 +2505,7 @@ GameObject:
   - component: {fileID: 6474536862580522797}
   - component: {fileID: 4257602344817200319}
   - component: {fileID: 5154158463848424730}
+  - component: {fileID: 3131471913312625259}
   m_Layer: 30
   m_Name: Player
   m_TagString: Player
@@ -2589,7 +2590,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3613695928230953461}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a1b93123f4c4fa14ea700c674d5edfbd, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2747,7 +2748,7 @@ MonoBehaviour:
   onHealthEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5154158463848424730}
+      - m_Target: {fileID: 3131471913312625259}
         m_TargetAssemblyTypeName: UI.HealthVignette, Assembly-CSharp
         m_MethodName: ChangeVisual
         m_Mode: 0
@@ -2816,7 +2817,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3613695928230953461}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a1b93123f4c4fa14ea700c674d5edfbd, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2963,6 +2964,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 48678e7c3c874c846b5358723ccf6158, type: 3}
   - {fileID: 8300000, guid: 9984b7c5bb9a9cc4899c63b2a3b6242e, type: 3}
   controller2: {fileID: 1883572417218459293}
+--- !u!114 &3131471913312625259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3613695928230953461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e54137f4e240539c0cd0963686b7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthVis: {fileID: 2100000, guid: e3f628f31ee805c48a0968c35cf2e1e4, type: 2}
 --- !u!1 &3643597534608658520
 GameObject:
   m_ObjectHideFlags: 0
