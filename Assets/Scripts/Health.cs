@@ -59,7 +59,7 @@ public class Health : MonoBehaviour
             blood.Play();
         }
 
-        if (IMPLAYER) MilkShake.Shaker.ShakeAll(preset);
+        if (IMPLAYER && preset != null) MilkShake.Shaker.ShakeAll(preset);
 
         if (autoHeal){
             CancelInvoke(nameof(Heal));

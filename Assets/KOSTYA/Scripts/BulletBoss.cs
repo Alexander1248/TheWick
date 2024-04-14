@@ -9,17 +9,29 @@ public class BulletBoss : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private ParticleSystem destructionEffect;
 
+    [SerializeField] private float radiusPlayerHit;
+    private Transform player;
+    private bool destroyed;
+
     public void init(Vector3 dir){
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         transform.forward = dir;
     }
 
     void Update(){
+        if (destroyed) return;
         rb.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, player.position) < radiusPlayerHit){
+            hit(player.GetComponent<Health>());
+        }
     }
 
-     void OnTriggerEnter(Collider other){
-        if (other.CompareTag("Player")){
-            other.GetComponent<Health>().DealDamage(damage, (other.transform.position - transform.position).normalized, 2);
+    void hit(Health hp){
+        if (destroyed) return;
+        destroyed = true;
+        if (hp) {
+            hp.DealDamage(damage, (hp.transform.position - transform.position).normalized, 2);
+            Debug.Log("Player");
         }
         if (destructionEffect != null){
             destructionEffect.Play();
@@ -27,5 +39,16 @@ public class BulletBoss : MonoBehaviour
             Destroy(destructionEffect.gameObject, 3);
         }
         Destroy(gameObject);
+    }
+
+     void OnTriggerEnter(Collider other){
+        if (other.CompareTag("Boss")) return;
+        Debug.Log(other.tag);
+
+        if (other.CompareTag("Player")){
+            hit(other.GetComponent<Health>());
+            return;
+        }
+        hit(null);
      }
 }
