@@ -63,6 +63,7 @@ public class Boss : MonoBehaviour
      [SerializeField] private AnimationClip nearHitClip;
      [SerializeField] private float nearRadius;
      [SerializeField] private float pushingforce;
+     [SerializeField] private float pushDamage = 12;
     private bool pushing;
     private float pushingtime;
 
@@ -88,6 +89,8 @@ public class Boss : MonoBehaviour
     private int maxHP;
 
     [SerializeField] private BossFight bossFight;
+
+    private Health playerHP;
 
     public enum State{
         Walking, ShootingBig, ShootingTop, ShootingStay, NearAttack, StartingChill, StoppingChill, DIED
@@ -131,6 +134,7 @@ public class Boss : MonoBehaviour
         bodyOffsetCopy = bodyOffset;
         chillKDLeft = chillKD;
         bossBar = GameObject.FindGameObjectWithTag("BossBar").GetComponent<Image>();
+        playerHP = player.GetComponent<Health>();
 
         //
         legPositions = new Vector3[legPoints.Length];
@@ -304,6 +308,7 @@ public class Boss : MonoBehaviour
             myHP = 0;
             CancelInvoke();
             state = State.DIED;
+            bossFight.bossDied();
         }
         bossBar.fillAmount = (float)myHP /  (float)maxHP;
     }
@@ -360,6 +365,7 @@ public class Boss : MonoBehaviour
     void pushPlayer(){
         pushingtime = 0.25f;
         pushing = true;
+        playerHP.DealDamage(pushDamage, (player.position - transform.position).normalized, 0);
     }
 
     void Attack(){

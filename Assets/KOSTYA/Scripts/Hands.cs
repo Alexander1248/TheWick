@@ -84,7 +84,6 @@ public class Hands : MonoBehaviour
     }
     
     public void releaseWrench(){
-        Debug.Log("sdf");
         wrenchForVent.gameObject.SetActive(false);
         venting = false;
         if (wrenchUnlocked)
