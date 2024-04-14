@@ -23,10 +23,10 @@ namespace SentenceGraph
         {
             VisualElement root = rootVisualElement;
 
-            var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/SentenceGraph/SentenceTreeEditor.uxml");
+            var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/SentenceGraph/SentenceTreeEditor.uxml");
             visualTree.CloneTree(root);
         
-            var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/SentenceGraph/SentenceTreeEditor.uss");
+            var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Editor/SentenceGraph/SentenceTreeEditor.uss");
             root.styleSheets.Add(styleSheet);
 
             _graphView = root.Q<SentenceGraphView>();

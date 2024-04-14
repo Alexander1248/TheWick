@@ -25,7 +25,7 @@ namespace SentenceGraph
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
             
-            var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/SentenceGraph/SentenceTreeEditor.uss");
+            var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Editor/SentenceGraph/SentenceTreeEditor.uss");
             styleSheets.Add(styleSheet);
         }
 
