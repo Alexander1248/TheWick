@@ -30,6 +30,12 @@ public class Freddy : MonoBehaviour
     private float pushingforce;
     private float pushingtime;
 
+    [SerializeField] private AudioSource audioSourceWalk;
+    [SerializeField] private AudioSource mainSource;
+    [SerializeField] private AudioClip[] mainClips;
+    [SerializeField] private AudioSource otherSounds;
+    [SerializeField] private AudioClip[] otherClips;
+
     public enum State{
         Idle, Chasing, Fighting, Died, StoppingChase, Stunned
     };
@@ -55,6 +61,9 @@ public class Freddy : MonoBehaviour
 
         if (id == 1) // foot kick
         {
+            otherSounds.clip = otherClips[0];
+            otherSounds.pitch = Random.Range(0.75f, 1.25f);
+            otherSounds.Play();
             pushingtime = 0.25f;
             pushingforce = legKickForce;
             pushing = true;
@@ -62,10 +71,17 @@ public class Freddy : MonoBehaviour
         }
         else if (id == 2) // hand kick
         {
+            otherSounds.clip = otherClips[0];
+            otherSounds.pitch = Random.Range(0.75f, 1.25f);
+            otherSounds.Play();
             pushingtime = 0.25f;
             pushingforce = handKickForce;
             pushing = true;
             hpPlayer.DealDamage(robotDamage, (player.position - transform.position).normalized, 0);
+        }
+        else if (id == -1){
+            audioSourceWalk.pitch = Random.Range(0.75f, 1.25f);
+            audioSourceWalk.Play();
         }
     }
 
@@ -98,6 +114,8 @@ public class Freddy : MonoBehaviour
             if (state != State.Chasing && state != State.Fighting){
                 CancelInvoke("StopChase");
                 state = State.Chasing;
+                mainSource.clip = mainClips[1];
+                mainSource.Play();
                 animator.CrossFade("RunRobot", 0.25f);
             }
         }
@@ -116,10 +134,16 @@ public class Freddy : MonoBehaviour
         head.forward = normalHead;
         animator.CrossFade("IdleRobot", 0.2f);
         agent.SetDestination(transform.position);
+
+        mainSource.clip = mainClips[0];
+        mainSource.Play();
     }
 
     public void GetDamaged(){
         //CancelInvoke("Unstun");
+        otherSounds.clip = otherClips[2];
+        otherSounds.pitch = Random.Range(0.75f, 1.25f);
+        otherSounds.Play();
         CancelInvoke();
         animator.CrossFade(takeDamageClip.name, 0.1f, -1, 0);
         state = State.Stunned;
@@ -135,6 +159,11 @@ public class Freddy : MonoBehaviour
     public void DieBitch(){
         if (state == State.Died) return;
         state = State.Died; 
+
+        mainSource.Stop();
+        
+        otherSounds.clip = otherClips[1];
+        otherSounds.Play();
 
         GetComponent<Collider>().enabled = false;  
         agent.enabled = false;
