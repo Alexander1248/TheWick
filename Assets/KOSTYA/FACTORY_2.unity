@@ -15278,7 +15278,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eee0bae749d7c13478611916e9e87089, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 66437ccf5c2c71c4b9bc28af357a5fd8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -36400,10 +36400,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8223817409023574157, guid: 3f5acc2feb8b1c94587a1cef5311efad,
+        type: 3}
+      propertyPath: autoHeal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223817409023574157, guid: 3f5acc2feb8b1c94587a1cef5311efad,
+        type: 3}
+      propertyPath: onHealthEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1491408986}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3613695928230953461, guid: 3f5acc2feb8b1c94587a1cef5311efad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1491408986}
   m_SourcePrefab: {fileID: 100100000, guid: 3f5acc2feb8b1c94587a1cef5311efad, type: 3}
 --- !u!114 &1491408959 stripped
 MonoBehaviour:
@@ -36411,12 +36425,18 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1491408958}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1491408960}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 229fa651ce04dfa479873fd173c2a7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1491408960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3613695928230953461, guid: 3f5acc2feb8b1c94587a1cef5311efad,
+    type: 3}
+  m_PrefabInstance: {fileID: 1491408958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1491408969 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6999843913739396228, guid: 3f5acc2feb8b1c94587a1cef5311efad,
@@ -36429,7 +36449,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1491408958}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1491408960}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a67658920379384eafd9d097f9bbf6f, type: 3}
@@ -36447,6 +36467,19 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 1491408958}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1491408986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491408960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e54137f4e240539c0cd0963686b7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthVis: {fileID: 2100000, guid: e3f628f31ee805c48a0968c35cf2e1e4, type: 2}
 --- !u!1 &1498941751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8936203982065746549, guid: 767afb27107a9e24a822cbc2149b946e,
@@ -41354,6 +41387,8 @@ MonoBehaviour:
   autoDoor: {fileID: 402796427}
   dialogue: {fileID: 1707474492}
   alarm: {fileID: 1621076753}
+  afterAlarmVolume: 0.5
+  afterCutsceneVolume: 0.2
 --- !u!114 &1707474489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41441,11 +41476,11 @@ MonoBehaviour:
     values:
     - text: {fileID: 1964255490}
       source: {fileID: 556336009}
-      minPitch: 1
-      maxPitch: 2
+      minPitch: 0.7
+      maxPitch: 1.2
     - text: {fileID: 1964255490}
       source: {fileID: 1491408985}
-      minPitch: 1.5
+      minPitch: 1
       maxPitch: 2
   graph: {fileID: 11400000, guid: 71396cf562f1bd84a82ad17034f75c7a, type: 2}
   onSentenceStart:
@@ -41469,6 +41504,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1707474488}
         m_TargetAssemblyTypeName: Cutscene2, Assembly-CSharp
         m_MethodName: TryDecreaseAlarmVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1707474488}
+        m_TargetAssemblyTypeName: Cutscene2, Assembly-CSharp
+        m_MethodName: TryDecreaseAlarmVolumeAgain
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

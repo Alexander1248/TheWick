@@ -55,6 +55,11 @@ namespace NPC
             _current = null;
         }
 
+        public string GetCurrentNarratorName()
+        {
+            return _currentData?.narrator;
+        }
+
         public void Update()
         {
             if (_current.IsUnityNull() || !IsPlaying) return;

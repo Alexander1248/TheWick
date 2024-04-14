@@ -74,7 +74,7 @@ MonoBehaviour:
     keys: 00000000
     values:
     - {fileID: 0}
-  tag: 
+  tag: cs end
   sentences:
     keys:
     - ru
