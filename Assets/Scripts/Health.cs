@@ -32,7 +32,6 @@ public class Health : MonoBehaviour
     private void Start()
     {
         _hp = maxHP;
-
     }
     
     void Heal()

@@ -1,0 +1,203 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7895150421486188573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10113cc9b4c402eb4af960250a0a137, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: 23778b9a44e7475439d762dccc69f2bb
+  nodePos: {x: 0, y: 0}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -5008374541946315227}
+  tag: 
+--- !u!114 &-5008374541946315227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: ba3f16138a94221438b7467757d7dfe6
+  nodePos: {x: 123.20001, y: 0}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 1488821453340638796}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u0410\u0439, \u043F\u043E\u0447\u0435\u043C\u0443 \u0442\u0443\u0442
+        \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0446\u0438\u044F \u0442\u0430\u043A
+        \u0432\u044B\u0441\u043E\u043A\u043E!"
+      time: 1.5
+      delay: 0.5
+      narrator: Player
+--- !u!114 &-1631947119883547002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: b2677ea6acec16340a2e895c278d4aa3
+  nodePos: {x: 433.60004, y: 0}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u0410\u0410\u0410! \u0411\u0415\u0416\u0418\u041C!"
+      time: 1.5
+      delay: 1
+      narrator: Player
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58646d219bb14154bdb9188ab6cbb3e5, type: 3}
+  m_Name: FACTORY_4
+  m_EditorClassIdentifier: 
+  root: {fileID: -7895150421486188573}
+  roots:
+  - {fileID: 7567087738347366713}
+  nodes:
+  - {fileID: -7895150421486188573}
+  - {fileID: -5008374541946315227}
+  - {fileID: 1488821453340638796}
+  - {fileID: -1631947119883547002}
+  - {fileID: 7567087738347366713}
+  - {fileID: 936651263524769895}
+  - {fileID: 6854136534539498137}
+--- !u!114 &936651263524769895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: 28c8e52f4807a99459dfb4383651168d
+  nodePos: {x: 123.20002, y: 100.80002}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 6854136534539498137}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u0424\u0443\u0445, \u044D\u0442\u043E \u0431\u044B\u043B\u043E
+        \u0431\u043B\u0438\u0437\u043A\u043E"
+      time: 0
+      delay: 0
+      narrator: Player
+--- !u!114 &1488821453340638796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: b92747fab0eff2c48843aece0bbac576
+  nodePos: {x: 278.40005, y: 0}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -1631947119883547002}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u042D\u0445, \u043D\u0443 \u0445\u043E\u0442\u044F \u0431\u044B
+        \u044F \u0432 \u0431\u0435\u0437\u043E\u043F\u0430..."
+      time: 1.5
+      delay: 0.3
+      narrator: Player
+--- !u!114 &6854136534539498137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: 697fa7a17a4b0b44892d37ae8a2eda1c
+  nodePos: {x: 278.40012, y: 100.799995}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: 
+      time: 0
+      delay: 0
+      narrator: Player
+--- !u!114 &7567087738347366713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dacf69829b694503a1c3a17dc61adda4, type: 3}
+  m_Name: SelectableDialogueRoot
+  m_EditorClassIdentifier: 
+  guid: 19f09ab6befe50945851c0a1fa53fe7f
+  nodePos: {x: -59.999954, y: 100.45499}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 936651263524769895}
+  tag: 
+  rootName: After Chase
