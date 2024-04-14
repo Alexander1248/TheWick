@@ -149,6 +149,7 @@ public class Menu : MonoBehaviour
     }
 
     void StartGame(){
+        PlayerPrefs.DeleteKey("CompressedGas");
         SceneManager.LoadScene("FACTORY");
     }
 }

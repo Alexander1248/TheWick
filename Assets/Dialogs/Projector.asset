@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LocalizedSentence
   m_EditorClassIdentifier: 
   guid: e185394a3d6a0454ea0fb0d3e5f992da
-  nodePos: {x: 375.2, y: -76.8}
+  nodePos: {x: 191.99997, y: -76.80001}
   next:
     keys: 00000000
     values:
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: Delay
   m_EditorClassIdentifier: 
   guid: 1cc1a11d0339e814a9f796cf6c713d66
-  nodePos: {x: 268, y: 157.3602}
+  nodePos: {x: 599.1736, y: 38.40001}
   next:
     keys: 00000000
     values:
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: LocalizedSentence
   m_EditorClassIdentifier: 
   guid: 7a64f784b1afd65488cc8d2f876d6831
-  nodePos: {x: 553.4, y: -153.6}
+  nodePos: {x: 191.99994, y: -153.59999}
   next:
     keys: 00000000
     values:
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: LocalizedSentence
   m_EditorClassIdentifier: 
   guid: 7b8e37c1de7faf54f960d069435f91f9
-  nodePos: {x: 734.00006, y: -230.4}
+  nodePos: {x: 190.40002, y: -230.39993}
   next:
     keys: 00000000
     values:
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: LocalizedSentence
   m_EditorClassIdentifier: 
   guid: 3a26842c8a574024cb26d3d218c695b7
-  nodePos: {x: 906.8079, y: -230.40004}
+  nodePos: {x: 347.2, y: -230.4}
   next:
     keys: 00000000
     values:
