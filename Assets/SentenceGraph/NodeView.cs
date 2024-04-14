@@ -31,14 +31,20 @@ namespace SentenceGraph
 
         private void CreateInputPorts()
         {
-            if (Sentence is DialogueRoot) return;
+            if (Sentence is DialogueRoot or SelectableDialogueRoot) return;
             Input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, null);
             inputContainer.Add(Input);
         }
 
+        public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+        {
+            base.BuildContextualMenu(evt);
+            Sentence.BuildContextualMenu(evt);
+        }
+
         private void CreateOutputPorts()
         {
-            Outputs = new Port[Sentence.next.Length];
+            Outputs = new Port[Sentence.next.Count];
             for (var i = 0; i < Outputs.Length; i++)
             {
                 Outputs[i] = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, null);

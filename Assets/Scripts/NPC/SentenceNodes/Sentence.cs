@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UIElements;
+using Utils;
 
 namespace NPC.SentenceNodes
 {
@@ -10,24 +13,25 @@ namespace NPC.SentenceNodes
         [HideInInspector] public string guid;
         [HideInInspector] public Vector2 nodePos;
         
-        [HideInInspector] public Sentence[] next;
+        [HideInInspector] public UDictionary<int, Sentence> next = new();
 
-        protected Sentence(int variantCount)
-        {
-            next = new Sentence[variantCount];
-        }
+        public string tag;
 
         public abstract Sentence GetNext();
         public abstract SentenceData GetSentence(String locale);
 
         public virtual void GetState(Dialogue dialogue) { }
 
+        public virtual void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+        {
+            
+        }
+
         public virtual Sentence Clone()
         {
             var sentence = Instantiate(this);
-            sentence.next = new Sentence[next.Length];
-            for (var i = 0; i < next.Length; i++) 
-                sentence.next[i] = next[i].Clone();
+            foreach (var key in next.Keys)
+                sentence.next[key] = next[key] == null ? null : next[key].Clone();
             return sentence;
         }
     }

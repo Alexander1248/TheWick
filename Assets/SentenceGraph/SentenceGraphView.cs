@@ -30,12 +30,16 @@ namespace SentenceGraph
 
         public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
         {
+            var container = ElementAt(1);
+            Vector3 screenMousePosition = evt.localMousePosition;
+            Vector2 worldMousePosition = screenMousePosition - container.transform.position;
+            worldMousePosition *= 1 / container.transform.scale.x;
             // base.BuildContextualMenu(evt);
             evt.menu.AppendAction("Update", _ => PopulateView(_graph));
             var types = TypeCache.GetTypesDerivedFrom<Sentence>();
             foreach (var type in types.Where(type => type != typeof(DialogueRoot)))
-                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", a => CreateNode(type, 
-                    viewTransform.matrix.inverse.MultiplyPoint(a.eventInfo.localMousePosition)));
+                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", 
+                    a => CreateNode(type, worldMousePosition));
         }
 
         private void CreateNode(Type type, Vector2 position)
@@ -71,9 +75,9 @@ namespace SentenceGraph
             _graph.nodes.ForEach(n =>
             {
                 var from = FindNodeView(n);
-                for (var i = 0; i < n.next.Length; i++)
-                    if (n.next[i] != null)
-                        AddElement(from.Outputs[i].ConnectTo(FindNodeView(n.next[i]).Input));
+                foreach (var key in n.next.Keys)
+                    if (n.next[key] != null)
+                        AddElement(from.Outputs[key].ConnectTo(FindNodeView(n.next[key]).Input));
             });
             
         }
@@ -96,7 +100,7 @@ namespace SentenceGraph
 
                         var to = edge.input.node as NodeView;
                         if (to == null) return;
-                        _graph.RemoveLink(from.Sentence, to.Sentence);
+                        NPC.SentenceGraph.RemoveLink(from.Sentence, to.Sentence);
                         break;
                     }
                 }
@@ -125,7 +129,7 @@ namespace SentenceGraph
 
         private void CreateNodeView(Sentence sentence)
         {
-            NodeView nodeView = new NodeView(sentence, _graph);
+            var nodeView = new NodeView(sentence, _graph);
             nodeView.OnNodeSelected = OnNodeSelected;
             AddElement(nodeView);
         }
@@ -137,6 +141,12 @@ namespace SentenceGraph
                 && endPort.node != startPort.node).ToList();
         }
         
+
+        public void Save()
+        {
+            EditorUtility.SetDirty(_graph);
+            AssetDatabase.SaveAssets();
+        }
         
     }
 }
