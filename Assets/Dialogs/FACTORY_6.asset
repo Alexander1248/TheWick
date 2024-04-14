@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6152720205631448287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: ff93a3f25d2b5ef488fcfa7412c3db2b
+  nodePos: {x: 123.19994, y: 0.000034332275}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 4692842248020298569}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: " \u0411\u043E\u0436\u0435, \u0447\u0442\u043E \u0442\u044B \u0442\u0430\u043A\u043E\u0435?"
+      time: 1
+      delay: 1
+      narrator: Player
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,6 +43,36 @@ MonoBehaviour:
   roots: []
   nodes:
   - {fileID: 7897740698192720754}
+  - {fileID: -6152720205631448287}
+  - {fileID: 4692842248020298569}
+--- !u!114 &4692842248020298569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: 4329957b58edb974d928ee430c6120f3
+  nodePos: {x: 278.40002, y: 0.000015258789}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u0422\u043E\u043B\u044C\u043A\u043E \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439
+        \u043C\u0435\u043D\u044F \u043F\u0430\u043B\u044C\u0446\u0435\u043C \u0442\u0440\u043E\u043D\u0443\u0442\u044C."
+      time: 2
+      delay: 1
+      narrator: Player
 --- !u!114 &7897740698192720754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,5 +90,5 @@ MonoBehaviour:
   next:
     keys: 00000000
     values:
-    - {fileID: 0}
+    - {fileID: -6152720205631448287}
   tag: 
