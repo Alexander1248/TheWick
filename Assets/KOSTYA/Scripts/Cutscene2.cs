@@ -32,6 +32,8 @@ public class Cutscene2 : MonoBehaviour
     
     [SerializeField] private Dialogue dialogue;
     [SerializeField] private AudioSource alarm;
+    [SerializeField] private float afterAlarmVolume = 0.5f;
+    [SerializeField] private float afterCutsceneVolume = 0.2f;
 
     private float _volume;
     void Start()
@@ -117,6 +119,11 @@ public class Cutscene2 : MonoBehaviour
     public void TryDecreaseAlarmVolume(string tag)
     {
         if (tag != "alarm") return;
-        _volume *= 0.5f;
+        _volume *= afterAlarmVolume;
+    }
+    public void TryDecreaseAlarmVolumeAgain(string tag)
+    {
+        if (tag != "cs end") return;
+        _volume *= afterCutsceneVolume;
     }
 }
