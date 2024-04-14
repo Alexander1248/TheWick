@@ -45,8 +45,15 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
-     <Folder Include="Assets\TutorialInfo\Scripts\Editor" />
+     <Compile Include="Assets\Editor\SentenceGraph\SentenceGraphView.cs" />
+     <Compile Include="Assets\Editor\SentenceGraph\InspectorView.cs" />
+     <Compile Include="Assets\Editor\SentenceGraph\NodeView.cs" />
+     <Compile Include="Assets\Editor\SentenceGraph\SentenceGraphEditor.cs" />
+     <Compile Include="Assets\Editor\SentenceGraph\SplitView.cs" />
+     <Folder Include="Assets\Editor" />
+     <None Include="Assets\Editor\SentenceGraph\SentenceTreeEditor.uxml" />
+     <Folder Include="Assets\Editor\SentenceGraph" />
+     <None Include="Assets\Editor\SentenceGraph\SentenceTreeEditor.uss" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -308,17 +315,17 @@
      <Reference Include="Unity.VisualScripting.YamlDotNet">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Plastic.Antlr3.Runtime">
-     <HintPath>D:\Projects\UnityProjects\The Wick\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-     </Reference>
      <Reference Include="unityplastic">
-     <HintPath>D:\Projects\UnityProjects\The Wick\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+     <HintPath>D:\Projects\UnityProjects\The Wick\Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Plastic.Antlr3.Runtime">
+     <HintPath>D:\Projects\UnityProjects\The Wick\Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
-     <HintPath>D:\Projects\UnityProjects\The Wick\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+     <HintPath>D:\Projects\UnityProjects\The Wick\Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="log4netPlastic">
-     <HintPath>D:\Projects\UnityProjects\The Wick\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+     <HintPath>D:\Projects\UnityProjects\The Wick\Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.IonicZip">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
@@ -716,11 +723,17 @@
      <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Animation.Rigging">
+     <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.Animation.Rigging.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.RenderPipelines.Core.Runtime">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Runtime">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation">
+     <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Editor">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
@@ -730,6 +743,9 @@
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Animation.Rigging.Editor">
+     <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.Animation.Rigging.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
@@ -782,6 +798,9 @@
      <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.AI.Navigation.Updater">
+     <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
@@ -803,8 +822,14 @@
      <Reference Include="Unity.RenderPipelines.Universal.Shaders">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor">
+     <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+     <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
@@ -814,9 +839,45 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{b6e34285-ad82-f07d-4137-8b52faa76e2e}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{d5cc559b-d786-6c18-d169-cece6851a47b}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{9d2bdcae-c867-d88b-f2fa-c91ab83880e7}</Project>
+      <Name>Assembly-CSharp-Editor-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="KinoBloom.Runtime.csproj">
+      <Project>{5cb0531c-5a1d-0ed7-df98-8d23b8047238}</Project>
+      <Name>KinoBloom.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Cyanilux.BlitRenderFeature.csproj">
+      <Project>{2aa67511-fb06-bafe-39c5-fdbdaaf64b76}</Project>
+      <Name>Cyanilux.BlitRenderFeature</Name>
+    </ProjectReference>
+    <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
+      <Project>{31ad3191-8302-da9c-26ff-b40ae76ea08f}</Project>
+      <Name>ToonyColorsPro.Demo.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXRRuntime.csproj">
+      <Project>{86091175-c387-d433-0ffa-6a6c8c248022}</Project>
+      <Name>CFXRRuntime</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXREditor.csproj">
+      <Project>{a70d3389-b91e-11ba-0859-8dafd7a4eac2}</Project>
+      <Name>CFXREditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXRDemo.csproj">
+      <Project>{1d433884-faa9-f2a4-014e-95729c1e326a}</Project>
+      <Name>CFXRDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="Cyanilux.BlitRenderFeature.Editor.csproj">
+      <Project>{fb09b6f9-c998-2a0b-b78b-7b8ac8bb6ccc}</Project>
+      <Name>Cyanilux.BlitRenderFeature.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,8 +13,9 @@ namespace NPC
         [SerializeField] private UDictionary<string, Narrator> narrators;
         [SerializeField] private SentenceGraph graph;
         [Space]
-        [SerializeField] private UnityEvent<string> onSentenceChanged;
-        [SerializeField] private UnityEvent onDialogueEnd;
+        public UnityEvent<string> onSentenceStart;
+        public UnityEvent<string> onSentenceEnd;
+        public UnityEvent onDialogueEnd;
 
         private SentenceData _currentData;
         private Narrator _currentNarrator;
@@ -80,6 +81,7 @@ namespace NPC
 
         private void GoToNext()
         {
+            onSentenceEnd.Invoke(_current.tag);
             _currentNarrator?.Clear();
             _current = _current.GetNext();
             SwitchUpdate();
@@ -92,7 +94,7 @@ namespace NPC
                 onDialogueEnd.Invoke();
                 return;
             }
-            onSentenceChanged.Invoke(_current.tag);
+            onSentenceStart.Invoke(_current.tag);
 
             _current.GetState(this);
             _currentData = _current.GetSentence(PlayerPrefs.GetString("Language"));
