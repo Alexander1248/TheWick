@@ -126,7 +126,7 @@ Material:
     - _PatternScale: -10.07
     - _PatternShift: 1
     - _QueueOffset: 0
-    - _Radius: 0.4
+    - _Radius: 1
     - _RadiusScale: 1
     - _RadiusShift: 0
     - _ReceiveShadows: 1
