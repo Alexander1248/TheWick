@@ -70457,6 +70457,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 24300002, guid: a6372a4dcd961034496a5ddcbdc27c75,
         type: 2}
+    - target: {fileID: 4387894583240838398, guid: 3f5acc2feb8b1c94587a1cef5311efad,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4880497235332189062, guid: 3f5acc2feb8b1c94587a1cef5311efad,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -70526,6 +70531,11 @@ PrefabInstance:
     - target: {fileID: 6999843913739396228, guid: 3f5acc2feb8b1c94587a1cef5311efad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670971762509564872, guid: 3f5acc2feb8b1c94587a1cef5311efad,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8959622631038426660, guid: 3f5acc2feb8b1c94587a1cef5311efad,
