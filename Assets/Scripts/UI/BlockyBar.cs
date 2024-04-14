@@ -11,7 +11,7 @@ public class BlockyBar : MonoBehaviour
     private int _prev;
     private Image[] _images;
 
-    public void Initialize(int max, Vector2 anchor, Vector2Int blockSize, Vector2Int blockMargin, int inRowCount)
+    public void Initialize(int max, Vector2 anchor, Vector2Int blockSize, Vector2Int blockMargin, int inRowCount, float angle = 0)
     {
         _max = max;
         _images = new Image[max];
@@ -23,9 +23,10 @@ public class BlockyBar : MonoBehaviour
             t.SetParent(transform);
             t.sizeDelta = new Vector2(blockSize.x, blockSize.y);
             t.anchorMax = t.anchorMin = anchor;
-            var x = (int) ((i % inRowCount + .5f) * block.x * (1 - anchor.x * 2));
-            var y = (int) ((i / inRowCount + .5f) * block.y * (1 - anchor.y * 2));
+            var x = (int)((i % inRowCount + .5f) * block.x * (1 - anchor.x * 2));
+            var y = (int)((i / inRowCount + .5f) * block.y * (1 - anchor.y * 2));
             t.anchoredPosition = new Vector2(x, y);
+            t.rotation = Quaternion.Euler(0, 0, angle);
             _images[i] = obj.AddComponent<Image>();
             _images[i].sprite = sprite;
         }
