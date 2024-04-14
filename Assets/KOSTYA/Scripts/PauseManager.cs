@@ -29,7 +29,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private FirstPersonController2 controller2;
 
 
-    private bool paused;
+    public bool paused;
 
     void Update()
     {
@@ -42,6 +42,7 @@ public class PauseManager : MonoBehaviour
 
     private float _timeScaleBuffer;
     void pause(){
+        paused = true;
         controller2.NoRotate();
 
         _timeScaleBuffer = Time.timeScale;
@@ -56,6 +57,7 @@ public class PauseManager : MonoBehaviour
     }
 
     void unPause(){
+        paused = false;
         controller2.enablePlayer();
         Time.timeScale = _timeScaleBuffer;
         pauseMenu.SetActive(false);
