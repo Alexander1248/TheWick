@@ -35,6 +35,8 @@ public class Hands : MonoBehaviour
     [SerializeField] private Transform wrenchForVent;
     private bool venting;
 
+    [SerializeField] private GameObject tipWrench;
+
     private RaycastHit _hit;
     void Start(){
         lastScrollTime = Time.time;
@@ -80,8 +82,13 @@ public class Hands : MonoBehaviour
             weapons[1].SetActive(false);
             return true;
         }
+        tipWrench.SetActive(true);
+        Invoke("hideTipWrench", 3);
+
         return false;
     }
+
+    void hideTipWrench() => tipWrench.SetActive(false);
     
     public void releaseWrench(){
         wrenchForVent.gameObject.SetActive(false);
