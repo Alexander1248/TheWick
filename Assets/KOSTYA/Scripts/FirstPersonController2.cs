@@ -77,6 +77,12 @@ public class FirstPersonController2 : MonoBehaviour
     [SerializeField] private float speedVent;
     private float normalSpeedSave;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] footsteps;
+    private AudioClip[] woodSave;
+    [SerializeField] private AudioClip ventSound;
+    private bool soudReady;
+
     private void ChangeCollider(Collider coll)
     {
         if (coll.IsUnityNull()) return;
@@ -98,6 +104,8 @@ public class FirstPersonController2 : MonoBehaviour
         if (vent.inside.IsUnityNull()) return;
         _jointBufferedPosition = jointOriginalPos;
         jointOriginalPos = Vector3.zero;
+
+        footsteps = new AudioClip[]{ventSound};
         
         _ventBuffer = _inUse;
         ChangeCollider(ventCollider);
@@ -116,6 +124,8 @@ public class FirstPersonController2 : MonoBehaviour
         if (vent.outside.IsUnityNull()) return;
         InVent = false;
         ChangeCollider(_ventBuffer);
+
+        footsteps = woodSave;
         
         transform.position = vent.outside.position;
         _hands.enabled = true;
@@ -153,6 +163,7 @@ public class FirstPersonController2 : MonoBehaviour
 
     private void Start()
     {
+        woodSave = footsteps;
         normalSpeedSave = walkSpeed;
         _hands = GetComponent<Hands>();
         foreach (var coll in GetComponents<Collider>())
@@ -332,6 +343,15 @@ public class FirstPersonController2 : MonoBehaviour
             else
             {
                 timer += Time.deltaTime * bobSpeed;
+            }
+
+            if (Mathf.Sin(timer) < 0.3f && soudReady){
+                audioSource.clip = footsteps[Random.Range(0, footsteps.Length)];
+                audioSource.Play();
+                soudReady = false;
+            }
+            if (Mathf.Sin(timer) > 0.7f && !soudReady){
+                soudReady = true;
             }
 
             joint.localPosition = new Vector3(jointOriginalPos.x + Mathf.Sin(timer) * bobAmount.x, jointOriginalPos.y + Mathf.Sin(timer) * bobAmount.y, jointOriginalPos.z + Mathf.Sin(timer) * bobAmount.z);

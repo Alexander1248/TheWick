@@ -37,6 +37,8 @@ public class Hands : MonoBehaviour
 
     [SerializeField] private GameObject tipWrench;
 
+    [SerializeField] private AudioSource wrenchSounds;
+
     private RaycastHit _hit;
     void Start(){
         lastScrollTime = Time.time;
@@ -132,6 +134,7 @@ public class Hands : MonoBehaviour
         }
 
         if (Input.GetMouseButton(0) && canHitGaechnii && currentWeaponIndex == 1){
+            wrenchSounds.Play();
             if (!playerAnimator.enabled) playerAnimator.enabled = true;
             playerAnimator.Play("PlayerGaechniiHit", 0, 0);
             canHitGaechnii = false;

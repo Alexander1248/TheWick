@@ -90,6 +90,8 @@ public class Boss : MonoBehaviour
 
     [SerializeField] private BossFight bossFight;
 
+    [SerializeField] private AudioSource walkingSound;
+
     private Health playerHP;
 
     public enum State{

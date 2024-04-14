@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Health : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Health : MonoBehaviour
     [SerializeField] private float autoHealStartTime = 10;
     [SerializeField] private float autoHealStartCooldown = 1;
     [SerializeField] private float autoHealAmount = 3;
+
+    [SerializeField] private AudioSource soundOnDamage;
 
     [SerializeField] private MilkShake.ShakePreset preset;
 
@@ -43,6 +46,11 @@ public class Health : MonoBehaviour
     public void DealDamage(float damage, Vector3 direction, float kickForce , Vector3? point = null)
     {
         if (rb) rb.AddForce(-direction * kickForce, ForceMode.Impulse);
+
+        if (soundOnDamage != null){
+            soundOnDamage.pitch = Random.Range(0.75f, 1.25f);
+            soundOnDamage.Play();
+        }
 
         if (blood){
             blood.transform.position = _buff;
