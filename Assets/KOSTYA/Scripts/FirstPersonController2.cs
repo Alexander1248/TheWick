@@ -345,7 +345,7 @@ public class FirstPersonController2 : MonoBehaviour
                 timer += Time.deltaTime * bobSpeed;
             }
 
-            if (Mathf.Sin(timer) < 0.3f && soudReady && isGrounded){
+            if (Mathf.Sin(timer) < 0.3f && soudReady){
                 audioSource.clip = footsteps[Random.Range(0, footsteps.Length)];
                 audioSource.Play();
                 soudReady = false;

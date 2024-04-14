@@ -12,6 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58646d219bb14154bdb9188ab6cbb3e5, type: 3}
   m_Name: FACTORY_6
   m_EditorClassIdentifier: 
-  root: {fileID: 0}
+  root: {fileID: 7897740698192720754}
   roots: []
-  nodes: []
+  nodes:
+  - {fileID: 7897740698192720754}
+--- !u!114 &7897740698192720754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10113cc9b4c402eb4af960250a0a137, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: a9eb900cacc467b488f5459f84777e3e
+  nodePos: {x: 0, y: 0}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  tag: 

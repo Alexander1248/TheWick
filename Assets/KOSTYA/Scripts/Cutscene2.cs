@@ -102,6 +102,7 @@ public class Cutscene2 : MonoBehaviour
             firstPersonController2.unlockPlayer();
             autoDoor.enabled = true;
             autoDoor.Play("OpenAutoDoor", -1, 0);
+            autoDoor.GetComponent<AudioSource>().Play();
             playerRb.isKinematic = false;
             return;
         }
