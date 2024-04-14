@@ -31,8 +31,7 @@ namespace NPC.SentenceNodes
         {
             var sentence = Instantiate(this);
             foreach (var key in next.Keys)
-                sentence.next[key] = next[key] == null ? null : next[key].Clone();
-
+                sentence.next[key] = next[key];
             sentence.sentenceData = sentenceData.Clone();
             return sentence;
         }

@@ -29,13 +29,13 @@ namespace NPC
 
         public void StartDialogue()
         {
-            _current = graph.root.Clone();
+            _current = SentenceGraph.Clone(graph.root);
             SwitchUpdate();
             PlayDialogue();
         }
         public void StartDialogue(string rootName)
         {
-            _current = graph.roots.Find(r => r.RootName == rootName).Clone();
+            _current = SentenceGraph.Clone(graph.roots.Find(r => r.RootName == rootName));
             SwitchUpdate();
             PlayDialogue();
         }
