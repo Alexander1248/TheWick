@@ -9,12 +9,6 @@ namespace SentenceGraph
 
         private Editor _editor;
 
-        public InspectorView()
-        {
-            var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/SentenceGraph/SentenceTreeEditor.uss");
-            styleSheets.Add(styleSheet);
-        }
-
         public void UpdateSelection(NodeView view)
         {
             Clear();
