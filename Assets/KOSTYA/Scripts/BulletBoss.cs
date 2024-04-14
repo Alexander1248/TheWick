@@ -8,6 +8,7 @@ public class BulletBoss : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private ParticleSystem destructionEffect;
+    [SerializeField] private AudioSource audioSource;
 
     [SerializeField] private float radiusPlayerHit;
     private Transform player;
@@ -28,6 +29,7 @@ public class BulletBoss : MonoBehaviour
 
     void hit(Health hp){
         if (destroyed) return;
+        if (audioSource != null) audioSource.Play();
         destroyed = true;
         if (hp) {
             hp.DealDamage(damage, (hp.transform.position - transform.position).normalized, 2);
