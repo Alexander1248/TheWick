@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58646d219bb14154bdb9188ab6cbb3e5, type: 3}
+  m_Name: FACTORY_5
+  m_EditorClassIdentifier: 
+  root: {fileID: 7007372092208953709}
+  roots: []
+  nodes:
+  - {fileID: 7007372092208953709}
+--- !u!114 &7007372092208953709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10113cc9b4c402eb4af960250a0a137, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: 9a8c8368385399a4f9d45be3810cf27f
+  nodePos: {x: 0, y: 0}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  tag: 
