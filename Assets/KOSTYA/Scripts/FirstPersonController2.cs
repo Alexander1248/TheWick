@@ -126,6 +126,20 @@ public class FirstPersonController2 : MonoBehaviour
         walkSpeed = normalSpeedSave;
         Camera.main.fieldOfView = fovNormal;
     }
+
+    public void lockPlayer(){
+        enableSprint = false;
+        walkSpeed = 0;
+        enableJump = false;
+        enableHeadBob = false;
+    }
+
+    public void unlockPlayer(){
+        enableSprint = true;
+        walkSpeed = normalSpeedSave;
+        enableJump = true;
+        enableHeadBob = true;
+    }
     
 
     private void Awake()
