@@ -120,10 +120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64bcb18c0b72d7341921cde66d12c40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
-  speed: 250
+  damage: 4
+  speed: 30
   rb: {fileID: 4371958662600878984}
   destructionEffect: {fileID: 0}
+  radiusPlayerHit: 1.4
 --- !u!54 &4371958662600878984
 Rigidbody:
   m_ObjectHideFlags: 0

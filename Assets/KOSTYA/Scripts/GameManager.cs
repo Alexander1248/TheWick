@@ -12,8 +12,10 @@ public class GameManager : MonoBehaviour
         if (id == 3) Invoke("load3", 1.5f);
         else if (id == 4) Invoke("load4", 1.5f);
         else if (id == 5) Invoke("load5", 1.5f);
+        else if (id == 6) Invoke("load6", 1.5f);
     }
     void load3() => SceneManager.LoadScene("FACTORY_3");
     void load4() => SceneManager.LoadScene("FACTORY_4");
     void load5() => SceneManager.LoadScene("FACTORY_5");
+    void load6() => SceneManager.LoadScene("FACTORY_6 1");
 }

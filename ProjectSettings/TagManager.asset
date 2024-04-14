@@ -8,6 +8,8 @@ TagManager:
   - InteractMe
   - Water
   - Gun
+  - Boss
+  - BossBar
   layers:
   - Default
   - TransparentFX
