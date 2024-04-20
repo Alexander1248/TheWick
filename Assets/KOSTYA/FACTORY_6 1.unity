@@ -57330,7 +57330,7 @@ PrefabInstance:
     - target: {fileID: 1071125213151962460, guid: 3f754103a89937e4d80787bded3f326b,
         type: 3}
       propertyPath: pushingforce
-      value: 650
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 1071125213151962460, guid: 3f754103a89937e4d80787bded3f326b,
         type: 3}
@@ -71252,6 +71252,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067350607567856715, guid: 3f5acc2feb8b1c94587a1cef5311efad,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 4257602344817200319, guid: 3f5acc2feb8b1c94587a1cef5311efad,
         type: 3}
