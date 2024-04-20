@@ -63,7 +63,7 @@ namespace NPC
         public void Update()
         {
             if (_current.IsUnityNull() || !IsPlaying) return;
-            if (_currentData == null || Input.GetKeyDown(KeyCode.Return))
+            if (_currentData == null)
             {
                 CancelInvoke(nameof(GoToNext));
                 GoToNext();
