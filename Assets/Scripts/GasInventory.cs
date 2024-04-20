@@ -1,4 +1,5 @@
-﻿using Unity.VisualScripting;
+﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -7,26 +8,17 @@ public class GasInventory : MonoBehaviour
     [SerializeField] private int gasCylinderMax = 10;
     [SerializeField] private int gasCylinderCount = 10;
     [SerializeField] private BlockyBar gasCylinderBar;
-    
-    public void AddCompressedSteamCylinder(int count)
-    {
-        gasCylinderCount = Mathf.Min(gasCylinderCount + count, gasCylinderMax);
-        if (gasCylinderBar.IsUnityNull() && gasCylinderBar.enabled) 
-            gasCylinderBar.Set(gasCylinderCount);
-        PlayerPrefs.SetInt("CompressedGas", gasCylinderCount);
-    }
 
     public bool IsEmpty()
     {
-        return gasCylinderCount <= 0;
+        return gasCylinderCount == 0;
     }
 
     public void Edit(int value)
     {
-        gasCylinderCount--;
+        gasCylinderCount = Mathf.Clamp(gasCylinderCount + value, 0, gasCylinderMax);
         if (!gasCylinderBar.IsUnityNull() && gasCylinderBar.enabled) 
             gasCylinderBar.Set(gasCylinderCount);
-        PlayerPrefs.SetInt("CompressedGas", gasCylinderCount);
     }
     public void Start()
     {
@@ -53,5 +45,10 @@ public class GasInventory : MonoBehaviour
     {
         if (gasCylinderBar == null) return;
         gasCylinderBar.gameObject.SetActive(false);
+    }
+
+    public void Save()
+    {
+        PlayerPrefs.SetInt("CompressedGas", gasCylinderCount);
     }
 }

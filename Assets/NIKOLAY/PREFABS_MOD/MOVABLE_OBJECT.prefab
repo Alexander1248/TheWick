@@ -841,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 5693409992384005986, guid: 040995056ca10434bb6584eab881d394,
         type: 3}
       propertyPath: valveProgress.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5693409992384005986, guid: 040995056ca10434bb6584eab881d394,
         type: 3}

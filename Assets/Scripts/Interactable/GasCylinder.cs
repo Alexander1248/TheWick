@@ -26,7 +26,7 @@ namespace Interactable
                 audioSource.clip = clips[0];
                 audioSource.Play();
             }
-            _inventory.AddCompressedSteamCylinder(gasCount);
+            _inventory.Edit(gasCount);
             Destroy(gameObject);
         }
 

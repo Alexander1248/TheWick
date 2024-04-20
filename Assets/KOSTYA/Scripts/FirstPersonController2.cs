@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Interactable;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 #if UNITY_EDITOR
     using UnityEditor;
@@ -295,7 +297,7 @@ public class FirstPersonController2 : MonoBehaviour
         Vector3 direction = transform.TransformDirection(Vector3.down);
         float distance = 0.2f;
 
-        if (Physics.Raycast(origin, direction, out RaycastHit hit, distance))
+        if (Physics.Raycast(origin, direction, out RaycastHit hit, distance, int.MaxValue, QueryTriggerInteraction.Ignore))
         {
             Debug.DrawRay(origin, direction * distance, Color.red);
             isGrounded = true;

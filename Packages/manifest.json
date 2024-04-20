@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.cyanilux.urp-blitrenderfeature": "file:D:/Projects/UnityProjects/_Tools/URP_BlitRenderFeature-master",
+    "com.cyanilux.urp-blitrenderfeature": "https://github.com/Cyanilux/URP_BlitRenderFeature.git",
     "com.unity.ai.navigation": "1.1.5",
     "com.unity.animation.rigging": "1.2.1",
     "com.unity.collab-proxy": "2.3.1",
