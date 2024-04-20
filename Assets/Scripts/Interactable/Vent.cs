@@ -18,14 +18,14 @@ namespace Interactable
         public MeshRenderer[] MeshesOutline => meshesOutline;
 
         private bool _closed = true;
+        private bool _animation = true;
         private FirstPersonController2 _controller;
 
-        
-        private Collider _collider;
+
         private void Start()
         {
             _controller = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController2>();
-            _collider = GetComponent<Collider>();
+            GetComponent<Collider>();
         }
 
         public void Interact(PlayerInteract playerInteract)
@@ -33,12 +33,14 @@ namespace Interactable
             if (_closed)
             {
                 _closed = false;
+                _animation = true;
                 animator.speed = 1 / time;
                 animator.Play("OpenVent");
                 Invoke(nameof(ChangeVentState), time);
                 return;
             }
 
+            if (_animation) return;
             _controller.ChangeVentState(this);
         }
 
@@ -54,6 +56,7 @@ namespace Interactable
         public void ChangeVentState()
         {
             _controller.ChangeVentState(this);
+            _animation = false;
         }
     }
 }
