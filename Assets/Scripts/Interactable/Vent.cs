@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
+﻿using UnityEngine;
 using Utils;
 
 namespace Interactable
