@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,17 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Animator animatorFade;
-        // хз Time.timeScale = 1; нужен везде
+    private GasInventory _gasInventory;
+
+    private void Start()
+    {
+        _gasInventory = GameObject.FindWithTag("Player").GetComponent<GasInventory>();
+    }
+
+    // хз Time.timeScale = 1; нужен везде
     public void loadScene(int id){
         Time.timeScale = 1;
+        _gasInventory.Save();
         animatorFade.Play("FadeIn", -1, 0);
         if (id == 3) Invoke("load3", 1.5f);
         else if (id == 4) Invoke("load4", 1.5f);
