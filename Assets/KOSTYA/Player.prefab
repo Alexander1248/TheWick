@@ -2153,7 +2153,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 6341686791499004582}
   m_HandleRect: {fileID: 4431371526408556009}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.343
@@ -3346,7 +3346,7 @@ MonoBehaviour:
   enableSprint: 1
   sprintSpeed: 1
   enableJump: 1
-  jumpPower: 2
+  jumpPower: 3.5
   isGrounded: 0
   enableHeadBob: 1
   joint: {fileID: 1659800441520286177}
