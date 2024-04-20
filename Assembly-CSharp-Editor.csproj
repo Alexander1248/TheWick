@@ -792,6 +792,9 @@
      <Reference Include="Unity.Timeline">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
      </Reference>
+     <Reference Include="Cyanilux.BlitRenderFeature">
+     <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Cyanilux.BlitRenderFeature.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
@@ -809,6 +812,9 @@
      </Reference>
      <Reference Include="Unity.Mathematics">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+     </Reference>
+     <Reference Include="Cyanilux.BlitRenderFeature.Editor">
+     <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Cyanilux.BlitRenderFeature.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
      <HintPath>D:\Projects\UnityProjects\The Wick\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
@@ -855,10 +861,6 @@
       <Project>{5cb0531c-5a1d-0ed7-df98-8d23b8047238}</Project>
       <Name>KinoBloom.Runtime</Name>
     </ProjectReference>
-    <ProjectReference Include="Cyanilux.BlitRenderFeature.csproj">
-      <Project>{2aa67511-fb06-bafe-39c5-fdbdaaf64b76}</Project>
-      <Name>Cyanilux.BlitRenderFeature</Name>
-    </ProjectReference>
     <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
       <Project>{31ad3191-8302-da9c-26ff-b40ae76ea08f}</Project>
       <Name>ToonyColorsPro.Demo.Editor</Name>
@@ -874,10 +876,6 @@
     <ProjectReference Include="CFXRDemo.csproj">
       <Project>{1d433884-faa9-f2a4-014e-95729c1e326a}</Project>
       <Name>CFXRDemo</Name>
-    </ProjectReference>
-    <ProjectReference Include="Cyanilux.BlitRenderFeature.Editor.csproj">
-      <Project>{fb09b6f9-c998-2a0b-b78b-7b8ac8bb6ccc}</Project>
-      <Name>Cyanilux.BlitRenderFeature.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

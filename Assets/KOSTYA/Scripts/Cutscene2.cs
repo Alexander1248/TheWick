@@ -67,9 +67,9 @@ public class Cutscene2 : MonoBehaviour
         catching = true;
     }
 
-    void Update()
+    private void Update()
     {
-        alarm.volume = Mathf.Lerp(alarm.volume, _volume, 0.3f);
+        alarm.volume = Mathf.Lerp(alarm.volume, _volume, Time.deltaTime);
         
         if (catching && Vector3.Distance(agent.transform.position, firstPersonController2.transform.position) <= 1f){
             agent.transform.forward = (new Vector3(firstPersonController2.transform.position.x, 
