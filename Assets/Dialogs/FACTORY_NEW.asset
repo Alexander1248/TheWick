@@ -18,11 +18,11 @@ MonoBehaviour:
     keys: 00000000
     values:
     - {fileID: 7447356548828085946}
-  drawer: {fileID: 9214695800441608710}
+  drawer: {fileID: 4569098972294636311}
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
 --- !u!114 &-8996063645096868958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +47,27 @@ MonoBehaviour:
     - "\u041D\u0430\u0434\u0435\u044E\u0441\u044C, \u0447\u0442\u043E \u0431\u0443\u0434\u0435\u0442
       \u0442\u0430\u043A\u0438\u043C \u0436\u0435, \u043A\u0430\u043A \u0438 \u043F\u0430\u043F\u043A\u0430."
     - I hope it will be the same as the folder.
+--- !u!114 &-8981024675644610003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: e3ce632c6496e3f4bbf69be6aeddc280
+  nodePos: {x: 604, y: 1438}
+  container: {fileID: 4206473407461557768}
+  narrator: 
+  symbolTime:
+    keys: 2e00
+    values:
+    - 0.2
+  defaultSymbolTime: 0.05
 --- !u!114 &-8795247178637281565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,11 +165,35 @@ MonoBehaviour:
     keys: 00000000
     values:
     - {fileID: -1598489500615131676}
-  drawer: {fileID: 4823183181462517166}
+  drawer: {fileID: 6730117043926309334}
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
+--- !u!114 &-7709107765945537123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: c437d1b5335dfab44ae56f582f629db7
+  nodePos: {x: 1813.0002, y: 71.99998}
+  container: {fileID: -8996063645096868958}
+  narrator: R1M3
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05
 --- !u!114 &-7533622008963451876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +217,7 @@ MonoBehaviour:
     - 0.4
     - 0.4
     - 0.4
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
 --- !u!114 &-7473821841978875697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +241,7 @@ MonoBehaviour:
     - 0.4
     - 0.4
     - 0.4
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
 --- !u!114 &-6584060161704918589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,31 +265,7 @@ MonoBehaviour:
     - 0.4
     - 0.4
     - 0.4
-  defaultSymbolTime: 0.1
---- !u!114 &-6462420937297033528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
-  m_Name: SmartSequentialDrawer
-  m_EditorClassIdentifier: 
-  guid: a55ebf7adc38f3d4a94c2b5722355d27
-  nodePos: {x: 603, y: 1135}
-  container: {fileID: -3303288446705365823}
-  narrator: Father
-  symbolTime:
-    keys: 2c002e0021003f00
-    values:
-    - 0.2
-    - 0.4
-    - 0.4
-    - 0.4
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
 --- !u!114 &-6219915885928615624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,7 +315,7 @@ MonoBehaviour:
     - 0.4
     - 0.4
     - 0.4
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
 --- !u!114 &-4686935160208847274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,8 +389,32 @@ MonoBehaviour:
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
   rootName: Room 3
+--- !u!114 &-3942521396117923784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 3a42712d0ea5dfe409407a77a3a9e9f7
+  nodePos: {x: 1617, y: 72}
+  container: {fileID: 69202691097830909}
+  narrator: R1M2
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05
 --- !u!114 &-3904768969602684822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,7 +437,7 @@ MonoBehaviour:
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
 --- !u!114 &-3698981069447762615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,7 +460,7 @@ MonoBehaviour:
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
 --- !u!114 &-3477803900838187250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,27 +485,6 @@ MonoBehaviour:
     - "\u041F\u0440\u043E\u0445\u043E\u0434\u0438\u0442\u0435 \u0442\u043E\u0433\u0434\u0430,
       \u043A\u043E\u043B\u044C \u043D\u0435 \u0448\u0443\u0442\u0438\u0448\u044C."
     - "Go ahead then, if you\u2019re not joking."
---- !u!114 &-3472941336137647899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
-  m_Name: SmartSequentialDrawer
-  m_EditorClassIdentifier: 
-  guid: fdbba9f07d8b34449a9f40716ada176a
-  nodePos: {x: 1616.5623, y: 71.99997}
-  container: {fileID: 69202691097830909}
-  narrator: R1M2
-  symbolTime:
-    keys: 2e00
-    values:
-    - 0.2
-  defaultSymbolTime: 0.1
 --- !u!114 &-3457544156952753556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,7 +508,7 @@ MonoBehaviour:
     - 0.4
     - 0.4
     - 0.4
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
 --- !u!114 &-3303288446705365823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,32 +550,11 @@ MonoBehaviour:
     keys: 00000000
     values:
     - {fileID: 0}
-  drawer: {fileID: 5589198010603979040}
+  drawer: {fileID: 8128065894501959055}
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
---- !u!114 &-3229832787107996459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
-  m_Name: SmartSequentialDrawer
-  m_EditorClassIdentifier: 
-  guid: 34b47d86d3558c64985a54a7b3ccefe0
-  nodePos: {x: 1812.9996, y: 71.999985}
-  container: {fileID: -8996063645096868958}
-  narrator: R1M3
-  symbolTime:
-    keys: 2e00
-    values:
-    - 0.2
-  defaultSymbolTime: 0.1
+  delay: 0.5
 --- !u!114 &-2962945576527644097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,7 +577,7 @@ MonoBehaviour:
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
 --- !u!114 &-2953190455022199169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,31 +652,7 @@ MonoBehaviour:
     - 0.4
     - 0.4
     - 0.4
-  defaultSymbolTime: 0.1
---- !u!114 &-2071607886915436212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
-  m_Name: SmartSequentialDrawer
-  m_EditorClassIdentifier: 
-  guid: 060649072285e1042afcf88ff51e7345
-  nodePos: {x: 603, y: 1438}
-  container: {fileID: 4206473407461557768}
-  narrator: Father
-  symbolTime:
-    keys: 2c002e0021003f00
-    values:
-    - 0.2
-    - 0.4
-    - 0.4
-    - 0.4
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
 --- !u!114 &-1757054119953643671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,7 +675,7 @@ MonoBehaviour:
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
 --- !u!114 &-1598489500615131676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,11 +694,11 @@ MonoBehaviour:
     keys: 00000000
     values:
     - {fileID: 0}
-  drawer: {fileID: 7526153133237986962}
+  drawer: {fileID: 361443997977770071}
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
 --- !u!114 &-1099466688963594380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,7 +748,7 @@ MonoBehaviour:
     - 0.4
     - 0.4
     - 0.4
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
 --- !u!114 &-466361243095692846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,7 +771,7 @@ MonoBehaviour:
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
   rootName: Enter
 --- !u!114 &-359961234888046816
 MonoBehaviour:
@@ -842,7 +821,7 @@ MonoBehaviour:
     keys: 2e00
     values:
     - 0.2
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
 --- !u!114 &-56812135887470195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -865,7 +844,7 @@ MonoBehaviour:
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
   rootName: Intro
 --- !u!114 &11400000
 MonoBehaviour:
@@ -891,10 +870,8 @@ MonoBehaviour:
   - {fileID: -56812135887470195}
   - {fileID: -5447756057716221411}
   - {fileID: -8248835174902396647}
-  - {fileID: 4823183181462517166}
   - {fileID: -8188851824102482078}
   - {fileID: -7800845988706665052}
-  - {fileID: 7526153133237986962}
   - {fileID: 2313525776459092692}
   - {fileID: -1598489500615131676}
   - {fileID: -466361243095692846}
@@ -926,24 +903,18 @@ MonoBehaviour:
   - {fileID: 8425547260908604992}
   - {fileID: -4235058428854949956}
   - {fileID: 2874373705405682491}
-  - {fileID: -6462420937297033528}
   - {fileID: -3303288446705365823}
-  - {fileID: -2071607886915436212}
   - {fileID: 4206473407461557768}
   - {fileID: -625910996186011826}
   - {fileID: -1099466688963594380}
-  - {fileID: 9214695800441608710}
   - {fileID: 6178641522608681806}
   - {fileID: -9114075520416255118}
-  - {fileID: -3472941336137647899}
   - {fileID: 69202691097830909}
   - {fileID: 7447356548828085946}
   - {fileID: 8263033914538930090}
-  - {fileID: -3229832787107996459}
   - {fileID: 6860394328235327901}
   - {fileID: -8996063645096868958}
   - {fileID: -3235718059417118735}
-  - {fileID: 5589198010603979040}
   - {fileID: 9134345229092449910}
   - {fileID: -6584060161704918589}
   - {fileID: 7537622878996024849}
@@ -957,6 +928,14 @@ MonoBehaviour:
   - {fileID: 5437824467328704006}
   - {fileID: -3698981069447762615}
   - {fileID: -4233956547251649500}
+  - {fileID: 6730117043926309334}
+  - {fileID: 361443997977770071}
+  - {fileID: 4569098972294636311}
+  - {fileID: -3942521396117923784}
+  - {fileID: -7709107765945537123}
+  - {fileID: 8128065894501959055}
+  - {fileID: 1088187358407344728}
+  - {fileID: -8981024675644610003}
 --- !u!114 &69202691097830909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,7 +982,52 @@ MonoBehaviour:
     - 0.4
     - 0.4
     - 0.4
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
+--- !u!114 &361443997977770071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 431b578759d8dbb49b631922047657a3
+  nodePos: {x: 603, y: 71.999985}
+  container: {fileID: 2313525776459092692}
+  narrator: Father
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05
+--- !u!114 &1088187358407344728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 14fbf7b4cec7cb448b75b946a7a41a95
+  nodePos: {x: 604, y: 1135}
+  container: {fileID: -3303288446705365823}
+  narrator: 
+  symbolTime:
+    keys: 2e00
+    values:
+    - 0.2
+  defaultSymbolTime: 0.05
 --- !u!114 &1107638675420767258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,7 +1050,7 @@ MonoBehaviour:
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
 --- !u!114 &1195360672702628671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1050,7 +1074,7 @@ MonoBehaviour:
     - 0.4
     - 0.4
     - 0.4
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
 --- !u!114 &1660724167881090690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1073,7 +1097,7 @@ MonoBehaviour:
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
   rootName: Mono
 --- !u!114 &1785062599917181627
 MonoBehaviour:
@@ -1095,7 +1119,7 @@ MonoBehaviour:
     keys: 2e00
     values:
     - 0.2
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
 --- !u!114 &1920100046529992297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1193,7 +1217,7 @@ MonoBehaviour:
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
   rootName: Room 2
 --- !u!114 &3547180147271856297
 MonoBehaviour:
@@ -1217,7 +1241,7 @@ MonoBehaviour:
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
 --- !u!114 &3692197242453817761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,11 +1260,11 @@ MonoBehaviour:
     keys: 00000000
     values:
     - {fileID: 0}
-  drawer: {fileID: -6462420937297033528}
+  drawer: {fileID: 1088187358407344728}
   branchChoicer: {fileID: 0}
   properties: []
-  tag: yes
-  delay: 0
+  tag: next
+  delay: 0.5
 --- !u!114 &4206473407461557768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1314,7 +1338,7 @@ MonoBehaviour:
       \u0438\u0436 \u0442\u044B, \u0434\u043E\u0447\u043A\u0443 \u0432\u0437\u044F\u043B
       \u0441 \u0441\u043E\u0431\u043E\u0439?"
     - Good afternoon! Kostya, why did you take your daughter with you?
---- !u!114 &4823183181462517166
+--- !u!114 &4569098972294636311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1326,15 +1350,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
   m_Name: SmartSequentialDrawer
   m_EditorClassIdentifier: 
-  guid: 7463e9574e1a61d4085336dd909487c5
-  nodePos: {x: 407, y: 72}
-  container: {fileID: -8188851824102482078}
-  narrator: Father
+  guid: a7a2f540b2c6f534680f9905c299d7a4
+  nodePos: {x: 1421, y: 72}
+  container: {fileID: 6178641522608681806}
+  narrator: R1M2
   symbolTime:
-    keys: 2e00
+    keys: 2c002e0021003f00
     values:
     - 0.2
-  defaultSymbolTime: 0.1
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05
 --- !u!114 &4838813077637738823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1357,7 +1384,7 @@ MonoBehaviour:
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
 --- !u!114 &5437824467328704006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1381,27 +1408,6 @@ MonoBehaviour:
     values:
     - "\u041E\u0439, \u043D\u0435 \u043D\u0430\u0447\u0438\u043D\u0430\u0439..."
     - Oh, don't start...
---- !u!114 &5589198010603979040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
-  m_Name: SmartSequentialDrawer
-  m_EditorClassIdentifier: 
-  guid: 56d410b6bb9b45d499cb781b206b0d18
-  nodePos: {x: 2009, y: 72}
-  container: {fileID: 9134345229092449910}
-  narrator: R1M3
-  symbolTime:
-    keys: 2e00
-    values:
-    - 0.2
-  defaultSymbolTime: 0.1
 --- !u!114 &6178641522608681806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,7 +1454,7 @@ MonoBehaviour:
     - 0.4
     - 0.4
     - 0.4
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
 --- !u!114 &6487436676609510652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1472,7 +1478,31 @@ MonoBehaviour:
     - 0.4
     - 0.4
     - 0.4
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
+--- !u!114 &6730117043926309334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: a060f162d1d89e649aea6b304285519c
+  nodePos: {x: 407, y: 72.00002}
+  container: {fileID: -8188851824102482078}
+  narrator: Father
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05
 --- !u!114 &6860394328235327901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1491,11 +1521,11 @@ MonoBehaviour:
     keys: 00000000
     values:
     - {fileID: -3235718059417118735}
-  drawer: {fileID: -3229832787107996459}
+  drawer: {fileID: -7709107765945537123}
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
 --- !u!114 &7109296263161588007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1519,7 +1549,7 @@ MonoBehaviour:
     - 0.4
     - 0.4
     - 0.4
-  defaultSymbolTime: 0.1
+  defaultSymbolTime: 0.05
 --- !u!114 &7332603556386789574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1543,7 +1573,7 @@ MonoBehaviour:
   branchChoicer: {fileID: -4686935160208847274}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
   rootName: To Next
 --- !u!114 &7447356548828085946
 MonoBehaviour:
@@ -1563,32 +1593,11 @@ MonoBehaviour:
     keys: 00000000
     values:
     - {fileID: 6860394328235327901}
-  drawer: {fileID: -3472941336137647899}
+  drawer: {fileID: -3942521396117923784}
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
---- !u!114 &7526153133237986962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
-  m_Name: SmartSequentialDrawer
-  m_EditorClassIdentifier: 
-  guid: 9387854c13ddaf04da9846c9f0629aa4
-  nodePos: {x: 603, y: 72}
-  container: {fileID: 2313525776459092692}
-  narrator: Father
-  symbolTime:
-    keys: 2e00
-    values:
-    - 0.2
-  defaultSymbolTime: 0.1
+  delay: 0.5
 --- !u!114 &7537622878996024849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1614,6 +1623,30 @@ MonoBehaviour:
       \u043E\u0442\u0441\u044E\u0434\u0430, \u0443 \u043D\u0430\u0441 \u0442\u0443\u0442
       \u0441\u0430\u043D\u043E\u0432\u0438\u0442\u044B\u0435 \u0434\u0435\u043B\u0430."
     - Girl, well, get out of here, we have dignified business here.
+--- !u!114 &8128065894501959055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: d559f4df2d3cd754fb24dbe8e72bbea8
+  nodePos: {x: 2010.0004, y: 71.99998}
+  container: {fileID: 9134345229092449910}
+  narrator: R1M3
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05
 --- !u!114 &8263033914538930090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1636,7 +1669,7 @@ MonoBehaviour:
   branchChoicer: {fileID: 0}
   properties: []
   tag: 
-  delay: 0
+  delay: 0.5
   rootName: Room 1
 --- !u!114 &8425547260908604992
 MonoBehaviour:
@@ -1656,11 +1689,11 @@ MonoBehaviour:
     keys: 00000000
     values:
     - {fileID: 0}
-  drawer: {fileID: -2071607886915436212}
+  drawer: {fileID: -8981024675644610003}
   branchChoicer: {fileID: 0}
   properties: []
-  tag: no
-  delay: 0
+  tag: 
+  delay: 0.5
 --- !u!114 &8522225778033152339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1710,24 +1743,3 @@ MonoBehaviour:
     - "\u0410\u0432\u043E\u0441\u044C, \u0431\u0440\u0430\u0442\u0446\u044B, \u0410\u043B\u044F\u0441\u043A\u0443
       \u0432\u0435\u0440\u043D\u0451\u0442!"
     - Perhaps, brothers, he will return Alaska!
---- !u!114 &9214695800441608710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
-  m_Name: SmartSequentialDrawer
-  m_EditorClassIdentifier: 
-  guid: 650911dd02e29dc4cac4e5574656d5da
-  nodePos: {x: 1420.5623, y: 71.99997}
-  container: {fileID: 6178641522608681806}
-  narrator: R1M2
-  symbolTime:
-    keys: 2e00
-    values:
-    - 0.2
-  defaultSymbolTime: 0.1

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Plugins.DialogueSystem.Scripts.DialogueGraph.Attributes;
@@ -69,7 +70,7 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph
                     if (field.FieldType.IsGenericType && field.FieldType.GetInterface(nameof(IList)) != null)
                     {
                         if (field.GetValue(n) is not IList values) continue;
-                        var list = new List<AbstractNode>();
+                        var list =  (IList) Activator.CreateInstance(field.FieldType);
                         foreach (var value in values)
                             if (value is AbstractNode abstractNode) 
                                 list.Add(abstractNode == null ? null : clones[abstractNode]);

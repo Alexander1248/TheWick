@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using NPC;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
+using Dialogue = Plugins.DialogueSystem.Scripts.DialogueGraph.Dialogue;
 
 public class CSManager : MonoBehaviour
 {
@@ -46,24 +45,29 @@ public class CSManager : MonoBehaviour
         else if (animatorNpc.name.Contains("Npc3")) animatorNpc.CrossFade("FatherHalfSittingTalk", 0.5f, -1, 0);
     }
 
-    void startGame(){
-        playableDirector.Play();
-        dialogue.StartDialogue();
+    void startGame()
+    {
+        Invoke(nameof(PlayDirector), 4);
+        dialogue.StartDialogue("Intro");
         //Debug.Log("(Отец)-И вот мы пришли! Главное ничего не трогай, а то я знаю, какая ты у меня. Один раз мне все гайки из лестницы выкрутила, так папаня и полетел с неё, хаха.");
+    }
+
+    private void PlayDirector()
+    {
+        playableDirector.Play();
     }
 
     public void getSignal(int id){
         if (cntr == 0){
-            dialogue.StartDialogue("Main 1");
+            dialogue.StartDialogue("Enter");
             //Debug.Log("(Мужик)- Доброго дня! Костя, иж ты, дочку взял с собой?  (Отец)-Доброго! Просилась ужасно, вот и решил показать. (Мужик)- Проходите тогда, коль не шутишь");
         }
         else if (cntr == 1){
-            dialogue.StartDialogue("Main 2");
+            dialogue.StartDialogue("Mono");
             //Debug.Log("(Отец)- А вот и Великий Царицынский Цех, построенный по указу Царя Всея Руси Николая Второго в 1930 году!(Отец)- Здесь и собирают все свечи, озаряющие наш Царицын! (Отец)- Коли желаешь посмотреть, понаблюдать за работой, можешь погулять. Как насмотришься, скажи мне.(Отец)- Только не отвлекай никого!");
             npc2_1.CrossFade("FatherSitting", 0.5f, -1, 0);
         }
         else if (cntr == 2){
-            dialogue.StartDialogue("Main 3");
             //Debug.Log("(Отец)- Если хочешь, можешь походить по кабинетам, только не мешай");
 
         }

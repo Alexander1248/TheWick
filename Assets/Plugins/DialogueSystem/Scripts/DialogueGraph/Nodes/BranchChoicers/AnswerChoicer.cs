@@ -25,6 +25,7 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph.Nodes.BranchChoicers
         private UnityAction<Dialogue> _listener;
         private List<Answer> _answers;
         private bool _isManual;
+        private CursorLockMode _modeBuff;
         public override void OnDrawStart(Dialogue dialogue, Storyline node)
         {
             if (!answerPrefab.TryGetComponent(typeof(RectTransform), out var _))
@@ -69,6 +70,9 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph.Nodes.BranchChoicers
             }
 
             if (late) return;
+
+            _modeBuff = Cursor.lockState;
+            Cursor.lockState = CursorLockMode.Confined;
             for (var i = 0; i < answers.Count; i++)
             {
                 _answers[i].gameObject.SetActive(true);
@@ -79,6 +83,8 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph.Nodes.BranchChoicers
         public override void OnDrawEnd(Dialogue dialogue, Storyline storyline)
         {
             if (!late) return;
+            _modeBuff = Cursor.lockState;
+            Cursor.lockState = CursorLockMode.Confined;
             for (var i = 0; i < answers.Count; i++)
             {
                 _answers[i].gameObject.SetActive(true);
@@ -88,6 +94,7 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph.Nodes.BranchChoicers
 
         public override void OnDelayStart(Dialogue dialogue, Storyline storyline)
         {
+            Cursor.lockState = _modeBuff;
             for (var i = 0; i < answers.Count; i++)
             {
                 _answers[i].Hide();
