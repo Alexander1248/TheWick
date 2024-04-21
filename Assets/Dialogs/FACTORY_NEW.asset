@@ -1,0 +1,1733 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9114075520416255118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 70b39fe9e36319843a7b619b816b76ff
+  nodePos: {x: 1406.5625, y: 149}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 7447356548828085946}
+  drawer: {fileID: 9214695800441608710}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+--- !u!114 &-8996063645096868958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 0f7546e5f6e6984469c7dc8244829e54
+  nodePos: {x: 1837.9996, y: -5.000002}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041D\u0430\u0434\u0435\u044E\u0441\u044C, \u0447\u0442\u043E \u0431\u0443\u0434\u0435\u0442
+      \u0442\u0430\u043A\u0438\u043C \u0436\u0435, \u043A\u0430\u043A \u0438 \u043F\u0430\u043F\u043A\u0430."
+    - I hope it will be the same as the folder.
+--- !u!114 &-8795247178637281565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 3e95f4fceca04ad489628c5f155807d8
+  nodePos: {x: 236.99995, y: 665.1022}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0410 \u0432\u043E\u0442 \u0438 \u0412\u0435\u043B\u0438\u043A\u0438\u0439
+      \u0426\u0430\u0440\u0438\u0446\u044B\u043D\u0441\u043A\u0438\u0439 \u0426\u0435\u0445,
+      \u043F\u043E\u0441\u0442\u0440\u043E\u0435\u043D\u043D\u044B\u0439 \u043F\u043E
+      \u0443\u043A\u0430\u0437\u0443 \u0426\u0430\u0440\u044F \u0412\u0441\u0435\u044F
+      \u0420\u0443\u0441\u0438 \u041D\u0438\u043A\u043E\u043B\u0430\u044F \u0412\u0442\u043E\u0440\u043E\u0433\u043E
+      \u0432 1930 \u0433\u043E\u0434\u0443!"
+    - And here is the Great Tsaritsyn Workshop, built by order of the Tsar of All
+      Rus' Nicholas II in 1930!
+--- !u!114 &-8248835174902396647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 4516781bcaec560408568a466092a0b8
+  nodePos: {x: 236.99998, y: -5.000016}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0418 \u0432\u043E\u0442 \u043C\u044B \u043F\u0440\u0438\u0448\u043B\u0438!"
+    - And here we are!
+--- !u!114 &-8188851824102482078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 6518f098d38bde04983ec307a5680435
+  nodePos: {x: 432, y: -5}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043D\u0438\u0447\u0435\u0433\u043E
+      \u043D\u0435 \u0442\u0440\u043E\u0433\u0430\u0439, \u0430 \u0442\u043E \u044F
+      \u0437\u043D\u0430\u044E, \u043A\u0430\u043A\u0430\u044F \u0442\u044B \u0443
+      \u043C\u0435\u043D\u044F."
+    - "The main thing is don\u2019t touch anything, otherwise I know what kind of
+      person you are."
+--- !u!114 &-7800845988706665052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: e84de8627be12984ba26613ea7f2282e
+  nodePos: {x: 393, y: 149}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -1598489500615131676}
+  drawer: {fileID: 4823183181462517166}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+--- !u!114 &-7533622008963451876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: cdb57e22e19c624428d3345384140542
+  nodePos: {x: 211.99991, y: 742.10223}
+  container: {fileID: -8795247178637281565}
+  narrator: Father
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &-7473821841978875697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 959e93a581433be47b4547b6ec29ba20
+  nodePos: {x: 799.00006, y: 741.9999}
+  container: {fileID: 4304914259760138464}
+  narrator: Father
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &-6584060161704918589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 68aad8869a83600469a907eafa5e6a52
+  nodePos: {x: 1226.0001, y: 430.00003}
+  container: {fileID: 7537622878996024849}
+  narrator: R2M1
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &-6462420937297033528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: a55ebf7adc38f3d4a94c2b5722355d27
+  nodePos: {x: 603, y: 1135}
+  container: {fileID: -3303288446705365823}
+  narrator: Father
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &-6219915885928615624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 3747246352af7b049b6b4c21aa10e09b
+  nodePos: {x: 1446, y: 664.99994}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0414\u0430 \u0443\u0436... \u0412 \u043F\u0440\u043E\u0448\u043B\u044B\u0439
+      \u0440\u0430\u0437 \u043F\u043E\u0441\u043B\u0435 \u0442\u0430\u043A\u043E\u0439
+      \u043D\u043E\u0447\u0438 \u043C\u044B \u043E\u043A\u0430\u0437\u0430\u043B\u0438\u0441\u044C
+      \u0433\u0434\u0435-\u0442\u043E \u0432 \u0412\u044F\u0442\u043A\u0435..."
+    - Yeah... Last time, after such a night, we ended up somewhere in Vyatka...
+--- !u!114 &-5447756057716221411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 782f58a2009b49f4aab95e78a686c8d5
+  nodePos: {x: 212.00002, y: 71.999985}
+  container: {fileID: -8248835174902396647}
+  narrator: Father
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &-4686935160208847274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93811e549c04478aa659e1d98ec6d1f6, type: 3}
+  m_Name: AnswerChoicer
+  m_EditorClassIdentifier: 
+  guid: 07d2dc67d21bfab4393b80d76085e9c6
+  nodePos: {x: 198.00003, y: 1414.4684}
+  answerPrefab: {fileID: 8369534784972384349, guid: ff1d2aa70f6366548af71a342e191c8a,
+    type: 3}
+  answersRootKey: answers
+  answers:
+  - {fileID: -4235058428854949956}
+  - {fileID: 2874373705405682491}
+  late: 1
+  pivot: 1
+  margin:
+    serializedVersion: 2
+    x: 10
+    y: 10
+    width: 10
+    height: 10
+--- !u!114 &-4235058428854949956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: f52db7c8c66ebfc478538dcdaeedae07
+  nodePos: {x: -4.999974, y: 1414.4684}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0414\u0430"
+    - Yes
+--- !u!114 &-4233956547251649500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad84465e128f45c9a2b8120b5d4d3fa3, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: e61afc6f6b23ef8488e95de2b7592f13
+  nodePos: {x: 1211, y: 819}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 1107638675420767258}
+  drawer: {fileID: -2174647859085886919}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+  rootName: Room 3
+--- !u!114 &-3904768969602684822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: ed94686eb8ae72e4f88a95043c2f2caa
+  nodePos: {x: 393.00006, y: 483.497}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -2962945576527644097}
+  drawer: {fileID: 7109296263161588007}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+--- !u!114 &-3698981069447762615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 0b6075662239f4a42894f0d62cf59069
+  nodePos: {x: 1603, y: 819}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  drawer: {fileID: 1785062599917181627}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+--- !u!114 &-3477803900838187250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 363244a9174d08a44950d28f67604b73
+  nodePos: {x: 628.0001, y: 329.497}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041F\u0440\u043E\u0445\u043E\u0434\u0438\u0442\u0435 \u0442\u043E\u0433\u0434\u0430,
+      \u043A\u043E\u043B\u044C \u043D\u0435 \u0448\u0443\u0442\u0438\u0448\u044C."
+    - "Go ahead then, if you\u2019re not joking."
+--- !u!114 &-3472941336137647899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: fdbba9f07d8b34449a9f40716ada176a
+  nodePos: {x: 1616.5623, y: 71.99997}
+  container: {fileID: 69202691097830909}
+  narrator: R1M2
+  symbolTime:
+    keys: 2e00
+    values:
+    - 0.2
+  defaultSymbolTime: 0.1
+--- !u!114 &-3457544156952753556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 74b084baf85da2c4fb4fa652bd6ad57b
+  nodePos: {x: 212.00006, y: 406.497}
+  container: {fileID: 4347210676788832324}
+  narrator: Man
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &-3303288446705365823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 54e9282f3582fc14c83820a9248338cd
+  nodePos: {x: 628.00006, y: 1058}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0422\u043E\u0433\u0434\u0430 \u043F\u043E\u0448\u043B\u0438 \u0434\u0430\u043B\u044C\u0448\u0435..."
+    - Then let's move on...
+--- !u!114 &-3235718059417118735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 2d0413f7e9f43f2438e3bae36b0d5ddd
+  nodePos: {x: 1995, y: 149}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  drawer: {fileID: 5589198010603979040}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+--- !u!114 &-3229832787107996459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 34b47d86d3558c64985a54a7b3ccefe0
+  nodePos: {x: 1812.9996, y: 71.999985}
+  container: {fileID: -8996063645096868958}
+  narrator: R1M3
+  symbolTime:
+    keys: 2e00
+    values:
+    - 0.2
+  defaultSymbolTime: 0.1
+--- !u!114 &-2962945576527644097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 3c913ca08e1a3a84482e106c6fe8c5fd
+  nodePos: {x: 589.0001, y: 483.497}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  drawer: {fileID: 1195360672702628671}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+--- !u!114 &-2953190455022199169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 6417abab6aee8954fb9bb5943d04d215
+  nodePos: {x: 627.99994, y: 665.1022}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041A\u043E\u043B\u0438 \u0436\u0435\u043B\u0430\u0435\u0448\u044C \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C,
+      \u043F\u043E\u043D\u0430\u0431\u043B\u044E\u0434\u0430\u0442\u044C \u0437\u0430
+      \u0440\u0430\u0431\u043E\u0442\u043E\u0439, \u043C\u043E\u0436\u0435\u0448\u044C
+      \u043F\u043E\u0433\u0443\u043B\u044F\u0442\u044C. \u041A\u0430\u043A \u043D\u0430\u0441\u043C\u043E\u0442\u0440\u0438\u0448\u044C\u0441\u044F,
+      \u0441\u043A\u0430\u0436\u0438 \u043C\u043D\u0435."
+    - If you want to look, observe work, you can take a walk. When you see enough,
+      tell me.
+--- !u!114 &-2589675221036145957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 279ef4d98cd95b14d9aa0886624a2478
+  nodePos: {x: 237.00002, y: 1135.4684}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041D\u0430\u0441\u043C\u043E\u0442\u0440\u0435\u043B\u0430\u0441\u044C?"
+    - Have you seen enough?
+--- !u!114 &-2174647859085886919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 8a01092a7976dea4792bae7b59127eef
+  nodePos: {x: 1226, y: 741.99994}
+  container: {fileID: -359961234888046816}
+  narrator: R3M1
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &-2071607886915436212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 060649072285e1042afcf88ff51e7345
+  nodePos: {x: 603, y: 1438}
+  container: {fileID: 4206473407461557768}
+  narrator: Father
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &-1757054119953643671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 52467cc046016f44f8dbff470b8f0e15
+  nodePos: {x: 588.9998, y: 819.1022}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 3547180147271856297}
+  drawer: {fileID: 6228710683013787508}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+--- !u!114 &-1598489500615131676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: ab3bbd3b85a632f4ab63e15cceaf04a6
+  nodePos: {x: 589, y: 149}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  drawer: {fileID: 7526153133237986962}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+--- !u!114 &-1099466688963594380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: fde5023783df70643b17ab9cfc40eec0
+  nodePos: {x: 1250.5624, y: -5.0000114}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u042D\u0445, \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044C\u0442\u0435,
+      \u0410\u043B\u0451\u0448\u0435, \u0446\u0435\u0441\u0430\u0440\u0435\u0432\u0438\u0447\u0443
+      \u043D\u0430\u0448\u0435\u043C\u0443, \u043A\u043E\u043B\u044C \u043F\u043E\u0434\u0438
+      30 \u043D\u0430\u0441\u0442\u0443\u043F\u0438\u043B\u043E!"
+    - Oh, imagine, Alyosha, our Tsarevich, since 30 has arrived!
+--- !u!114 &-625910996186011826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 04f60923641aa104284eb720a3a87c44
+  nodePos: {x: 1225.5624, y: 71.99997}
+  container: {fileID: -1099466688963594380}
+  narrator: R1M1
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &-466361243095692846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad84465e128f45c9a2b8120b5d4d3fa3, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: 89638d16a77e92d4b8062f7aac2829d1
+  nodePos: {x: 197, y: 483}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -3904768969602684822}
+  drawer: {fileID: -3457544156952753556}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+  rootName: Enter
+--- !u!114 &-359961234888046816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 06a9d113fc9adf544af97a4600ed43b5
+  nodePos: {x: 1251, y: 664.99994}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041E\u0445, \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044C, \u043A\u0430\u043A
+      \u043F\u043E\u043B\u0443\u0447\u043A\u0430 \u043F\u0440\u0438\u0434\u0451\u0442,
+      \u043F\u043E\u0435\u0434\u0435\u043C \u0432 \u0431\u0440\u0438\u0447\u043A\u0435
+      \u043A\u0443\u0442\u0438\u0442\u044C \u043F\u043E \u0446\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u044B\u043C
+      \u0443\u043B\u043E\u0447\u043A\u0430\u043C!"
+    - Oh, imagine how the pay comes, let's go in a chaise for a spree along the central
+      streets!
+--- !u!114 &-322400488549299898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 8128c81ba5746eb488aec759991056ab
+  nodePos: {x: 1421, y: 741.99994}
+  container: {fileID: -6219915885928615624}
+  narrator: R3M2
+  symbolTime:
+    keys: 2e00
+    values:
+    - 0.2
+  defaultSymbolTime: 0.1
+--- !u!114 &-56812135887470195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad84465e128f45c9a2b8120b5d4d3fa3, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: c32efd80dde470a4cb0529691af02b6e
+  nodePos: {x: 197, y: 149}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -7800845988706665052}
+  drawer: {fileID: -5447756057716221411}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+  rootName: Intro
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dc910af0e3446b0bda39e5ae3bb19ca, type: 3}
+  m_Name: FACTORY_NEW
+  m_EditorClassIdentifier: 
+  roots:
+  - {fileID: -56812135887470195}
+  - {fileID: -466361243095692846}
+  - {fileID: 1660724167881090690}
+  - {fileID: 7332603556386789574}
+  - {fileID: 8263033914538930090}
+  - {fileID: 3492802692758313113}
+  - {fileID: -4233956547251649500}
+  nodes:
+  - {fileID: -56812135887470195}
+  - {fileID: -5447756057716221411}
+  - {fileID: -8248835174902396647}
+  - {fileID: 4823183181462517166}
+  - {fileID: -8188851824102482078}
+  - {fileID: -7800845988706665052}
+  - {fileID: 7526153133237986962}
+  - {fileID: 2313525776459092692}
+  - {fileID: -1598489500615131676}
+  - {fileID: -466361243095692846}
+  - {fileID: 4347210676788832324}
+  - {fileID: -3904768969602684822}
+  - {fileID: 8522225778033152339}
+  - {fileID: -2962945576527644097}
+  - {fileID: -3477803900838187250}
+  - {fileID: -3457544156952753556}
+  - {fileID: 7109296263161588007}
+  - {fileID: 1195360672702628671}
+  - {fileID: 1660724167881090690}
+  - {fileID: -7533622008963451876}
+  - {fileID: 6487436676609510652}
+  - {fileID: 6228710683013787508}
+  - {fileID: 4838813077637738823}
+  - {fileID: -1757054119953643671}
+  - {fileID: 1920100046529992297}
+  - {fileID: -8795247178637281565}
+  - {fileID: -2953190455022199169}
+  - {fileID: 3547180147271856297}
+  - {fileID: -7473821841978875697}
+  - {fileID: 4304914259760138464}
+  - {fileID: 7332603556386789574}
+  - {fileID: 232330149439951263}
+  - {fileID: -4686935160208847274}
+  - {fileID: -2589675221036145957}
+  - {fileID: 3692197242453817761}
+  - {fileID: 8425547260908604992}
+  - {fileID: -4235058428854949956}
+  - {fileID: 2874373705405682491}
+  - {fileID: -6462420937297033528}
+  - {fileID: -3303288446705365823}
+  - {fileID: -2071607886915436212}
+  - {fileID: 4206473407461557768}
+  - {fileID: -625910996186011826}
+  - {fileID: -1099466688963594380}
+  - {fileID: 9214695800441608710}
+  - {fileID: 6178641522608681806}
+  - {fileID: -9114075520416255118}
+  - {fileID: -3472941336137647899}
+  - {fileID: 69202691097830909}
+  - {fileID: 7447356548828085946}
+  - {fileID: 8263033914538930090}
+  - {fileID: -3229832787107996459}
+  - {fileID: 6860394328235327901}
+  - {fileID: -8996063645096868958}
+  - {fileID: -3235718059417118735}
+  - {fileID: 5589198010603979040}
+  - {fileID: 9134345229092449910}
+  - {fileID: -6584060161704918589}
+  - {fileID: 7537622878996024849}
+  - {fileID: 3492802692758313113}
+  - {fileID: -2174647859085886919}
+  - {fileID: -359961234888046816}
+  - {fileID: -322400488549299898}
+  - {fileID: -6219915885928615624}
+  - {fileID: 1107638675420767258}
+  - {fileID: 1785062599917181627}
+  - {fileID: 5437824467328704006}
+  - {fileID: -3698981069447762615}
+  - {fileID: -4233956547251649500}
+--- !u!114 &69202691097830909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: a903203215c7b304398fc686f2bb4248
+  nodePos: {x: 1641.5623, y: -5.0000114}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0426\u0435\u0441\u0430\u0440\u0435\u0432\u0438\u0447\u0430 \u0445\u0440\u0430\u043D\u0438! "
+    - Save the Tsarevich!
+--- !u!114 &232330149439951263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 8479372be20e87e4aa12827b0fdffd1e
+  nodePos: {x: 211.99998, y: 1212.4684}
+  container: {fileID: -2589675221036145957}
+  narrator: Father
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &1107638675420767258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 2692743271107dc4ab7f5004f1ffe4f6
+  nodePos: {x: 1407, y: 819}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -3698981069447762615}
+  drawer: {fileID: -322400488549299898}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+--- !u!114 &1195360672702628671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: c5d4040cfb752054e874eb16d5b700c9
+  nodePos: {x: 603.00006, y: 406.497}
+  container: {fileID: -3477803900838187250}
+  narrator: Man
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &1660724167881090690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad84465e128f45c9a2b8120b5d4d3fa3, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: 4f9db4b423112214ead0f66b1bd50116
+  nodePos: {x: 197, y: 819}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 4838813077637738823}
+  drawer: {fileID: -7533622008963451876}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+  rootName: Mono
+--- !u!114 &1785062599917181627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 9b28f723a86ba4d46a18b2c12a1e0310
+  nodePos: {x: 1617, y: 741.99994}
+  container: {fileID: 5437824467328704006}
+  narrator: R3M1
+  symbolTime:
+    keys: 2e00
+    values:
+    - 0.2
+  defaultSymbolTime: 0.1
+--- !u!114 &1920100046529992297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: bd99088c8591f1a43bf8dd2b29172787
+  nodePos: {x: 431.99994, y: 665.1022}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0417\u0434\u0435\u0441\u044C \u0438 \u0441\u043E\u0431\u0438\u0440\u0430\u044E\u0442
+      \u0432\u0441\u0435 \u0441\u0432\u0435\u0447\u0438, \u043E\u0437\u0430\u0440\u044F\u044E\u0449\u0438\u0435
+      \u043D\u0430\u0448 \u0426\u0430\u0440\u0438\u0446\u044B\u043D! "
+    - This is where they collect all the candles that illuminate our Tsaritsyn!
+--- !u!114 &2313525776459092692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 42c8a9d3c19c4fd4db1e9070f6faa030
+  nodePos: {x: 628, y: -5}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041E\u0434\u0438\u043D \u0440\u0430\u0437 \u043C\u043D\u0435 \u0432\u0441\u0435
+      \u0433\u0430\u0439\u043A\u0438 \u0438\u0437 \u043B\u0435\u0441\u0442\u043D\u0438\u0446\u044B
+      \u0432\u044B\u043A\u0440\u0443\u0442\u0438\u043B\u0430, \u0442\u0430\u043A
+      \u043F\u0430\u043F\u0430\u043D\u044F \u0438 \u043F\u043E\u043B\u0435\u0442\u0435\u043B
+      \u0441 \u043D\u0435\u0451, \u0445\u0430\u0445\u0430."
+    - One time I unscrewed all the nuts from the ladder, so dad flew off it, haha.
+--- !u!114 &2874373705405682491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: bcc7e7cb422babf4886e11172465f497
+  nodePos: {x: -4.999974, y: 1491.4684}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041D\u0435\u0442"
+    - No
+--- !u!114 &3492802692758313113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad84465e128f45c9a2b8120b5d4d3fa3, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: cec073dfd84ee694a806f1f76c4e3bd2
+  nodePos: {x: 1211.0002, y: 507.00003}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  drawer: {fileID: -6584060161704918589}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+  rootName: Room 2
+--- !u!114 &3547180147271856297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 9949f72745af87b43abcd542961a8bfb
+  nodePos: {x: 784.00006, y: 819}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  drawer: {fileID: -7473821841978875697}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+--- !u!114 &3692197242453817761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 9e960116f80cb4f47917cdc1d5be1fb3
+  nodePos: {x: 588.00006, y: 1212}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  drawer: {fileID: -6462420937297033528}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: yes
+  delay: 0
+--- !u!114 &4206473407461557768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 4ae249a9928665c49bafdd9f9df81191
+  nodePos: {x: 628.00006, y: 1361}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u042F \u0431\u0443\u0434\u0443 \u0436\u0434\u0430\u0442\u044C \u0442\u0435\u0431\u044F
+      \u0442\u0443\u0442..."
+    - I'll be waiting for you here...
+--- !u!114 &4304914259760138464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: fbe249080d966f44e9d78adaa3d5d52f
+  nodePos: {x: 825, y: 664.9999}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0422\u043E\u043B\u044C\u043A\u043E \u043D\u0435 \u043E\u0442\u0432\u043B\u0435\u043A\u0430\u0439
+      \u043D\u0438\u043A\u043E\u0433\u043E!"
+    - "Just don\u2019t distract anyone!"
+--- !u!114 &4347210676788832324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: de5e0341fced8d1439532d2c4da77584
+  nodePos: {x: 237.00009, y: 329.497}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0414\u043E\u0431\u0440\u043E\u0433\u043E \u0434\u043D\u044F! \u041A\u043E\u0441\u0442\u044F,
+      \u0438\u0436 \u0442\u044B, \u0434\u043E\u0447\u043A\u0443 \u0432\u0437\u044F\u043B
+      \u0441 \u0441\u043E\u0431\u043E\u0439?"
+    - Good afternoon! Kostya, why did you take your daughter with you?
+--- !u!114 &4823183181462517166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 7463e9574e1a61d4085336dd909487c5
+  nodePos: {x: 407, y: 72}
+  container: {fileID: -8188851824102482078}
+  narrator: Father
+  symbolTime:
+    keys: 2e00
+    values:
+    - 0.2
+  defaultSymbolTime: 0.1
+--- !u!114 &4838813077637738823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 2db767fe2582abf41be00dc616dacbcb
+  nodePos: {x: 392.99994, y: 819.1022}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -1757054119953643671}
+  drawer: {fileID: 6487436676609510652}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+--- !u!114 &5437824467328704006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: ea72297583be2b44e8de6771735d7fe6
+  nodePos: {x: 1642, y: 664.99994}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041E\u0439, \u043D\u0435 \u043D\u0430\u0447\u0438\u043D\u0430\u0439..."
+    - Oh, don't start...
+--- !u!114 &5589198010603979040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 56d410b6bb9b45d499cb781b206b0d18
+  nodePos: {x: 2009, y: 72}
+  container: {fileID: 9134345229092449910}
+  narrator: R1M3
+  symbolTime:
+    keys: 2e00
+    values:
+    - 0.2
+  defaultSymbolTime: 0.1
+--- !u!114 &6178641522608681806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: a7b87f6b842a5a3488b5207b98f6a067
+  nodePos: {x: 1445.5623, y: -5.0000114}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0411\u043E\u0436\u0435!"
+    - God!
+--- !u!114 &6228710683013787508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 31fb528b98fda1a4aa5e93c3a50fe83f
+  nodePos: {x: 602.99994, y: 742.10223}
+  container: {fileID: -2953190455022199169}
+  narrator: Father
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &6487436676609510652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 4af5a256d8a99214e93d6367efd3f7ea
+  nodePos: {x: 406.9999, y: 742.10223}
+  container: {fileID: 1920100046529992297}
+  narrator: Father
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &6860394328235327901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 62c55794dbe691b4db651e55d519fe80
+  nodePos: {x: 1798.9998, y: 149}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -3235718059417118735}
+  drawer: {fileID: -3229832787107996459}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+--- !u!114 &7109296263161588007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: e641c2ac2ee9849438e52f1e8229b5ab
+  nodePos: {x: 407.00012, y: 406.497}
+  container: {fileID: 8522225778033152339}
+  narrator: Father
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.1
+--- !u!114 &7332603556386789574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad84465e128f45c9a2b8120b5d4d3fa3, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: 464ce47a393a80140a9e195b762ee9d1
+  nodePos: {x: 197.00002, y: 1289}
+  next:
+    keys: 0000000001000000
+    values:
+    - {fileID: 3692197242453817761}
+    - {fileID: 8425547260908604992}
+  drawer: {fileID: 232330149439951263}
+  branchChoicer: {fileID: -4686935160208847274}
+  properties: []
+  tag: 
+  delay: 0
+  rootName: To Next
+--- !u!114 &7447356548828085946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 6d46a6464cc4891428a905d398f19a3e
+  nodePos: {x: 1602.5625, y: 149}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 6860394328235327901}
+  drawer: {fileID: -3472941336137647899}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+--- !u!114 &7526153133237986962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 9387854c13ddaf04da9846c9f0629aa4
+  nodePos: {x: 603, y: 72}
+  container: {fileID: 2313525776459092692}
+  narrator: Father
+  symbolTime:
+    keys: 2e00
+    values:
+    - 0.2
+  defaultSymbolTime: 0.1
+--- !u!114 &7537622878996024849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 3dca9eb65c5c44941b3c61b180d8b06f
+  nodePos: {x: 1251.0002, y: 353}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0414\u0435\u0432\u043E\u0447\u043A\u0430, \u0430 \u043D\u0443 \u043A\u044B\u0448
+      \u043E\u0442\u0441\u044E\u0434\u0430, \u0443 \u043D\u0430\u0441 \u0442\u0443\u0442
+      \u0441\u0430\u043D\u043E\u0432\u0438\u0442\u044B\u0435 \u0434\u0435\u043B\u0430."
+    - Girl, well, get out of here, we have dignified business here.
+--- !u!114 &8263033914538930090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad84465e128f45c9a2b8120b5d4d3fa3, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: ba909a4b9bf8f8d45804db5c583316e5
+  nodePos: {x: 1210.5624, y: 149}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -9114075520416255118}
+  drawer: {fileID: -625910996186011826}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+  rootName: Room 1
+--- !u!114 &8425547260908604992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: a9e43937d2bfe3c479823e282063a3f8
+  nodePos: {x: 588.00006, y: 1515}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  drawer: {fileID: -2071607886915436212}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: no
+  delay: 0
+--- !u!114 &8522225778033152339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 98b92a07c35c2dc49828151456291515
+  nodePos: {x: 432.00006, y: 329.497}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0414\u043E\u0431\u0440\u043E\u0433\u043E! \u041F\u0440\u043E\u0441\u0438\u043B\u0430\u0441\u044C
+      \u0443\u0436\u0430\u0441\u043D\u043E, \u0432\u043E\u0442 \u0438 \u0440\u0435\u0448\u0438\u043B
+      \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u044C."
+    - Good! It was asking badly, so I decided to show it.
+--- !u!114 &9134345229092449910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 240764c59b864f64eb1092e42ab1b88e
+  nodePos: {x: 2034, y: -5}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0410\u0432\u043E\u0441\u044C, \u0431\u0440\u0430\u0442\u0446\u044B, \u0410\u043B\u044F\u0441\u043A\u0443
+      \u0432\u0435\u0440\u043D\u0451\u0442!"
+    - Perhaps, brothers, he will return Alaska!
+--- !u!114 &9214695800441608710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 650911dd02e29dc4cac4e5574656d5da
+  nodePos: {x: 1420.5623, y: 71.99997}
+  container: {fileID: 6178641522608681806}
+  narrator: R1M2
+  symbolTime:
+    keys: 2e00
+    values:
+    - 0.2
+  defaultSymbolTime: 0.1
