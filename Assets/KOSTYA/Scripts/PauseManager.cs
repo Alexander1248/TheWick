@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -29,6 +30,10 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private FirstPersonController2 controller2;
 
 
+    [SerializeField] private TMP_Dropdown dropdown;
+    [SerializeField] private string languagePrefName = "locale";
+    [SerializeField] private Language[] languages;
+    
     public bool paused;
 
     void Update()
@@ -85,6 +90,21 @@ public class PauseManager : MonoBehaviour
 
         slidersText[0].text = "" + PlayerPrefs.GetFloat("PlayerVolume", 1).ToString("F1");
         sliders[0].value = PlayerPrefs.GetFloat("PlayerVolume", 1);
+        
+        
+        dropdown.AddOptions(languages.Select(language => new TMP_Dropdown.OptionData(language.name)).ToList());
+        if (PlayerPrefs.HasKey(languagePrefName))
+        {
+            var language = PlayerPrefs.GetString(languagePrefName);
+            for (var i = 0; i < languages.Length; i++)
+                if (languages[i].tag == language)
+                {
+                    dropdown.SetValueWithoutNotify(i);
+                    break;
+                }
+        }
+
+        dropdown.onValueChanged.AddListener(ChangeLang);
     }
 
     public static float InverseLerp(float a, float b, float value)
@@ -143,6 +163,10 @@ public class PauseManager : MonoBehaviour
         audioMixer.SetFloat("Volume", Mathf.Log10(sliders[0].value)*20);
     }
 
+    public void ChangeLang(int state){
+        PlayerPrefs.SetString(languagePrefName, languages[state].tag);
+    }
+    
     public void resetButton(int id){
         buttons[id].fontSize = defaultSize[id];
     }

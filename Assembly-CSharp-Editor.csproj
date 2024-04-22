@@ -46,14 +46,22 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\SentenceGraph\SentenceGraphView.cs" />
+     <Compile Include="Assets\Editor\DialogueSystem\NodeView.cs" />
      <Compile Include="Assets\Editor\SentenceGraph\InspectorView.cs" />
      <Compile Include="Assets\Editor\SentenceGraph\NodeView.cs" />
      <Compile Include="Assets\Editor\SentenceGraph\SentenceGraphEditor.cs" />
      <Compile Include="Assets\Editor\SentenceGraph\SplitView.cs" />
+     <Compile Include="Assets\Editor\DialogueSystem\DialogueGraphView.cs" />
+     <Compile Include="Assets\Editor\DialogueSystem\SplitView.cs" />
+     <Compile Include="Assets\Editor\DialogueSystem\InspectorView.cs" />
+     <Compile Include="Assets\Editor\DialogueSystem\DialogueGraphEditor.cs" />
+     <None Include="Assets\Editor\DialogueSystem\DialogueGraphEditor.uxml" />
      <Folder Include="Assets\Editor" />
      <None Include="Assets\Editor\SentenceGraph\SentenceTreeEditor.uxml" />
      <Folder Include="Assets\Editor\SentenceGraph" />
+     <None Include="Assets\Editor\DialogueSystem\DialogueGraphEditor.uss" />
      <None Include="Assets\Editor\SentenceGraph\SentenceTreeEditor.uss" />
+     <Folder Include="Assets\Editor\DialogueSystem" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

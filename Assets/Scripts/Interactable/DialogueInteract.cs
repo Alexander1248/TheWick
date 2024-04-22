@@ -1,16 +1,13 @@
-﻿using System;
-using NPC;
+﻿using NPC;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
 using Utils;
+using Dialogue = Plugins.DialogueSystem.Scripts.DialogueGraph.Dialogue;
 
 namespace Interactable
 {
     public class DialogueInteract : MonoBehaviour, IInteractable
     {
         [SerializeField] private Dialogue dialogue;
-        [SerializeField] private bool standardDialogue;
         [SerializeField] private string dialogueName;
         
         [SerializeField] private KeyCode tipButton;
@@ -28,9 +25,7 @@ namespace Interactable
             _buff = gameObject.tag;
             gameObject.tag = "Untagged";
             _dialogueStarted = true;
-            if (standardDialogue) dialogue.StartDialogue();
-            else dialogue.StartDialogue(dialogueName);
-            
+            dialogue.StartDialogueNow(dialogueName);
             dialogue.onDialogueEnd.AddListener(EndInteract);
         }
 

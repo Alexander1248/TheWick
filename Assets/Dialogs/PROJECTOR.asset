@@ -1,0 +1,462 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6933254335224149114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 1bbbb4e3cc938094cab4553c58fd0b19
+  nodePos: {x: 930.00006, y: -328.99997}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041A\u0440\u043E\u043C\u0435 \u0440\u043E\u0431\u043E\u0442\u043E\u0432,
+      \u043F\u0440\u0438 \u043F\u043E\u043C\u043E\u0449\u0438 \u043F\u0430\u0440\u0430
+      \u0431\u044B\u043B\u043E \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043E
+      \u043D\u043E\u0432\u043E\u0435, \u043D\u0435 \u0438\u043C\u0435\u044E\u0449\u0435\u0435
+      \u0430\u043D\u0430\u043B\u043E\u0433\u043E\u0432 \u0432 \u043C\u0438\u0440\u0435,
+      \u043F\u0430\u0440\u043E\u0432\u043E\u0435 \u043E\u0440\u0443\u0436\u0438\u0435!
+      \u041F\u0430\u0440\u043E\u0438\u0437\u043B\u0443\u0447\u0430\u0442\u0435\u043B\u044C
+      \u041F-3! "
+    - In addition to robots, with the help of steam, a new steam weapon, which has
+      no analogues in the world, was developed! Steam emitter P-3!
+--- !u!114 &-5646386085922018995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 0ade571147563f948be9b59d2796e536
+  nodePos: {x: 1101, y: -252}
+  container: {fileID: 4685745183617687145}
+  narrator: Narrator
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05
+--- !u!114 &-5541394321725819594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 3b6fc000eea239f42aab8719797f01c3
+  nodePos: {x: 1184, y: 123.000015}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 1614699238558110312}
+  drawer: {fileID: 0}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 10
+--- !u!114 &-4622870292380134840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 799d56d8012fbcb42af63422ab80df3e
+  nodePos: {x: 496.99988, y: 123}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -538190037636967455}
+  drawer: {fileID: -271805081792096220}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 2
+  delay: 0.5
+--- !u!114 &-3806163012155304204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: a0f729fe4ae93de4a9068dcbc45176b9
+  nodePos: {x: 890, y: -175}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -1482835021337240013}
+  drawer: {fileID: 5814278230290601201}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 4
+  delay: 0.5
+--- !u!114 &-2176223147122449322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad84465e128f45c9a2b8120b5d4d3fa3, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: 006461673291ee342ac388d5e7b9dd2e
+  nodePos: {x: 105, y: 272}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 1614699238558110312}
+  drawer: {fileID: 0}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 
+  delay: 0
+  rootName: Projector
+--- !u!114 &-1482835021337240013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 2fe86ae36684a654b9f85f09910e64d9
+  nodePos: {x: 1086, y: -175}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -5541394321725819594}
+  drawer: {fileID: -5646386085922018995}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 4
+  delay: 0.5
+--- !u!114 &-538190037636967455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 82dc78c3154bfce42b9efadc655b1125
+  nodePos: {x: 692.99994, y: -26.000013}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -3806163012155304204}
+  drawer: {fileID: 1346164797225307301}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 3
+  delay: 0.5
+--- !u!114 &-271805081792096220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 55bd4fcf8f6115a46bc60c2e623e7883
+  nodePos: {x: 512, y: 45.999977}
+  container: {fileID: 3885699883402343545}
+  narrator: Narrator
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dc910af0e3446b0bda39e5ae3bb19ca, type: 3}
+  m_Name: PROJECTOR
+  m_EditorClassIdentifier: 
+  roots:
+  - {fileID: -2176223147122449322}
+  nodes:
+  - {fileID: -2176223147122449322}
+  - {fileID: 1614699238558110312}
+  - {fileID: 9069923857054302179}
+  - {fileID: 5938483048655488506}
+  - {fileID: -4622870292380134840}
+  - {fileID: -271805081792096220}
+  - {fileID: -538190037636967455}
+  - {fileID: 1346164797225307301}
+  - {fileID: -3806163012155304204}
+  - {fileID: 5814278230290601201}
+  - {fileID: -1482835021337240013}
+  - {fileID: -5646386085922018995}
+  - {fileID: -5541394321725819594}
+  - {fileID: 3885699883402343545}
+  - {fileID: 7143456049904177801}
+  - {fileID: -6933254335224149114}
+  - {fileID: 4685745183617687145}
+--- !u!114 &1346164797225307301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: f03738fb086f9644f8896208c42fb1c7
+  nodePos: {x: 708.99994, y: -102.99998}
+  container: {fileID: 7143456049904177801}
+  narrator: Narrator
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05
+--- !u!114 &1614699238558110312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 6a72a3033d1c7ab4e9e41619d6c29f8c
+  nodePos: {x: 301, y: 272}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -4622870292380134840}
+  drawer: {fileID: 9069923857054302179}
+  branchChoicer: {fileID: 0}
+  properties: []
+  tag: 1
+  delay: 0.5
+--- !u!114 &3885699883402343545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 2b3b113262f160e4f9e48d1eaf81b2ae
+  nodePos: {x: 536.99994, y: -25.999996}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0420\u0430\u0437\u0432\u0438\u0442\u0438\u0435 \u043F\u0430\u0440\u043E\u0432\u044B\u0445
+      \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0438\u0439 \u0438 \u0440\u043E\u0431\u043E\u0442\u043E\u0442\u0435\u0445\u043D\u0438\u043A\u0435
+      \u043F\u0440\u0438\u0432\u0435\u043B\u0438 \u043A \u0432\u0435\u043B\u0438\u043A\u0438\u043C
+      \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F\u043C, \u0442\u0430\u043A\u0438\u0445
+      \u043A\u0430\u043A \u0440\u043E\u0431\u043E\u0442\u044B \u043F\u043E\u043C\u043E\u0449\u043D\u0438\u043A\u0438
+      \u201C\u0414\u0432\u043E\u0440\u0435\u0446\u043A\u0438\u0439\u201D \u0438\u043B\u0438
+      \u201C\u041C\u0435\u0440\u0434\u043E\u0442\u0435\u043B\u044C\u201D."
+    - "The development of steam technology and robotics led to great discoveries,
+      such as robotic assistants \u201CButler\u201D or \u201CMerdotel\u201D."
+--- !u!114 &4685745183617687145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 614962b254f97e744b86ec0b43e8b10e
+  nodePos: {x: 1126, y: -328.9999}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041E\u043D \u0441\u043F\u043E\u0441\u043E\u0431\u0435\u043D \u043D\u0430\u043D\u0435\u0441\u0442\u0438
+      \u0441\u0435\u0440\u044C\u0451\u0437\u043D\u044B\u0435 \u0443\u0432\u0435\u0447\u044C\u044F,
+      \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E \u0441\u0442\u0440\u0435\u043B\u044F\u0432
+      \u0441\u043A\u0432\u043E\u0437\u044C \u043E\u0433\u043E\u043D\u044C."
+    - It is capable of causing serious injury, especially when shooting through fire.
+--- !u!114 &5814278230290601201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: dbde62f774f20e64185d06203296df91
+  nodePos: {x: 904.99994, y: -252}
+  container: {fileID: -6933254335224149114}
+  narrator: Narrator
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05
+--- !u!114 &5938483048655488506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: d7e23e42461c28a4bbc3751b2e282ee3
+  nodePos: {x: 341, y: 118}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041E\u0434\u0435\u0440\u0436\u0430\u0432 \u0433\u0440\u0430\u043D\u0434\u0438\u043E\u0437\u043D\u0443\u044E
+      \u043F\u043E\u0431\u0435\u0434\u0443 \u0432\u043E \u0412\u0442\u043E\u0440\u043E\u0439
+      \u041E\u0442\u0435\u0447\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0439
+      \u0432\u043E\u0439\u043D\u0435, \u0420\u043E\u0441\u0441\u0438\u0439\u0441\u043A\u0430\u044F
+      \u0418\u043C\u043F\u0435\u0440\u0438\u044F \u0441\u0442\u0440\u0435\u043C\u0438\u0442\u0441\u044F
+      \u0432\u043F\u0435\u0440\u0435\u0434!"
+    - Having won a grandiose victory in the Second Patriotic War, the Russian Empire
+      is striving forward!
+--- !u!114 &7143456049904177801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 0aa71d8e83e9d9b4284bc07e6fd9fa2d
+  nodePos: {x: 732.99994, y: -180.00003}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041F\u043E\u043C\u0438\u043C\u043E \u0443\u0441\u043B\u0443\u0433\u0438
+      \u0434\u043E\u043C\u0430, \u0442\u0430\u043A\u0438\u0435 \u0440\u043E\u0431\u043E\u0442\u044B,
+      \u043A\u0430\u043A \u201C\u0421\u0443\u0432\u043E\u0440\u043E\u0432\u201D \u0438\u043B\u0438
+      \u201C\u0411\u0430\u0433\u0440\u0430\u0442\u0438\u043E\u043D\u201D, \u043E\u043A\u0430\u0437\u044B\u0432\u0430\u044E\u0442
+      \u041E\u0442\u0435\u0447\u0435\u0441\u0442\u0432\u0443 \u0438 \u0420\u043E\u0434\u0438\u043D\u0435
+      \u0434\u043E\u043B\u0433 \u043D\u0430 \u043F\u043E\u043B\u044F\u0445 \u0441\u0440\u0430\u0436\u0435\u043D\u0438\u0439."
+    - "In addition to providing services at home, robots such as \u201CSuvorov\u201D
+      or \u201CBagration\u201D provide duty to the Fatherland and Motherland on the
+      battlefields."
+--- !u!114 &9069923857054302179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: bc599ade47277594c83dccf0aeb6f96a
+  nodePos: {x: 316, y: 195}
+  container: {fileID: 5938483048655488506}
+  narrator: Narrator
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05

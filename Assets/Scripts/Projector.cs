@@ -1,7 +1,6 @@
-﻿using System;
-using NPC;
-using UnityEngine;
+﻿using UnityEngine;
 using Utils;
+using Dialogue = Plugins.DialogueSystem.Scripts.DialogueGraph.Dialogue;
 
 public class Projector : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class Projector : MonoBehaviour
 
     private void Start()
     {
-        dialogue.StartDialogue();
+        dialogue.StartDialogueNow("Projector");
         dialogue.PauseDialogue();
     }
 
