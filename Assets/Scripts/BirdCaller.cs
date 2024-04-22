@@ -1,34 +1,69 @@
-﻿using NPC;
+﻿using System.Collections.Generic;
+using NPC;
+using Plugins.DialogueSystem.Scripts.DialogueGraph.Nodes;
+using Plugins.DialogueSystem.Scripts.DialogueGraph.Nodes.PropertyNodes;
 using UnityEngine;
+using Dialogue = Plugins.DialogueSystem.Scripts.DialogueGraph.Dialogue;
 
-public class BirdCaller : MonoBehaviour
+public class BirdCaller : Property
 {
-    [SerializeField] private Dialogue dialogue;
+    
+    [SerializeField] private Stage stage;
+    [SerializeField] private bool show;
     private Bird _bird;
-    private bool _birdActive;
-    private void Start()
+    
+    
+    public override AbstractNode Clone()
     {
-        _bird = GameObject.FindGameObjectWithTag("Player").GetComponent<Bird>();
+        var clone = Instantiate(this);
+        clone.stage = stage;
+        clone.show = show;
+        return clone;
     }
 
-    public void UpdateBird()
+    private void ShowBird(Dialogue dialogue)
     {
-        if (dialogue.GetCurrentNarratorName() == "Player")
-            ShowBird();
-        else
-            HideBird();
-    }
-
-    public void ShowBird()
-    {
-        if (_birdActive) return;
+        if ((bool)dialogue.buffer.GetValueOrDefault("birdActive", false)) return;
         _bird.EnableBird();
-        _birdActive = true;
+        dialogue.buffer["birdActive"] = true;
     }
-    public void HideBird()
+
+    private void HideBird(Dialogue dialogue)
     {
-        if (!_birdActive) return;
+        if (!(bool)dialogue.buffer.GetValueOrDefault("birdActive", false)) return;
         _bird.DisableBird();
-        _birdActive = false;
+        dialogue.buffer["birdActive"] = false;
+    }
+
+    public override void OnDrawStart(Dialogue dialogue, Storyline node)
+    {
+        if (stage != Stage.OnDrawStart) return;
+        _bird = GameObject.FindGameObjectWithTag("Player").GetComponent<Bird>();
+        if (show) ShowBird(dialogue);
+        else HideBird(dialogue);
+    }
+
+    public override void OnDrawEnd(Dialogue dialogue, Storyline storyline)
+    {
+        if (stage != Stage.OnDrawEnd) return;
+        _bird = GameObject.FindGameObjectWithTag("Player").GetComponent<Bird>();
+        if (show) ShowBird(dialogue);
+        else HideBird(dialogue);
+    }
+
+    public override void OnDelayStart(Dialogue dialogue, Storyline storyline)
+    {
+        if (stage != Stage.OnDelayStart) return;
+        _bird = GameObject.FindGameObjectWithTag("Player").GetComponent<Bird>();
+        if (show) ShowBird(dialogue);
+        else HideBird(dialogue);
+    }
+
+    public override void OnDelayEnd(Dialogue dialogue, Storyline storyline)
+    {
+        if (stage != Stage.OnDelayEnd) return;
+        _bird = GameObject.FindGameObjectWithTag("Player").GetComponent<Bird>();
+        if (show) ShowBird(dialogue);
+        else HideBird(dialogue);
     }
 }

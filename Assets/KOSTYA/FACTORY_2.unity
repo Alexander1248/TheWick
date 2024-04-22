@@ -2904,8 +2904,9 @@ MonoBehaviour:
   enter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1848117095}
-        m_TargetAssemblyTypeName: NPC.Dialogue, Assembly-CSharp
+      - m_Target: {fileID: 1848117098}
+        m_TargetAssemblyTypeName: Plugins.DialogueSystem.Scripts.DialogueGraph.Dialogue,
+          Assembly-CSharp-firstpass
         m_MethodName: PlayDialogue
         m_Mode: 1
         m_Arguments:
@@ -2919,8 +2920,9 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1848117095}
-        m_TargetAssemblyTypeName: NPC.Dialogue, Assembly-CSharp
+      - m_Target: {fileID: 1848117098}
+        m_TargetAssemblyTypeName: Plugins.DialogueSystem.Scripts.DialogueGraph.Dialogue,
+          Assembly-CSharp-firstpass
         m_MethodName: PauseDialogue
         m_Mode: 1
         m_Arguments:
@@ -19704,9 +19706,11 @@ MonoBehaviour:
   tipButton: 101
   tipName:
     keys:
-    - rus
+    - ru
+    - en
     values:
     - "\u0412\u0437\u044F\u0442\u044C"
+    - Take
   meshesOutline:
   - {fileID: 426588430}
   audioSource: {fileID: 0}
@@ -27391,12 +27395,12 @@ PrefabInstance:
     - target: {fileID: 5823326699794093494, guid: 02ff5a5dd1a920c449c40266992eb2d8,
         type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: StartDialogue
+      value: StartDialogueNow
       objectReference: {fileID: 0}
     - target: {fileID: 5823326699794093494, guid: 02ff5a5dd1a920c449c40266992eb2d8,
         type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: NPC.Dialogue, Assembly-CSharp
+      value: Plugins.DialogueSystem.Scripts.DialogueGraph.Dialogue, Assembly-CSharp-firstpass
       objectReference: {fileID: 0}
     - target: {fileID: 5823326699794093494, guid: 02ff5a5dd1a920c449c40266992eb2d8,
         type: 3}
@@ -31756,8 +31760,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1707474492}
-        m_TargetAssemblyTypeName: NPC.Dialogue, Assembly-CSharp
-        m_MethodName: StartDialogue
+        m_TargetAssemblyTypeName: Plugins.DialogueSystem.Scripts.DialogueGraph.Dialogue,
+          Assembly-CSharp-firstpass
+        m_MethodName: StartDialogueNow
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41896,7 +41901,6 @@ GameObject:
   - component: {fileID: 1707474489}
   - component: {fileID: 1707474488}
   - component: {fileID: 1707474492}
-  - component: {fileID: 1707474493}
   m_Layer: 0
   m_Name: CSFreddy
   m_TagString: Untagged
@@ -42011,7 +42015,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1707474487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83aef19abdc2476ba383e1386e247291, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f9692116ab543e0b64376ca3d8c2d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   narrators:
@@ -42027,7 +42031,13 @@ MonoBehaviour:
       source: {fileID: 1491408985}
       minPitch: 1
       maxPitch: 2
-  graph: {fileID: 11400000, guid: 71396cf562f1bd84a82ad17034f75c7a, type: 2}
+  graph: {fileID: 11400000, guid: cfd2ee3c625e0674f9c18407dbaed4a5, type: 2}
+  manual: 0
+  canSkip: 0
+  skipKey: 13
+  data:
+    keys: []
+    values: []
   onSentenceStart:
     m_PersistentCalls:
       m_Calls:
@@ -42035,18 +42045,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Cutscene2, Assembly-CSharp
         m_MethodName: TryStartAlarm
         m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1707474493}
-        m_TargetAssemblyTypeName: BirdCaller, Assembly-CSharp
-        m_MethodName: UpdateBird
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -42084,32 +42082,7 @@ MonoBehaviour:
         m_CallState: 2
   onDialogueEnd:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1707474493}
-        m_TargetAssemblyTypeName: BirdCaller, Assembly-CSharp
-        m_MethodName: HideBird
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1707474493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707474487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37611366c7d4429ba3208de7ff2c713f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 1707474492}
+      m_Calls: []
 --- !u!1001 &1709791103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45562,7 +45535,7 @@ GameObject:
   - component: {fileID: 1848117094}
   - component: {fileID: 1848117097}
   - component: {fileID: 1848117096}
-  - component: {fileID: 1848117095}
+  - component: {fileID: 1848117098}
   m_Layer: 0
   m_Name: Projector
   m_TagString: Untagged
@@ -45588,48 +45561,6 @@ Transform:
   - {fileID: 1581983414}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0.8, z: 0}
---- !u!114 &1848117095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848117091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83aef19abdc2476ba383e1386e247291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  narrators:
-    keys:
-    - Narrator
-    values:
-    - text: {fileID: 1964255490}
-      source: {fileID: 1951035507}
-      minPitch: 1.5
-      maxPitch: 2.5
-  graph: {fileID: 11400000, guid: 982b54fa771be8e459d4539006d1e36d, type: 2}
-  onSentenceStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1848117096}
-        m_TargetAssemblyTypeName: Projector, Assembly-CSharp
-        m_MethodName: ChangeScreen
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onSentenceEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  onDialogueEnd:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1848117096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45642,7 +45573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa970229e068412086abdd8a0a9b37c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 1848117095}
+  dialogue: {fileID: 1848117098}
   renderer: {fileID: 1848117097}
   screens:
     keys:
@@ -45707,6 +45638,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1848117098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848117091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9692116ab543e0b64376ca3d8c2d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  narrators:
+    keys:
+    - Narrator
+    values:
+    - text: {fileID: 1964255490}
+      source: {fileID: 1951035507}
+      minPitch: 1.5
+      maxPitch: 2.5
+  graph: {fileID: 11400000, guid: 6724ec883a3d7774fac922991087a235, type: 2}
+  manual: 0
+  canSkip: 0
+  skipKey: 13
+  data:
+    keys: []
+    values: []
+  onSentenceStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848117096}
+        m_TargetAssemblyTypeName: Projector, Assembly-CSharp
+        m_MethodName: ChangeScreen
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onSentenceEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1858043502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48105,7 +48084,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.1
+  MinDistance: 0.3
   MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0

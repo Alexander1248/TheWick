@@ -8988,9 +8988,11 @@ MonoBehaviour:
   tipButton: 101
   tipName:
     keys:
-    - rus
+    - ru
+    - en
     values:
     - "\u0412\u0437\u044F\u0442\u044C"
+    - Take
   meshesOutline:
   - {fileID: 6239241868495620347}
   audioSource: {fileID: 575838942}
@@ -9058,9 +9060,10 @@ MonoBehaviour:
           m_StringArgument: OpenDoorFast
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 804045334}
-        m_TargetAssemblyTypeName: NPC.Dialogue, Assembly-CSharp
-        m_MethodName: StartDialogue
+      - m_Target: {fileID: 804045336}
+        m_TargetAssemblyTypeName: Plugins.DialogueSystem.Scripts.DialogueGraph.Dialogue,
+          Assembly-CSharp-firstpass
+        m_MethodName: StartDialogueNow
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10939,9 +10942,10 @@ MonoBehaviour:
   valveOpened:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 804045334}
-        m_TargetAssemblyTypeName: NPC.Dialogue, Assembly-CSharp
-        m_MethodName: StartDialogue
+      - m_Target: {fileID: 804045336}
+        m_TargetAssemblyTypeName: Plugins.DialogueSystem.Scripts.DialogueGraph.Dialogue,
+          Assembly-CSharp-firstpass
+        m_MethodName: StartDialogueNow
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23664,7 +23668,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 804045335}
-  - component: {fileID: 804045334}
   - component: {fileID: 804045336}
   m_Layer: 0
   m_Name: Dialogue
@@ -23673,60 +23676,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &804045334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 804045333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83aef19abdc2476ba383e1386e247291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  narrators:
-    keys:
-    - Player
-    values:
-    - text: {fileID: 283854810}
-      source: {fileID: 1641725151}
-      minPitch: 1
-      maxPitch: 2
-  graph: {fileID: 11400000, guid: 71d59bf3b26f6a44ebca3b83251c812a, type: 2}
-  onSentenceStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 804045336}
-        m_TargetAssemblyTypeName: BirdCaller, Assembly-CSharp
-        m_MethodName: UpdateBird
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onSentenceEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  onDialogueEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 804045336}
-        m_TargetAssemblyTypeName: BirdCaller, Assembly-CSharp
-        m_MethodName: HideBird
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &804045335
 Transform:
   m_ObjectHideFlags: 0
@@ -23751,10 +23700,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 804045333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37611366c7d4429ba3208de7ff2c713f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f9692116ab543e0b64376ca3d8c2d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 804045334}
+  narrators:
+    keys:
+    - Player
+    values:
+    - text: {fileID: 283854810}
+      source: {fileID: 1641725151}
+      minPitch: 1
+      maxPitch: 2
+  graph: {fileID: 11400000, guid: a0e88c99dd3fd254c8ac679f9394c39a, type: 2}
+  manual: 0
+  canSkip: 0
+  skipKey: 13
+  data:
+    keys: []
+    values: []
+  onSentenceStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onSentenceEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &820770062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27024,16 +26996,17 @@ MonoBehaviour:
   autorun:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 804045334}
-        m_TargetAssemblyTypeName: NPC.Dialogue, Assembly-CSharp
-        m_MethodName: StartDialogue
-        m_Mode: 1
+      - m_Target: {fileID: 804045336}
+        m_TargetAssemblyTypeName: Plugins.DialogueSystem.Scripts.DialogueGraph.Dialogue,
+          Assembly-CSharp-firstpass
+        m_MethodName: StartDialogueNow
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Intro
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!4 &956852700
@@ -55819,9 +55792,10 @@ MonoBehaviour:
   valveOpened:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 804045334}
-        m_TargetAssemblyTypeName: NPC.Dialogue, Assembly-CSharp
-        m_MethodName: StartDialogue
+      - m_Target: {fileID: 804045336}
+        m_TargetAssemblyTypeName: Plugins.DialogueSystem.Scripts.DialogueGraph.Dialogue,
+          Assembly-CSharp-firstpass
+        m_MethodName: StartDialogueNow
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

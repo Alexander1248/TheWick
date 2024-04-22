@@ -4,6 +4,7 @@ using NPC;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Playables;
+using Dialogue = Plugins.DialogueSystem.Scripts.DialogueGraph.Dialogue;
 
 public class Cutscene2 : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class Cutscene2 : MonoBehaviour
     {
         _volume = alarm.volume;
         playableDirector.Play();
-        dialogue.StartDialogue();
+        dialogue.StartDialogueNow("Intro");
     }
 
     bool isStaying()
@@ -104,12 +105,13 @@ public class Cutscene2 : MonoBehaviour
             autoDoor.Play("OpenAutoDoor", -1, 0);
             autoDoor.GetComponent<AudioSource>().Play();
             playerRb.isKinematic = false;
+            dialogue.StartDialogueNow("After Alarm");
             return;
         }
         firstPersonController2.transform.SetParent(posUnderTable);
         imundertable = true;
         firstPersonController2.transform.localPosition = Vector3.zero;
-        dialogue.StartDialogue("UnderTable");
+        dialogue.StartDialogueNow("Under Table");
     }
 
     public void TryStartAlarm(string tag)

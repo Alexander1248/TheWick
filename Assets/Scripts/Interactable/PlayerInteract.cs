@@ -27,6 +27,8 @@ namespace Interactable
         [SerializeField] private TMP_Text textTipTip;
 
         [SerializeField] private TMP_Text textLook;
+        [SerializeField] private string localePlayerPref;
+        [SerializeField] private string defaultLocale;
 
         void Start()
         {
@@ -78,8 +80,9 @@ namespace Interactable
                 _interactable = obj.GetComponent<IInteractable>();
                 _interactable.Selected();
             
-                ShowTip(_interactable.TipButton.ToString(), _interactable.TipName.TryGetValue(PlayerPrefs.GetString("Language"), 
-                    out var value) ? value : _interactable.TipName.Values[0]);
+                var locale = PlayerPrefs.HasKey(localePlayerPref) ? PlayerPrefs.GetString(localePlayerPref) : defaultLocale;
+                if (_interactable.TipName.TryGetValue(locale, out var text)) ShowTip(_interactable.TipButton.ToString(),text);
+                else ShowTip(_interactable.TipButton.ToString(),_interactable.TipName.Values.Count > 0 ? _interactable.TipName.Values[0] : "");
             }
             else if (Vector3.Distance(transform.position, obj.transform.position) > distInteract)
             {

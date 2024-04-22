@@ -1,0 +1,515 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9171232223945097084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: 82f6891731643e14196e781a058cf7f9
+  nodePos: {x: 602.4002, y: -111.460014}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u0427\u0442\u043E \u043F\u0440\u043E\u0438\u0441\u0445\u043E\u0434\u0438\u0442?"
+      time: 0.5
+      delay: 1
+      narrator: Father
+--- !u!114 &-9080441548631559585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: 2f016483a9059d5428b9f70094678305
+  nodePos: {x: 290.3999, y: 42.4}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u041D\u0430\u0434\u043E \u043F\u043E\u043F\u044B\u0442\u0430\u0442\u044C\u0441\u044F
+        \u0441\u043F\u0430\u0441\u0442\u0438 \u0438\u0437 \u043B\u0430\u043F \u044D\u0442\u0438\u0445
+        \u043C\u0430\u0448\u0438\u043D \u0434\u044C\u044F\u0432\u043E\u043B\u0430!"
+      time: 3.5
+      delay: 1
+      narrator: Player
+--- !u!114 &-6786572247050153649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: 55bb1c1e3e4d02842bee6e0c72c18bc1
+  nodePos: {x: 135.20007, y: -34.400005}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  tag: cs end
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u0427\u0451\u0440\u0442, \u0447\u0451\u0440\u0442, \u0447\u0451\u0440\u0442!
+        \u041A\u0430\u0442\u044F, \u0441\u0438\u0434\u0438 \u0442\u0443\u0442 \u0438
+        \u043D\u0435 \u0432\u044B\u0441\u043E\u0432\u044B\u0432\u0430\u0439\u0441\u044F!"
+      time: 2
+      delay: 1
+      narrator: Father
+--- !u!114 &-6053323651114319021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dacf69829b694503a1c3a17dc61adda4, type: 3}
+  m_Name: SelectableDialogueRoot
+  m_EditorClassIdentifier: 
+  guid: 6c653bf87e38b05439008c5cbb2281f7
+  nodePos: {x: -48.000072, y: 42.4}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 7541052100404347395}
+  tag: 
+  rootName: After Warning
+--- !u!114 &-5526739445220369598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14af7cf68a2e454daf561243e9037826, type: 3}
+  m_Name: Delay
+  m_EditorClassIdentifier: 
+  guid: aaa3d9371f45551418caeb6222485592
+  nodePos: {x: 523.20013, y: -111.460014}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -9171232223945097084}
+  tag: alarm
+  delay: 2
+--- !u!114 &-5171501492085784268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dacf69829b694503a1c3a17dc61adda4, type: 3}
+  m_Name: SelectableDialogueRoot
+  m_EditorClassIdentifier: 
+  guid: d0ee62b5bdfc0344a98d33644cfe71aa
+  nodePos: {x: -47.999966, y: 306.51855}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -2384990961361755253}
+  tag: 
+  rootName: After Robot
+--- !u!114 &-4479308768072079164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: b55e59a5c8c0bf64a99ef5afb870ea6b
+  nodePos: {x: 212.79996, y: 306.4}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -3166572234395113954}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u0424\u0443\u0445! \u041C\u043E\u0439 \u0434\u0443\u0445 \u043D\u0435
+        \u0441\u043B\u043E\u043C\u0438\u0442\u044C!"
+      time: 2
+      delay: 1
+      narrator: Player
+--- !u!114 &-3166572234395113954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: 443b76c6fbcb8b74bb3614da5f496772
+  nodePos: {x: 367.99997, y: 306.40002}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u041D\u043E \u043C\u043E\u0436\u0435\u0442 \u0442\u0443\u0442 \u0433\u0434\u0435-\u0442\u043E
+        \u0435\u0441\u0442\u044C \u043F\u0435\u0440\u0432\u0430\u044F \u043F\u043E\u043C\u043E\u0449\u044C?"
+      time: 2
+      delay: 1
+      narrator: Player
+--- !u!114 &-2827813831105164245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: c3bdc9d776d3ab04290c3cb6303d1c3e
+  nodePos: {x: 212.80011, y: -111.460014}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 252534978227913380}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u0410 \u0437\u0434\u0435\u0441\u044C \u0443 \u043D\u0430\u0441
+        \u043A\u0443\u0445\u043C\u0438\u0441\u0442\u0435\u0440\u0441\u043A\u0430\u044F!
+        \u0413\u043E\u0442\u043E\u0432\u044F\u0442, \u043A\u043E\u043D\u0435\u0447\u043D\u043E
+        \u043D\u0435 \u0442\u0430\u043A \u0445\u043E\u0440\u043E\u0448\u043E, \u043D\u043E
+        \u0437\u0430\u0442\u043E \u0441 \u0434\u0443\u0448\u043E\u0439."
+      time: 3.5
+      delay: 1
+      narrator: Father
+--- !u!114 &-2384990961361755253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14af7cf68a2e454daf561243e9037826, type: 3}
+  m_Name: Delay
+  m_EditorClassIdentifier: 
+  guid: 9c76db4fe91b69a4c92263cf33065ddf
+  nodePos: {x: 135.20006, y: 306.51855}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -4479308768072079164}
+  tag: 
+  delay: 2
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58646d219bb14154bdb9188ab6cbb3e5, type: 3}
+  m_Name: FACTORY_2
+  m_EditorClassIdentifier: 
+  root: {fileID: 5769841529871434014}
+  roots:
+  - {fileID: -6053323651114319021}
+  - {fileID: -5171501492085784268}
+  - {fileID: 3044482739743453537}
+  - {fileID: 613602216970827664}
+  nodes:
+  - {fileID: 5769841529871434014}
+  - {fileID: -2827813831105164245}
+  - {fileID: 252534978227913380}
+  - {fileID: -5526739445220369598}
+  - {fileID: -9171232223945097084}
+  - {fileID: -6786572247050153649}
+  - {fileID: -6053323651114319021}
+  - {fileID: 7541052100404347395}
+  - {fileID: -9080441548631559585}
+  - {fileID: -5171501492085784268}
+  - {fileID: -4479308768072079164}
+  - {fileID: 3044482739743453537}
+  - {fileID: 2043678355444082346}
+  - {fileID: -2384990961361755253}
+  - {fileID: 3144536593317728675}
+  - {fileID: 5652214629601495551}
+  - {fileID: 3072211112722550589}
+  - {fileID: 613602216970827664}
+  - {fileID: -3166572234395113954}
+--- !u!114 &252534978227913380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: 1e54e2f1ff3a78b4f806672f92489a4b
+  nodePos: {x: 368.00012, y: -111.460014}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -5526739445220369598}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u0427\u0442\u043E \u0436, \u043D\u0430 \u044D\u0442\u043E\u043C
+        \u043F\u043E\u043A\u0430 \u0432\u0441\u0451, \u0432 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439
+        \u0440\u0430\u0437 \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E
+        \u043F\u043E\u043A\u0430\u0436\u0443 \u0431\u043E\u043B\u044C\u0448\u0435!"
+      time: 3
+      delay: 0
+      narrator: Father
+--- !u!114 &613602216970827664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dacf69829b694503a1c3a17dc61adda4, type: 3}
+  m_Name: SelectableDialogueRoot
+  m_EditorClassIdentifier: 
+  guid: 19183db6b60071349a741a90d4f3cfa7
+  nodePos: {x: -49.60005, y: -34.399986}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -6786572247050153649}
+  tag: 
+  rootName: UnderTable
+--- !u!114 &2043678355444082346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: f2ed7a8369c045143b87b46948f8edb3
+  nodePos: {x: 135.20006, y: 200.91853}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 3144536593317728675}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u0427\u0435\u0440\u0442, \u0434\u0432\u0435\u0440\u044C \u0437\u0430\u043F\u0435\u0440\u0442\u0430!"
+      time: 1.7
+      delay: 1
+      narrator: Player
+--- !u!114 &3044482739743453537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dacf69829b694503a1c3a17dc61adda4, type: 3}
+  m_Name: SelectableDialogueRoot
+  m_EditorClassIdentifier: 
+  guid: f1da862b84026124c93f7f9ed1df9d97
+  nodePos: {x: -47.999966, y: 200.91853}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 2043678355444082346}
+  tag: 
+  rootName: Locked Door
+--- !u!114 &3072211112722550589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14af7cf68a2e454daf561243e9037826, type: 3}
+  m_Name: Delay
+  m_EditorClassIdentifier: 
+  guid: eef76b951cf82fd4095c38cf20f0342e
+  nodePos: {x: 133.60013, y: -111.460014}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -2827813831105164245}
+  tag: 
+  delay: 4.5
+--- !u!114 &3144536593317728675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: 2af863e11c639df4b8ee408750059a6e
+  nodePos: {x: 290.4, y: 200.8}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 5652214629601495551}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u0427\u0442\u043E\u0431\u044B \u043F\u0440\u043E\u0439\u0442\u0438
+        \u043D\u0430\u0434\u043E \u043A\u0430\u043A \u0442\u043E \u043F\u0440\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C
+        \u044D\u0442\u043E\u0442 \u0432\u0435\u043D\u0442\u0438\u043B\u044C"
+      time: 2.5
+      delay: 1
+      narrator: Player
+--- !u!114 &5652214629601495551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: 5020c74393c419f48bf52707047c1433
+  nodePos: {x: 445.6, y: 200.80002}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u041C\u043E\u0436\u0435\u0442 \u0442\u0443\u0442 \u0433\u0434\u0435-\u0442\u043E
+        \u0440\u0430\u0437\u0432\u043E\u0434\u043D\u043E\u0439 \u043A\u043B\u044E\u0447
+        \u0435\u0441\u0442\u044C?"
+      time: 2.5
+      delay: 1
+      narrator: Player
+--- !u!114 &5769841529871434014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10113cc9b4c402eb4af960250a0a137, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: d3f4a12892622ef44a164210a294cd9c
+  nodePos: {x: 12.000167, y: -111.460014}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 3072211112722550589}
+  tag: 
+--- !u!114 &7541052100404347395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f544080dc4d646bf8ec6b5fe010b3191, type: 3}
+  m_Name: LocalizedSentence
+  m_EditorClassIdentifier: 
+  guid: c509331091b76d543be99bd9ca63a5e8
+  nodePos: {x: 135.19992, y: 42.4}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -9080441548631559585}
+  tag: 
+  sentences:
+    keys:
+    - ru
+    values:
+    - sentence: "\u0411\u043E\u0436\u0435... \u0427\u0442\u043E \u044D\u0442\u043E
+        \u0431\u044B\u043B\u043E?! \u041A\u0443\u0434\u0430 \u043E\u043D \u0434\u0435\u043B
+        \u043F\u0430\u043F\u0443..."
+      time: 3
+      delay: 1
+      narrator: Player
