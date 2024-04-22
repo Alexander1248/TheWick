@@ -72,7 +72,7 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph.Nodes.BranchChoicers
             if (late) return;
 
             _modeBuff = Cursor.lockState;
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None;
             for (var i = 0; i < answers.Count; i++)
             {
                 _answers[i].gameObject.SetActive(true);
@@ -84,7 +84,7 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph.Nodes.BranchChoicers
         {
             if (!late) return;
             _modeBuff = Cursor.lockState;
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None;
             for (var i = 0; i < answers.Count; i++)
             {
                 _answers[i].gameObject.SetActive(true);
