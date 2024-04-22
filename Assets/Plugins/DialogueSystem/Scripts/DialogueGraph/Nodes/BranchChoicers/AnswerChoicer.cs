@@ -26,9 +26,10 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph.Nodes.BranchChoicers
         private List<Answer> _answers;
         private bool _isManual;
         private CursorLockMode _modeBuff;
+        private bool _visibilityBuff;
         public override void OnDrawStart(Dialogue dialogue, Storyline node)
         {
-            if (!answerPrefab.TryGetComponent(typeof(RectTransform), out var _))
+            if (!answerPrefab.TryGetComponent(typeof(RectTransform), out _))
                 throw new ArgumentException("Answer prefab not UI component!");
             if (!answerPrefab.TryGetComponent(typeof(Answer), out _))
                 throw new ArgumentException("Answer prefab not contain Answer Behaviour!");
@@ -70,9 +71,11 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph.Nodes.BranchChoicers
             }
 
             if (late) return;
-
             _modeBuff = Cursor.lockState;
-            Cursor.lockState = CursorLockMode.None;
+            _visibilityBuff = Cursor.visible;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            
             for (var i = 0; i < answers.Count; i++)
             {
                 _answers[i].gameObject.SetActive(true);
@@ -84,7 +87,10 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph.Nodes.BranchChoicers
         {
             if (!late) return;
             _modeBuff = Cursor.lockState;
-            Cursor.lockState = CursorLockMode.None;
+            _visibilityBuff = Cursor.visible;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            
             for (var i = 0; i < answers.Count; i++)
             {
                 _answers[i].gameObject.SetActive(true);
@@ -95,6 +101,7 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph.Nodes.BranchChoicers
         public override void OnDelayStart(Dialogue dialogue, Storyline storyline)
         {
             Cursor.lockState = _modeBuff;
+            Cursor.visible = _visibilityBuff;
             for (var i = 0; i < answers.Count; i++)
             {
                 _answers[i].Hide();

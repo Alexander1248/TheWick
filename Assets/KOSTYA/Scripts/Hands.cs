@@ -14,7 +14,6 @@ public class Hands : MonoBehaviour
     [SerializeField] private AnimationClip gunShoot;
     private bool canHitGaechnii = true;
     private bool canShoot = true;
-    [SerializeField] private float duration = 0;
 
     private int currentWeaponIndex = 0;
     [SerializeField] private float scrollThreshold = 0.2f;
@@ -28,6 +27,7 @@ public class Hands : MonoBehaviour
     [SerializeField] private float wrenchDistance = 3.0f;
     [SerializeField] private float wrenchDamage = 10.0f;
     [SerializeField] private float wrenchKickForce = 1f;
+    [SerializeField] private float duration = 0;
 
     [SerializeField] private bool wrenchUnlocked;
     [SerializeField] private bool weaponUnlocked;
