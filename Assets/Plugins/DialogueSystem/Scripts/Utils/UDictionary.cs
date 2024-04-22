@@ -2,7 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+
+#if UNITY_EDITOR
 using UnityEditorInternal;
+#endif
+
 using UnityEngine;
 
 namespace Plugins.DialogueSystem.Scripts.Utils
