@@ -80,9 +80,10 @@ public class PauseManager : MonoBehaviour
         buttons[id].fontSize += 20;
     }
 
-    void Start(){
+    void Start()
+    {
         defaultSize = new float[buttons.Length];
-        for(int i = 0; i < buttons.Length; i++)
+        for (int i = 0; i < buttons.Length; i++)
             defaultSize[i] = buttons[i].fontSize;
 
         slidersText[1].text = "" + PlayerPrefs.GetFloat("PlayerSens", 3).ToString("F1");
@@ -90,19 +91,17 @@ public class PauseManager : MonoBehaviour
 
         slidersText[0].text = "" + PlayerPrefs.GetFloat("PlayerVolume", 1).ToString("F1");
         sliders[0].value = PlayerPrefs.GetFloat("PlayerVolume", 1);
-        
-        
+
+
         dropdown.AddOptions(languages.Select(language => new TMP_Dropdown.OptionData(language.name)).ToList());
-        if (PlayerPrefs.HasKey(languagePrefName))
-        {
-            var language = PlayerPrefs.GetString(languagePrefName);
-            for (var i = 0; i < languages.Length; i++)
-                if (languages[i].tag == language)
-                {
-                    dropdown.SetValueWithoutNotify(i);
-                    break;
-                }
-        }
+        var language = PlayerPrefs.HasKey(languagePrefName) ? PlayerPrefs.GetString(languagePrefName) : "en";
+        for (var i = 0; i < languages.Length; i++)
+            if (languages[i].tag == language)
+            {
+                dropdown.SetValueWithoutNotify(i);
+                break;
+            }
+
 
         dropdown.onValueChanged.AddListener(ChangeLang);
     }

@@ -47,20 +47,22 @@ public class Menu : MonoBehaviour
 
 
 
-    void Start(){
+    void Start()
+    {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
         fontSizes_def = new float[buttons.Length];
         fontSizes_hov = new float[buttons.Length];
         fontSizes_click = new float[buttons.Length];
-        for(int i = 0; i < buttons.Length; i++){
+        for (int i = 0; i < buttons.Length; i++)
+        {
             fontSizes_def[i] = buttons[i].fontSize;
             fontSizes_hov[i] = buttons[i].fontSize + 15;
             fontSizes_click[i] = buttons[i].fontSize + 30;
         }
 
-        yEndBlack = black.localPosition.y; 
+        yEndBlack = black.localPosition.y;
 
         startingPos = cam.position;
 
@@ -70,18 +72,16 @@ public class Menu : MonoBehaviour
         slidersText[1].text = "" + PlayerPrefs.GetFloat("PlayerSens", 3).ToString("F1");
         sliders[1].value = InverseLerp(sensRange[0], sensRange[1], PlayerPrefs.GetFloat("PlayerSens", 3));
 
-        
+
         dropdown.AddOptions(languages.Select(language => new TMP_Dropdown.OptionData(language.name)).ToList());
-        if (PlayerPrefs.HasKey(languagePrefName))
-        {
-            var language = PlayerPrefs.GetString(languagePrefName);
-            for (var i = 0; i < languages.Length; i++)
-                if (languages[i].tag == language)
-                {
-                    dropdown.SetValueWithoutNotify(i);
-                    break;
-                }
-        }
+        var language = PlayerPrefs.HasKey(languagePrefName) ? PlayerPrefs.GetString(languagePrefName) : "en";
+        for (var i = 0; i < languages.Length; i++)
+            if (languages[i].tag == language)
+            {
+                dropdown.SetValueWithoutNotify(i);
+                break;
+            }
+
 
         dropdown.onValueChanged.AddListener(ChangeLang);
     }
