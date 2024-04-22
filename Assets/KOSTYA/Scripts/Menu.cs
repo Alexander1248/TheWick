@@ -178,11 +178,11 @@ public class Menu : MonoBehaviour
         PlayerPrefs.DeleteKey("CompressedGas");
         SceneManager.LoadScene("FACTORY");
     }
-    [Serializable]
-    private class Language
-    {
-        public string name;
-        public string tag;
-    }
 }
 
+[Serializable]
+public class Language
+{
+    public string name;
+    public string tag;
+}
