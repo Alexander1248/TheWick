@@ -4005,6 +4005,7 @@ MonoBehaviour:
   gaechniiHit: {fileID: 7400000, guid: a194bb3d205a05e4d9b64ae50772393f, type: 2}
   animatorGun: {fileID: 8714421783900378719}
   gunShoot: {fileID: 7400000, guid: d2d1a895ae801c04baea06ea9258edc1, type: 2}
+  duration: 0.75
   scrollThreshold: 0.05
   weapons:
   - {fileID: 0}
@@ -5467,7 +5468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb2ff7a320f48bbbe0859b4549bef74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 8618952243838505752}
+  text: {fileID: 4195457963269087208}
   localePlayerPref: locale
   defaultLocale: en
   localizations:
@@ -7300,7 +7301,7 @@ MonoBehaviour:
     - en
     values:
     - "\u0427\u0423\u0412\u0421\u0422\u0412\u0418\u0422\u0415\u041B\u042C\u041D\u041E\u0421\u0422\u042C"
-    - SENSETIVIVTY
+    - SENSITIVIVTY
 --- !u!1 &6439145695037389258
 GameObject:
   m_ObjectHideFlags: 0
@@ -9649,7 +9650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb2ff7a320f48bbbe0859b4549bef74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 8618952243838505752}
+  text: {fileID: 9053811587624292733}
   localePlayerPref: locale
   defaultLocale: en
   localizations:
