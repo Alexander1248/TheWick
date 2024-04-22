@@ -18,6 +18,7 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph.Nodes.DrawerNodes
         {
             var node = Instantiate(this);
             node.narrator = narrator;
+            node.symbolTime = new UDictionary<char, float>();
             foreach (var pair in symbolTime) 
                 node.symbolTime.Add(pair.Key, pair.Value);
             node.defaultSymbolTime = defaultSymbolTime;

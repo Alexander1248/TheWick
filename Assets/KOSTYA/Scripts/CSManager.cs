@@ -48,7 +48,7 @@ public class CSManager : MonoBehaviour
     void startGame()
     {
         Invoke(nameof(PlayDirector), 4);
-        dialogue.StartDialogue("Intro");
+        dialogue.StartDialogueNow("Intro");
         //Debug.Log("(Отец)-И вот мы пришли! Главное ничего не трогай, а то я знаю, какая ты у меня. Один раз мне все гайки из лестницы выкрутила, так папаня и полетел с неё, хаха.");
     }
 
@@ -59,11 +59,11 @@ public class CSManager : MonoBehaviour
 
     public void getSignal(int id){
         if (cntr == 0){
-            dialogue.StartDialogue("Enter");
+            dialogue.StartDialogueNow("Enter");
             //Debug.Log("(Мужик)- Доброго дня! Костя, иж ты, дочку взял с собой?  (Отец)-Доброго! Просилась ужасно, вот и решил показать. (Мужик)- Проходите тогда, коль не шутишь");
         }
         else if (cntr == 1){
-            dialogue.StartDialogue("Mono");
+            dialogue.StartDialogueNow("Mono");
             //Debug.Log("(Отец)- А вот и Великий Царицынский Цех, построенный по указу Царя Всея Руси Николая Второго в 1930 году!(Отец)- Здесь и собирают все свечи, озаряющие наш Царицын! (Отец)- Коли желаешь посмотреть, понаблюдать за работой, можешь погулять. Как насмотришься, скажи мне.(Отец)- Только не отвлекай никого!");
             npc2_1.CrossFade("FatherSitting", 0.5f, -1, 0);
         }
@@ -86,7 +86,7 @@ public class CSManager : MonoBehaviour
             for(int i = 0; i < npcs_room1.Length; i++){
                 playTalkNpc(npcs_room1[i]);
             }
-            dialogue.StartDialogue("Room 1");
+            dialogue.StartDialogueNow("Room 1");
             // Debug.Log("(Мужики)- Эх, представьте, Алёше, цесаревичу нашему, коль поди 30 наступило!(Мужики)- Боже! Цесаревича храни! (Мужики)- Надеюсь, что будет таким же, как и папка. Авось, братцы, Аляску вернёт!");
         
         }
@@ -94,7 +94,7 @@ public class CSManager : MonoBehaviour
             for(int i = 0; i < npcs_room2.Length; i++){
                 playTalkNpc(npcs_room2[i]);
             }
-            dialogue.StartDialogue("Room 2");
+            dialogue.StartDialogueNow("Room 2");
             // Debug.Log("(Мужики)- Девочка, а ну кыш отсюда, у нас тут сановитые дела");
 
         }
@@ -102,7 +102,7 @@ public class CSManager : MonoBehaviour
             for(int i = 0; i < npcs_room3.Length; i++){
                 playTalkNpc(npcs_room3[i]);
             }
-            dialogue.StartDialogue("Room 3");
+            dialogue.StartDialogueNow("Room 3");
             // Debug.Log("(Мужики)- Ох, представь, как получка придёт, поедем в бричке кутить по центральным улочкам!(Мужики)- Да уж... В прошлый раз после такой ночи мы оказались где-то в Вятке...(Мужики)- Ой, не начинай...");
         
         }

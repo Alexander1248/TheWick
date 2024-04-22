@@ -614,8 +614,10 @@ MonoBehaviour:
   tipName:
     keys:
     - ru
+    - en
     values:
     - "\u041E\u0442\u043A\u0440\u044B\u0442\u044C"
+    - Open
   meshesOutline:
   - {fileID: 3527540819387044962}
   audioSource: {fileID: 4039043523965273851}

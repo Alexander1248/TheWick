@@ -25,7 +25,7 @@ namespace Interactable
             _buff = gameObject.tag;
             gameObject.tag = "Untagged";
             _dialogueStarted = true;
-            dialogue.StartDialogue(dialogueName);
+            dialogue.StartDialogueNow(dialogueName);
             dialogue.onDialogueEnd.AddListener(EndInteract);
         }
 

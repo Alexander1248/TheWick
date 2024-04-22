@@ -3503,6 +3503,8 @@ MonoBehaviour:
   textTipButton: {fileID: 4387894583240838398}
   textTipTip: {fileID: 7670971762509564872}
   textLook: {fileID: 0}
+  localePlayerPref: locale
+  defaultLocale: en
 --- !u!114 &526152239465407960
 MonoBehaviour:
   m_ObjectHideFlags: 0

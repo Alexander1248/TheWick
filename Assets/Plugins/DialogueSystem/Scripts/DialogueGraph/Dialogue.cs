@@ -26,6 +26,8 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph
 
         private Storyline _current;
         private bool _wait = true;
+        private readonly Queue<string> _fastQueue = new();
+        private readonly Queue<string> _longQueue = new();
 
         public bool IsStarted => _current != null;
         public bool IsPlaying { get; private set; }
@@ -34,11 +36,19 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph
         public UDictionary<string, Object> Data => data;
         public readonly Dictionary<string, object> buffer = new();
 
-        public void StartDialogue(string rootName)
+        public void StartDialogueNow(string rootName)
         {
             _current = DialogueGraph.Clone(graph.roots.Find(r => r.RootName == rootName));
             SwitchUpdate();
             PlayDialogue();
+        }
+        public void StartDialogue(string rootName)
+        {
+            _fastQueue.Enqueue(rootName);
+        }
+        public void QueueDialogue(string rootName)
+        {
+            _longQueue.Enqueue(rootName);
         }
 
         public void PlayDialogue()
@@ -77,6 +87,8 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph
             if (canSkip && Input.GetKeyDown(skipKey))
             {
                 CancelInvoke(nameof(GoToNext));
+                _current.OnDrawEnd(this);
+                _current.OnDelayStart(this);
                 GoToNext();
                 return;
             }
@@ -100,6 +112,12 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph
             onSentenceEnd.Invoke(_current.tag);
             if (!_current.drawer.IsUnityNull())
                 _current.drawer.PauseDraw(this);
+            if (_fastQueue.TryDequeue(out var root))
+            {
+                StartDialogueNow(root);
+                return;
+            }
+
             _current = _current.GetNext();
             SwitchUpdate();
         }
@@ -108,6 +126,8 @@ namespace Plugins.DialogueSystem.Scripts.DialogueGraph
             if (_current.IsUnityNull())
             {
                 onDialogueEnd.Invoke();
+                if (_longQueue.TryDequeue(out var root)) 
+                    StartDialogueNow(root);
                 return;
             }
             _current.OnDrawStart(this);

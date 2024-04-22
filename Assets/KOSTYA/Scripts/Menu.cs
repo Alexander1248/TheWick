@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Menu : MonoBehaviour
 {
@@ -36,6 +40,10 @@ public class Menu : MonoBehaviour
     [SerializeField] private float[] sensRange;
 
     [SerializeField] private AudioMixer audioMixer;
+    
+    [SerializeField] private TMP_Dropdown dropdown;
+    [SerializeField] private string languagePrefName = "locale";
+    [SerializeField] private Language[] languages;
 
 
 
@@ -61,6 +69,9 @@ public class Menu : MonoBehaviour
 
         slidersText[1].text = "" + PlayerPrefs.GetFloat("PlayerSens", 3).ToString("F1");
         sliders[1].value = InverseLerp(sensRange[0], sensRange[1], PlayerPrefs.GetFloat("PlayerSens", 3));
+
+        dropdown.AddOptions(languages.Select(language => new TMP_Dropdown.OptionData(language.name)).ToList());
+        dropdown.onValueChanged.AddListener(ChangeLang);
     }
 
     public static float InverseLerp(float a, float b, float value)
@@ -84,6 +95,9 @@ public class Menu : MonoBehaviour
         audioMixer.SetFloat("Volume", Mathf.Log10(sliders[0].value)*20);
     }
     
+    public void ChangeLang(int state){
+        PlayerPrefs.SetString(languagePrefName, languages[state].tag);
+    }
 
     void Update()
     {
@@ -152,4 +166,11 @@ public class Menu : MonoBehaviour
         PlayerPrefs.DeleteKey("CompressedGas");
         SceneManager.LoadScene("FACTORY");
     }
+    [Serializable]
+    private class Language
+    {
+        public string name;
+        public string tag;
+    }
 }
+

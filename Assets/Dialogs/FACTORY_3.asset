@@ -1,0 +1,424 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8044298767890869857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 2ac0158ccad843e4a8aac59f7d54d59d
+  nodePos: {x: 1423.9602, y: 426}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  drawer: {fileID: -4537135921281986818}
+  branchChoicer: {fileID: 0}
+  properties:
+  - {fileID: 1974975355383681206}
+  tag: silent
+  delay: 0.5
+--- !u!114 &-7596836594532321267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad84465e128f45c9a2b8120b5d4d3fa3, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: 441080044af29c646bc72df97438bf11
+  nodePos: {x: 1751.3102, y: 426}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 6093364085519548755}
+  drawer: {fileID: 0}
+  branchChoicer: {fileID: 0}
+  properties:
+  - {fileID: -5866287379472644862}
+  tag: 
+  delay: 0.5
+  rootName: Vent
+--- !u!114 &-5866287379472644862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37611366c7d4429ba3208de7ff2c713f, type: 3}
+  m_Name: BirdCaller
+  m_EditorClassIdentifier: 
+  guid: 104affbe680a2024da93791757b60e08
+  nodePos: {x: 1751.3102, y: 551}
+  stage: 0
+  show: 1
+--- !u!114 &-4537135921281986818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 3c938cf68c54666428d03e63fe4a6ea9
+  nodePos: {x: 1438.9602, y: 349}
+  container: {fileID: -4135469762589318590}
+  narrator: Player
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05
+--- !u!114 &-4135469762589318590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 9b2ae294ac996ce4cac8037c3c2eddfa
+  nodePos: {x: 1463.9602, y: 272}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0411\u043B\u0438\u043D, \u0442\u0443\u043F\u0438\u043A! "
+    - Damn, dead end!
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dc910af0e3446b0bda39e5ae3bb19ca, type: 3}
+  m_Name: FACTORY_3
+  m_EditorClassIdentifier: 
+  roots:
+  - {fileID: 8101293836636097333}
+  - {fileID: 5687052351319461314}
+  - {fileID: -7596836594532321267}
+  nodes:
+  - {fileID: 8101293836636097333}
+  - {fileID: 749529818518559675}
+  - {fileID: 2121978419122267367}
+  - {fileID: 5075640614096700338}
+  - {fileID: 5333925382367451728}
+  - {fileID: 2863789233512705920}
+  - {fileID: 5687052351319461314}
+  - {fileID: -8044298767890869857}
+  - {fileID: 2124066096456465127}
+  - {fileID: 1974975355383681206}
+  - {fileID: -4537135921281986818}
+  - {fileID: -4135469762589318590}
+  - {fileID: -7596836594532321267}
+  - {fileID: 6093364085519548755}
+  - {fileID: -5866287379472644862}
+  - {fileID: 8736680151216953491}
+  - {fileID: 2694227564566944439}
+  - {fileID: 105457920800492643}
+--- !u!114 &105457920800492643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: dc94a2de3295a8843807936b2d6b5d51
+  nodePos: {x: 1987.3102, y: 272}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u041D\u0430\u0432\u0435\u0440\u043D\u043E\u0435 \u043C\u043D\u0435 \u043F\u0440\u0438\u0434\u0451\u0442\u0441\u044F
+      \u043B\u0435\u0437\u0442\u044C \u0432 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0446\u0438\u044E."
+    - 'I guess I''ll have to climb into the ventilation. '
+--- !u!114 &749529818518559675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 2f3175809b524dd41b5a6ad6618e9187
+  nodePos: {x: 983, y: 426}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  drawer: {fileID: 5333925382367451728}
+  branchChoicer: {fileID: 0}
+  properties:
+  - {fileID: 5075640614096700338}
+  tag: silent
+  delay: 0.5
+--- !u!114 &1974975355383681206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37611366c7d4429ba3208de7ff2c713f, type: 3}
+  m_Name: BirdCaller
+  m_EditorClassIdentifier: 
+  guid: 631ff2161db18d7498d1cbd37055af8f
+  nodePos: {x: 1423.9602, y: 575}
+  stage: 1
+  show: 0
+--- !u!114 &2121978419122267367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37611366c7d4429ba3208de7ff2c713f, type: 3}
+  m_Name: BirdCaller
+  m_EditorClassIdentifier: 
+  guid: 6eea0f3c99fa2424bb66a6f9d0fb640f
+  nodePos: {x: 787, y: 551}
+  stage: 0
+  show: 1
+--- !u!114 &2124066096456465127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37611366c7d4429ba3208de7ff2c713f, type: 3}
+  m_Name: BirdCaller
+  m_EditorClassIdentifier: 
+  guid: 37ff524512e9fac449cb738e01030e08
+  nodePos: {x: 1227.9602, y: 551}
+  stage: 0
+  show: 1
+--- !u!114 &2694227564566944439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 8a80894bd47ef3549b8058be861c0e3a
+  nodePos: {x: 1962.3102, y: 349}
+  container: {fileID: 105457920800492643}
+  narrator: Player
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.4
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05
+--- !u!114 &2863789233512705920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e3db4f5a6d4902af644adc65e98293, type: 3}
+  m_Name: LocalizedContainer
+  m_EditorClassIdentifier: 
+  guid: 80e2262481bee07458cd521d374fcb4a
+  nodePos: {x: 1023, y: 272}
+  localePlayerPref: locale
+  defaultLocale: en
+  localizations:
+    keys:
+    - ru
+    - en
+    values:
+    - "\u0418\u0445 \u0442\u0443\u0442 \u0441\u043B\u0438\u0448\u043A\u043E\u043C
+      \u043C\u043D\u043E\u0433\u043E, \u044F \u043D\u0435 \u0441\u043F\u0440\u0430\u0432\u043B\u044E\u0441\u044C,
+      \u043D\u0430\u0434\u043E \u0431\u044B\u0442\u044C \u043E\u0441\u0442\u043E\u0440\u043E\u0436\u043D\u0435\u0435..."
+    - "There are too many of them here, I can\u2019t handle it, I have to be careful..."
+--- !u!114 &5075640614096700338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37611366c7d4429ba3208de7ff2c713f, type: 3}
+  m_Name: BirdCaller
+  m_EditorClassIdentifier: 
+  guid: 919050ea462510f49923bce302b985cc
+  nodePos: {x: 983, y: 575}
+  stage: 1
+  show: 0
+--- !u!114 &5333925382367451728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1cbaed40a4bed949609d423f3e720, type: 3}
+  m_Name: SmartSequentialDrawer
+  m_EditorClassIdentifier: 
+  guid: 6a4e007bac55ec34ead2688d8456b75a
+  nodePos: {x: 998.00006, y: 349}
+  container: {fileID: 2863789233512705920}
+  narrator: Player
+  symbolTime:
+    keys: 2c002e0021003f00
+    values:
+    - 0.2
+    - 0.2
+    - 0.4
+    - 0.4
+  defaultSymbolTime: 0.05
+--- !u!114 &5687052351319461314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad84465e128f45c9a2b8120b5d4d3fa3, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: b271692d3b8c04a43adbc9b8f1c4b93e
+  nodePos: {x: 1227.9602, y: 426}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: -8044298767890869857}
+  drawer: {fileID: 0}
+  branchChoicer: {fileID: 0}
+  properties:
+  - {fileID: 2124066096456465127}
+  tag: 
+  delay: 0.5
+  rootName: Dead End
+--- !u!114 &6093364085519548755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8867b2af034842b874de30232a275a, type: 3}
+  m_Name: Storyline
+  m_EditorClassIdentifier: 
+  guid: 072a0c7d2d5374f4e8b08a7ec67da876
+  nodePos: {x: 1947.3102, y: 426}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 0}
+  drawer: {fileID: 2694227564566944439}
+  branchChoicer: {fileID: 0}
+  properties:
+  - {fileID: 8736680151216953491}
+  tag: 
+  delay: 0.5
+--- !u!114 &8101293836636097333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad84465e128f45c9a2b8120b5d4d3fa3, type: 3}
+  m_Name: DialogueRoot
+  m_EditorClassIdentifier: 
+  guid: 65c30b841b24fc0418085f1273c22553
+  nodePos: {x: 787, y: 426}
+  next:
+    keys: 00000000
+    values:
+    - {fileID: 749529818518559675}
+  drawer: {fileID: 0}
+  branchChoicer: {fileID: 0}
+  properties:
+  - {fileID: 2121978419122267367}
+  tag: 
+  delay: 0.5
+  rootName: Intro
+--- !u!114 &8736680151216953491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37611366c7d4429ba3208de7ff2c713f, type: 3}
+  m_Name: BirdCaller
+  m_EditorClassIdentifier: 
+  guid: 3cba8f53487590c4dbb0ed6d0757b104
+  nodePos: {x: 1947.3102, y: 575}
+  stage: 1
+  show: 0
