@@ -46,7 +46,7 @@ MonoBehaviour:
     values:
     - "\u041D\u0430\u0434\u0435\u044E\u0441\u044C, \u0447\u0442\u043E \u0431\u0443\u0434\u0435\u0442
       \u0442\u0430\u043A\u0438\u043C \u0436\u0435, \u043A\u0430\u043A \u0438 \u043F\u0430\u043F\u043A\u0430."
-    - I hope it will be the same as the folder.
+    - I hope he will be the same as his father.
 --- !u!114 &-8981024675644610003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: LocalizedContainer
   m_EditorClassIdentifier: 
   guid: 4516781bcaec560408568a466092a0b8
-  nodePos: {x: 236.99998, y: -5.000016}
+  nodePos: {x: 237, y: -6}
   localePlayerPref: locale
   defaultLocale: en
   localizations:
@@ -145,8 +145,8 @@ MonoBehaviour:
       \u043D\u0435 \u0442\u0440\u043E\u0433\u0430\u0439, \u0430 \u0442\u043E \u044F
       \u0437\u043D\u0430\u044E, \u043A\u0430\u043A\u0430\u044F \u0442\u044B \u0443
       \u043C\u0435\u043D\u044F."
-    - "The main thing is don\u2019t touch anything, otherwise I know what kind of
-      person you are."
+    - "The main thing is don\u2019t touch anything, because I know what kind of person
+      you are."
 --- !u!114 &-7800845988706665052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,7 +484,7 @@ MonoBehaviour:
     values:
     - "\u041F\u0440\u043E\u0445\u043E\u0434\u0438\u0442\u0435 \u0442\u043E\u0433\u0434\u0430,
       \u043A\u043E\u043B\u044C \u043D\u0435 \u0448\u0443\u0442\u0438\u0448\u044C."
-    - "Go ahead then, if you\u2019re not joking."
+    - "Go ahead then, if you\u2019re not kidding."
 --- !u!114 &-3457544156952753556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,7 +724,7 @@ MonoBehaviour:
       \u0410\u043B\u0451\u0448\u0435, \u0446\u0435\u0441\u0430\u0440\u0435\u0432\u0438\u0447\u0443
       \u043D\u0430\u0448\u0435\u043C\u0443, \u043A\u043E\u043B\u044C \u043F\u043E\u0434\u0438
       30 \u043D\u0430\u0441\u0442\u0443\u043F\u0438\u043B\u043E!"
-    - Oh, imagine, Alyosha, our Tsarevich, since 30 has arrived!
+    - Oh! Alyosha, out Tsarevich is 30 years old now!
 --- !u!114 &-625910996186011826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,8 +799,7 @@ MonoBehaviour:
       \u043F\u043E\u0435\u0434\u0435\u043C \u0432 \u0431\u0440\u0438\u0447\u043A\u0435
       \u043A\u0443\u0442\u0438\u0442\u044C \u043F\u043E \u0446\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u044B\u043C
       \u0443\u043B\u043E\u0447\u043A\u0430\u043C!"
-    - Oh, imagine how the pay comes, let's go in a chaise for a spree along the central
-      streets!
+    - Oh, when the pays will come, we'll ride the cart on the central streets!
 --- !u!114 &-322400488549299898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1144,7 +1143,7 @@ MonoBehaviour:
     - "\u0417\u0434\u0435\u0441\u044C \u0438 \u0441\u043E\u0431\u0438\u0440\u0430\u044E\u0442
       \u0432\u0441\u0435 \u0441\u0432\u0435\u0447\u0438, \u043E\u0437\u0430\u0440\u044F\u044E\u0449\u0438\u0435
       \u043D\u0430\u0448 \u0426\u0430\u0440\u0438\u0446\u044B\u043D! "
-    - This is where they collect all the candles that illuminate our Tsaritsyn!
+    - This is where we collect all the candles that illuminate our Tsaritsyn!
 --- !u!114 &2313525776459092692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,7 +1170,7 @@ MonoBehaviour:
       \u0432\u044B\u043A\u0440\u0443\u0442\u0438\u043B\u0430, \u0442\u0430\u043A
       \u043F\u0430\u043F\u0430\u043D\u044F \u0438 \u043F\u043E\u043B\u0435\u0442\u0435\u043B
       \u0441 \u043D\u0435\u0451, \u0445\u0430\u0445\u0430."
-    - One time I unscrewed all the nuts from the ladder, so dad flew off it, haha.
+    - One time you unscrewed all the nuts from the ladder, so dad flew off it, haha.
 --- !u!114 &2874373705405682491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1302,7 +1301,7 @@ MonoBehaviour:
   m_Name: LocalizedContainer
   m_EditorClassIdentifier: 
   guid: fbe249080d966f44e9d78adaa3d5d52f
-  nodePos: {x: 825, y: 664.9999}
+  nodePos: {x: 824, y: 665}
   localePlayerPref: locale
   defaultLocale: en
   localizations:
@@ -1407,7 +1406,7 @@ MonoBehaviour:
     - en
     values:
     - "\u041E\u0439, \u043D\u0435 \u043D\u0430\u0447\u0438\u043D\u0430\u0439..."
-    - Oh, don't start...
+    - Oh, don't even begin...
 --- !u!114 &6178641522608681806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1622,7 +1621,7 @@ MonoBehaviour:
     - "\u0414\u0435\u0432\u043E\u0447\u043A\u0430, \u0430 \u043D\u0443 \u043A\u044B\u0448
       \u043E\u0442\u0441\u044E\u0434\u0430, \u0443 \u043D\u0430\u0441 \u0442\u0443\u0442
       \u0441\u0430\u043D\u043E\u0432\u0438\u0442\u044B\u0435 \u0434\u0435\u043B\u0430."
-    - Girl, well, get out of here, we have dignified business here.
+    - Get out of here! We are having a busy dialog.
 --- !u!114 &8128065894501959055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,7 +1717,7 @@ MonoBehaviour:
     - "\u0414\u043E\u0431\u0440\u043E\u0433\u043E! \u041F\u0440\u043E\u0441\u0438\u043B\u0430\u0441\u044C
       \u0443\u0436\u0430\u0441\u043D\u043E, \u0432\u043E\u0442 \u0438 \u0440\u0435\u0448\u0438\u043B
       \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u044C."
-    - Good! It was asking badly, so I decided to show it.
+    - Good day to you too! She was asking badly, so I decided to show her my workplace.
 --- !u!114 &9134345229092449910
 MonoBehaviour:
   m_ObjectHideFlags: 0
