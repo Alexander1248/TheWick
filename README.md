@@ -1,1 +1,1 @@
-[Link to Itch.io](https://feesthefox.itch.io/the-wicks)
+[Download Game](https://feesthefox.itch.io/the-wicks)
